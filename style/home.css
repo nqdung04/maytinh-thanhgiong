@@ -584,7 +584,7 @@ body {
     justify-content: flex-start;
     /* Căn về trái để scroll mượt */
     padding-left: 16px;
-    gap: 40px;
+    gap: 55px;
   }
 
   .caption-list img {
@@ -639,7 +639,7 @@ body {
   }
 
   .reason {
-    margin-top: -82%;
+    margin-top: -44%;
   }
 
   .pride-image img {

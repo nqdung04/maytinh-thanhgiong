@@ -1,4 +1,5 @@
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: "Saira", sans-serif;
 }
@@ -104,4 +105,57 @@ body {
 
 h1[id] {
     scroll-margin-top: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  .product-scroll-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100vw;
+  }
+
+  .product-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+  }
+
+  .product-link {
+    flex: 0 0 100vw;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 95%;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .call-button {
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    font-size: 16px;
+    background-color: #d10000;
+    color: white;
+    border: none;
+    border-radius: 0;
+  }
 }
