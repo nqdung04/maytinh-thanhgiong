@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bảo hành - Công ty cổ phần truyền thông và máy tính Thánh Gióng</title>
+  <!-- Link Font Awesome để dùng biểu tượng -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../style/baohanh.css">
+  <link rel="stylesheet" href="../style/huongdan_baohanh.css">
+  <link rel="stylesheet" href="../style/navbar.css">
+  <link rel="stylesheet" href="../style/media.css">
+
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+
+    <div class="navbar-left">
+      <a href="../home.html"><i class="fa-solid fa-house"></i></a>
+      <a href="../pages/about.html">GIỚI THIỆU</a>
+      <a href="../pages/product.html">SẢN PHẨM</a>
+      <a href="../pages/xuatkhau.html">XUẤT KHẨU</a>
+      <a href="../pages/baohanh.html">BẢO HÀNH</a>
+    </div>
+
+    <div class="navbar-center">
+      <a href="../home.html">
+        <img src="../img/main-img/logo_maytinh.jpg" alt="Logo trang chủ 2" />
+      </a>
+    </div>
+    <div class="navbar-right">
+      <div class="search-container">
+        <a id="searchToggle" class="search-toggle">
+          <i class="fas fa-search"></i> TÌM KIẾM
+        </a>
+
+        <div id="searchBox" class="search-box">
+          <input type="text" id="searchInput" placeholder="Tìm sản phẩm..." autocomplete="off" />
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+      </div>
+      <a href="../pages/nhamay.html">NHÀ MÁY</a>
+      <a href="../pages/daily.html">ĐẠI LÝ</a>
+      <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ MENU</a>
+
+      <div class="menu" id="menu">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <h3>MENU</h3>
+        <a href="../pages/product.html#nc300">Máy tính MODEL NC300</a>
+        <a href="../pages/product.html#nc500">Máy tính MODEL NC500</a>
+        <a href="../pages/product.html#nc800">Máy tính MODEL NC800</a>
+
+        <a href="../menu/news.html">Tin tức </a>
+        <a href="../menu/contact.html">Liên hệ</a>
+        <a href="../menu/account.html"><i class="fa-solid fa-user"></i> Tài khoản</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-baohanh">
+    <strong><a href="baohanh.html">TRA CỨU HẠN BẢO HÀNH</a></strong>
+    <strong><a href="../baohanh_list/kichhoat.html">KÍCH HOẠT BẢO HÀNH</a></strong>
+    <strong><a href="../baohanh_list/yeucau.html">YÊU CẦU BẢO HÀNH, SỬA CHỮA</a></strong>
+    <strong><a href="../baohanh_list/tracuu.html">TRA CỨU BẢO HÀNH, SỬA CHỮA</a></strong>
+    <strong><a href="../baohanh_list/tram.html">TRẠM BẢO HÀNH</a></strong>
+    <strong><a href="../baohanh_list/huongdan.html">CHÍNH SÁCH & HƯỚNG DẪN</a></strong>
+  </div>
+
+  <h1 style="text-align: center; margin-top: 50px;">CHÍNH SÁCH & HƯỚNG DẪN</h1>
+  <h5 style="margin-left: 5%;"><strong>HƯỚNG DẪN KÍCH HOẠT BẢO HÀNH</strong></h5>
+  <img style="width: 90%; height: 650px; margin-left: 5%; margin-top: 3%;" src="../img/baohanh2.png">
+
+
+  <div class="container">
+
+    <div class="section">
+      <strong>
+        <p>Mục đích: Kích hoạt bảo hành cho sản phẩm được dán tem/mã.</p>
+      </strong>
+    </div>
+
+    <div class="section">
+      <h2>Quy trình thực hiện:</h2>
+      <ol>
+        <li>Nhập hoặc quét <strong>nhiều mã Serial</strong> – mã bảo hành.</li>
+        <li>Nhấn nút <strong>“Xác nhận”</strong>.</li>
+        <li>Hệ thống kiểm tra tính hợp lệ:
+          <ul>
+            <li><strong>TH1 – Mã hợp lệ:</strong> Hiển thị Form khách hàng → Hiển thị thông tin sản phẩm → Nhập thông
+              tin khách hàng → Bước 4.</li>
+            <li><strong>TH2 – Mã không hợp lệ:</strong> Thông báo mã không hợp lệ → Quay lại Bước 1.</li>
+          </ul>
+        </li>
+        <li>Nhấn nút <strong>“Kích hoạt bảo hành”</strong> để xác nhận bảo hành.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>I. Quy định chung</h2>
+      <ol>
+        <li>
+          Tất cả sản phẩm bán ra đều tuân thủ điều kiện bảo hành của các hãng: <em>Thánh Gióng, FPT, CMS, IBM, HP, DELL,
+            Canon, Toshiba, Sony, Samsung, LG, Acer...</em>
+        </li>
+        <li>
+          <strong>Điều kiện được bảo hành:</strong>
+          <ul>
+            <li>Phải dán tem bảo hành Thánh Gióng và còn trong hạn bảo hành.</li>
+            <li>Nếu bảo hành tại hãng, khách hàng cần có serial, tem và phiếu bảo hành chính hãng khi giao hàng.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Không được bảo hành nếu:</strong>
+          <ul>
+            <li>Tem/phiếu bảo hành bị mất, rách, chỉnh sửa hoặc đè tem khác.</li>
+            <li>Sản phẩm hết hạn bảo hành.</li>
+            <li>Serial/mã vạch không xác định được hoặc sai lệch.</li>
+            <li>Thiệt hại do thiên tai, cháy, điện, dùng sai điện áp.</li>
+            <li>Ẩm ướt, oxy hóa, có dấu hiệu động vật xâm nhập.</li>
+            <li>Rơi, vỡ, xước, tác động cơ học.</li>
+            <li>Lỗi phần mềm, tự sửa chữa.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>II. Cam kết của công ty Máy tính Thánh Gióng</h2>
+      <ol>
+        <li>
+          <strong>Với sản phẩm Thánh Gióng phân phối:</strong>
+          <ul>
+            <li>Bảo hành tại trung tâm Thánh Gióng hoặc đại lý ủy quyền.</li>
+            <li><span class="highlight">1 đổi 1 trong vòng 1 tháng</span> nếu sản phẩm bị lỗi không do người dùng.</li>
+            <li>Bảo hành sau 1 tháng: trả máy trong tối đa 48h làm việc.</li>
+            <li>Cho mượn thiết bị tạm thời nếu cần trong thời gian bảo hành.</li>
+            <li>Miễn phí bảo trì tại trung tâm: vệ sinh, diệt virus, sửa lỗi phần mềm,...</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Với sản phẩm thương hiệu Máy tính Thánh Gióng:</strong>
+          <ul>
+            <li>Bảo hành toàn bộ 24 tháng.</li>
+            <li><strong>Bảo hành tận nơi sử dụng 12 tháng đầu</strong> (trong vòng bán kính 15km từ trung tâm).</li>
+            <li>Xử lý sự cố nhẹ tại chỗ trong vòng 2 giờ làm việc.</li>
+            <li>Nếu không xử lý tại chỗ, hỗ trợ thiết bị thay thế tạm thời.</li>
+            <li>Trả bảo hành tối đa sau 48h làm việc.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Lưu ý:</strong>
+          <ul>
+            <li>Không áp dụng cho: Notebook, Server, Projector, Photocopy,...</li>
+            <li>Cam kết chỉ áp dụng cho khách hàng mua hàng của Thánh Gióng (không áp dụng cho đại lý).</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>III. Địa chỉ và thời gian bảo hành</h2>
+      <div class="box">
+        <p><strong><i class="fa-solid fa-location-dot"></i> Địa chỉ trung tâm:</strong> Số 37/97 Nguyễn Chí Thanh – Đống
+          Đa – Hà Nội</p>
+        <p><strong><i class="fas fa-phone"></i> Điện thoại:</strong> 0243.8586.9555 &nbsp; | &nbsp;
+          <strong>Hotline:</strong> 0948.598.000
+        </p>
+        <p><strong><i class="fa-solid fa-clock"></i> Thời gian làm việc:</strong><br>
+          Thứ 2 đến Thứ 7 (Trừ ngày lễ)<br>
+          <strong>Sáng:</strong> 8h00 – 12h00<br>
+          <strong>Chiều:</strong> 13h30 – 17h30
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="media-block">
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Like và truy cập fanpage THÁNH GIÓNG để cập nhật chương trình khuyến mại và tin tức sớm
+          nhất</p>
+        <div class="media-content">
+          <div class="fanpage">
+            <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" class="fanpage-link">
+              <div class="fanpage-box">
+                <img src="../img/fanpage.jpg" alt="Fanpage" class="fanpage-img" />
+
+                <!-- Góc trên trái: logo + tên + lượt theo dõi -->
+                <div class="fanpage-info">
+                  <img src="../img/main-fb.jpg" alt="Logo" class="fanpage-logo" />
+                  <div class="fanpage-text">
+                    <h3>Máy Tính Thánh Gióng</h3>
+                    <p>928 người theo dõi</p>
+                  </div>
+                </div>
+
+                <!-- Góc trái dưới: nút theo dõi -->
+                <div class="fanpage-follow"><i class="fab fa-facebook"></i> Theo dõi Trang</div>
+
+                <!-- Góc phải dưới: nút chia sẻ -->
+                <div class="fanpage-share"><i class="fa-solid fa-share"></i> Chia sẻ</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Cùng THÁNH GIÓNG xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
+        <div class="media-content">
+          <a href="https://www.youtube.com/@daotaothanhgiong7894" target="_blank" class="youtube-button">
+            <div class="youtube-icon-box">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <span class="youtube-label">THÁNH GIÓNG GROUP</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
+        <div class="media-content">
+          <form class="email-form" onsubmit="return false;">
+            <input type="email" placeholder="Nhập email của bạn" required />
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="office">
+      <h3>HÀ NỘI OFFICE</h3>
+      <p><strong>Địa chỉ:</strong> Trụ sở số 34/90 Láng Hạ - Đống Đa, Hà Nội , VPGD số 37/97 Nguyễn Chí Thanh,
+        Đống Đa, Hà Nội</p>
+      <p><strong>Điện thoại:</strong> 024-3.5143.999 - 0993888000</p>
+      <p><strong>Fax:</strong> 024-3.5146.989</p>
+      <p><strong>Email:</strong> nampt@thanhgiong.com.vn</p>
+    </div>
+
+    <div class="office">
+      <h3>FACTORY IN CITY</h3>
+      <p><strong>Địa chỉ:</strong> Lô A2 CN5 CCN tập trung vừa và nhỏ Từ Liêm, Minh Khai, Bắc Từ Liêm, HN.
+      </p>
+      <p><strong>Điện thoại:</strong> 024-3.868.0000 - 0915598000</p>
+      <p><strong>Fax:</strong> 024-3.868.0000</p>
+      <p><strong>Email:</strong> nhamay@thanhgiong.com.vn</p>
+    </div>
+
+    <div class="office">
+      <h3>ĐÀ NẴNG OFFICE</h3>
+      <p><strong>Địa chỉ:</strong> K80/18 Lê Hữu Trác, P.An Hải Đông, Q.Sơn Trà, Tp.Đà Nẵng</p>
+      <p><strong>Điện thoại:</strong> 02363.667.888 - 0946.001.002</p>
+      <p><strong>Fax:</strong> 02363.667.888</p>
+      <p><strong>Email:</strong> danang-office@thanhgiong.com.vn</p>
+    </div>
+
+    <div class="office">
+      <h3>TP.HỒ CHÍ MINH OFFICE</h3>
+      <p><strong>Địa chỉ:</strong> Lầu 8, Lô A, Tòa nhà Waseco, số 10 Phổ Quang, Phường 2, Q. Tân Bình, TP. Hồ Chí
+        Minh</p>
+      <p><strong>Điện thoại:</strong> 091 811 8233 - 094 839 8000</p>
+      <p><strong>Fax:</strong> </p>
+      <p><strong>Email:</strong> sangnt@teleq.com.vn</p>
+    </div>
+
+  </div>
+
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">
+    ↑
+  </button>
+
+  <div class="social-fixed">
+    <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" title="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.youtube.com/@daotaothanhgiong7894/" target="_blank" title="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </div>
+
+  <script src="../script/home.js"></script>
+  <script src="../script/baohanh.js"></script>
+  <script src="../script/product.js"></script>
+  <script src="../script/navbar.js"></script>
+
+</body>
+
+</html>

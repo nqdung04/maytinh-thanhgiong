@@ -1,0 +1,57 @@
+.baohanh-info-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-info, .customer-info {
+  flex: 1;
+  min-width: 300px;
+  max-width: 800px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.product-info h2, .customer-info h2 {
+  margin-bottom: 20px;
+  color: #0082C6;
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-info label,
+.customer-info label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.product-info input[type="text"],
+.customer-info input[type="text"],
+.customer-info input[type="date"],
+.customer-info input[type="tel"],
+.customer-info input[type="email"],
+.product-info textarea,
+.customer-info textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.product-info textarea[readonly] {
+  background-color: #f5f5f5;
+}
+
+input[readonly] {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}

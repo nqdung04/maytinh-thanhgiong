@@ -1,0 +1,257 @@
+/* Tổng thể container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.menu-baohanh {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 70px 0;
+  background-color: #f5f5f5;
+  padding: 15px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.menu-baohanh a {
+  text-decoration: none;
+  color: #0077b6;
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #0077b6;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.menu-baohanh a:hover {
+  background-color: #0077b6;
+  color: white;
+}
+
+/* Các section */
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f5f9fc;
+  border-left: 5px solid #0481C3;
+  border-radius: 6px;
+}
+
+/* Tiêu đề lớn */
+h1 {
+  color: #0481C3;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Tiêu đề nhỏ */
+h2, h5 {
+  color: #0481C3;
+  margin-bottom: 15px;
+}
+
+/* Danh sách số và chấm */
+ol, ul {
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+/* In đậm và tô nổi */
+strong {
+  color: #000;
+}
+
+/* Đoạn highlight */
+.highlight {
+  background-color: #ffff99;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Box thông tin liên hệ */
+.box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-left: 5px solid #0481C3;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.box p {
+  margin-bottom: 10px;
+}
+
+#searchToggle {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#searchToggle:hover {
+  color: yellow;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    flex-wrap: wrap;
+    background-color: #0082C6;;
+}
+
+.office {
+    flex: 1;
+    min-width: 220px;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.office h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.office p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: white;
+}
+
+.office strong {
+    color: white;
+}
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 999;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #0082C6;
+  color: white;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: #005b91;
+}
+
+.fanpage {
+  padding: 3%;
+}
+
+.fanpage-heading {
+  text-align: center;
+}
+
+.fanpage-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.fanpage-box {
+  position: relative;
+  width: 20%;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  transition: transform 0.2s;
+}
+
+.fanpage-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.fanpage-info {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 8px 12px;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.fanpage-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fanpage-text h3 {
+  margin: 0;
+  font-size: 16px;
+  color: white;
+}
+
+.fanpage-text h3:hover {
+  text-decoration: underline;
+}
+
+.fanpage-text p {
+  margin: 0;
+  font-size: 12px;
+  color: white;
+}
+
+.fanpage-follow,
+.fanpage-share {
+  position: absolute;
+  bottom: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #0082C6;
+  color: white;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.fanpage-follow {
+  left: 10px;
+}
+
+.fanpage-share {
+  right: 10px;
+}
+
+.fanpage-follow:hover,
+.fanpage-share:hover {
+  background-color: #005f90;
+}
+
+.fanpage-follow,
+.fanpage-share {
+  cursor: pointer;
+}

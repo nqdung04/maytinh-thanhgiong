@@ -1,0 +1,361 @@
+.navbar {
+  background: #0082C6;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  /* Bỏ padding trái/phải */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Logo 2 ở giữa navbar */
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 110;
+}
+
+.navbar-center img {
+  height: 60px;
+  object-fit: contain;
+  background: #0082C6;
+  border: 2px solid #0082C6;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar trái giữa 2 logo */
+.navbar-left {
+  float: left;
+  margin-left: 8%;
+  display: flex;
+  gap: 8px;
+}
+
+.navbar-left a {
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+  line-height: 60px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar-left a:hover {
+  color: #FFFF20;
+}
+
+/* Navbar phải */
+.navbar-right {
+  margin-left: auto;
+  float: right;
+  margin-right: 10%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-right a {
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 60px;
+  transition: color 0.3s;
+}
+
+.navbar-right a:hover {
+  color: #FFFF20;
+}
+
+/* Menu toggle (☰) */
+.navbar-right .menu-toggle {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Menu popup */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 350px;
+  background-color: white;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid #ccc;
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu h3 {
+  color: #0082C6;
+  margin-left: 20px;
+}
+
+.menu a {
+  color: black;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid #E2E2E2;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #0082C6;
+  color: white;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+/* Tìm kiếm */
+/* Vùng chứa chữ + hộp tìm */
+.search-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  line-height: 1;
+}
+
+/* Link chữ TÌM KIẾM */
+.search-toggle {
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 0 4px;
+  white-space: nowrap;
+}
+
+.search-toggle:hover {
+  color: #FFFF20;
+}
+
+/* Hộp trượt ra bên phải chữ */
+.search-box {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  /* ngay mép phải chữ TÌM KIẾM */
+  transform: translateY(-50%);
+  width: 0;
+  /* ẩn ban đầu */
+  opacity: 0;
+  pointer-events: none;
+  /* không nhận tương tác khi đóng */
+  transition: width 0.25s ease, opacity 0.2s ease;
+  z-index: 9999;
+}
+
+/* Khi mở */
+.search-box.open {
+  width: 350px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Ô input bên trong hộp */
+#searchInput {
+  width: 100%;
+  height: 40px;
+  padding: 6px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* Gợi ý – bám theo chiều rộng input */
+.suggestions {
+  position: absolute;
+  top: calc(100% + 6px);
+  /* ngay dưới input */
+  left: 0;
+  width: 100%;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  /* JS bật */
+  z-index: 1000;
+}
+
+/* Item */
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Social Fixed */
+.social-fixed {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.social-fixed a {
+  color: #0082C6;
+  font-size: 24px;
+  transition: color 0.3s, transform 0.3s;
+  text-align: center;
+}
+
+.social-fixed a:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Ẩn những phần không cần thiết */
+  .navbar-left,
+  .navbar-logo-left,
+  .navbar-right a[href*="nhamay"],
+  .navbar-right a[href*="daily"] {
+    display: none;
+  }
+
+  /* Hiện logo ở giữa */
+  .navbar-center {
+    margin: 0 auto;
+  }
+
+  /* Tìm kiếm bên trái, menu bên phải */
+  .navbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .search-container {
+    margin-left: 8px;
+  }
+
+  .search-box.open {
+    width: 300px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-toggle {
+    margin-right: 8px;
+    font-size: 24px;
+    display: block;
+  }
+
+  /* Menu popup full màn hình */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu .close-btn {
+    align-self: flex-end;
+    font-size: 30px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1680px) {
+  .navbar {
+    padding: 0 40px;
+  }
+
+  .navbar-left {
+    float: left;
+    left: 0;
+  }
+
+  .navbar-center {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .navbar-right {
+    float: right;
+    right: 0;
+  }
+}

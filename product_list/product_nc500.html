@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sản phẩm | Công ty cổ phần truyền thông và máy tính Thánh Gióng</title>
+    <!-- Link Font Awesome để dùng biểu tượng -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/product_detail.css">
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/media.css">
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+
+        <div class="navbar-left">
+            <a href="../home.html"><i class="fa-solid fa-house"></i></a>
+            <a href="../pages/about.html">GIỚI THIỆU</a>
+            <a href="../pages/product.html">SẢN PHẨM</a>
+            <a href="../pages/xuatkhau.html">XUẤT KHẨU</a>
+            <a href="../pages/baohanh.html" target="_blank">BẢO HÀNH</a>
+        </div>
+
+        <div class="navbar-center">
+            <a href="../home.html">
+                <img src="../img/main-img/logo_maytinh.jpg" alt="Logo trang chủ 2" />
+            </a>
+        </div>
+        <div class="navbar-right">
+            <div class="search-container">
+                <a id="searchToggle" class="search-toggle">
+                    <i class="fas fa-search"></i> TÌM KIẾM
+                </a>
+
+                <div id="searchBox" class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm sản phẩm..." autocomplete="off" />
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+            </div>
+            <a href="../pages/nhamay.html">NHÀ MÁY</a>
+            <a href="../pages/daily.html">ĐẠI LÝ</a>
+            <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ MENU</a>
+
+            <div class="menu" id="menu">
+                <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                <h3>MENU</h3>
+                <a href="../pages/product.html#nc300">Máy tính MODEL NC300</a>
+                <a href="../pages/product.html#nc500">Máy tính MODEL NC500</a>
+                <a href="../pages/product.html#nc800">Máy tính MODEL NC800</a>
+
+                <a href="../menu/news.html">Tin tức </a>
+                <a href="../menu/contact.html">Liên hệ</a>
+                <a href="../menu/account.html"><i class="fa-solid fa-user"></i> Tài khoản</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-detail">
+        <div class="product-image">
+            <img id="mainImage" src="../img/product-img/nc300-anh2.jpg" alt="Model NC300">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="../img/product-img/nc300-anh2.jpg" alt="Ảnh 2">
+                <img class="thumbnail" src="../img/product-img/nc300-anh3.jpg" alt="Ảnh 3">
+                <img class="thumbnail" src="../img/product-img/nc300-anh4.jpg" alt="Ảnh 4">
+                <img class="thumbnail" src="../img/product-img/nc300-anh5.jpg" alt="Ảnh 5">
+            </div>
+        </div>
+
+        <!-- Overlay phóng to -->
+        <div id="imageOverlay" class="image-overlay">
+            <span class="close-image" onclick="closeImage()">×</span>
+            <img id="zoomedImage" src="" alt="Ảnh phóng to">
+        </div>
+
+        <div class="product-info">
+            <h1>Máy tính Thánh Gióng Model NC500</h1>
+            <div class="price">Giá Bán: 6.800.000₫ (Chưa bao gồm VAT)</div>
+
+            <div class="description">
+                <h3>MÔ TẢ:</h3>
+                <p>MÁY THƯƠNG HIỆU VIỆT NAM – Máy tính Thánh Gióng</p>
+                <p>Máy tính sản xuất, lắp ráp năm 2025</p>
+                <p>Xuất xứ: Việt Nam</p>
+                <p>Đạt tiêu chuẩn ISO 9001:2015; ISO 14001:2015</p>
+                <p><strong>Bảo hành: 12 tháng</strong></p>
+                <p><strong>Có thể nâng cấp cấu hình</strong></p>
+            </div>
+
+            <div class="button-row">
+                <button class="buy-button" id="openOrderBtn">Đặt hàng</button>
+                <a href="../pages/baohanh.html" class="buy-button warranty-button" target="_blank">Kích hoạt bảo
+                    hành</a>
+            </div>
+        </div>
+
+        <div class="technical">
+            <h2>Thông số kĩ thuật</h2>
+            <table>
+                <tr>
+                    <td>CPU</td>
+                    <td>Intel Pentium G6405</td>
+                </tr>
+                <tr>
+                    <td>Bộ nhớ</td>
+                    <td>RAM 4GB DDR4</td>
+                </tr>
+                <tr>
+                    <td>Ổ cứng</td>
+                    <td>SSD 256GB</td>
+                </tr>
+                <tr>
+                    <td>Mainboard</td>
+                    <td>H510</td>
+                </tr>
+                <tr>
+                    <td>Vỏ máy</td>
+                    <td>m-Tower TG50</td>
+                </tr>
+                <tr>
+                    <td>Màn hình</td>
+                    <td>21.5 Inch LED</td>
+                </tr>
+                <tr>
+                    <td>Key&Mouse</td>
+                    <td>Thánh Gióng USB</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Form Đặt Hàng -->
+        <div id="orderOverlay" class="overlay">
+            <div class="order-form">
+                <span class="close-btn" onclick="closeOrderForm()">×</span>
+                <h1 style="color: #d10000;">Hotline: 0993 888 000</h1>
+                <h2>Tên sản phẩm: Máy Tính Thánh Gióng Model NC500</h2>
+                <h2>Giá bán: 6.800.000₫</h2>
+                <form id="orderForm" autocomplete="off">
+                    <label>Họ và Tên:</label>
+                    <input type="text" required placeholder="Nhập họ tên" />
+                    <label>Số điện thoại:</label>
+                    <input type="tel" required placeholder="Nhập số điện thoại" id="phone" maxlength="11"
+                        inputmode="numeric" pattern="[0-9]*" />
+                    <label>Email:</label>
+                    <input type="email" required placeholder="Nhập email" />
+                    <label>Địa chỉ nhận hàng:</label>
+                    <textarea required placeholder="Nhập địa chỉ"></textarea>
+                    <label>Ghi chú:</label>
+                    <textarea placeholder="Để lại lời nhắn (Nếu có)"></textarea>
+                    <button type="submit">Gửi đơn đặt hàng</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="media-block">
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Like và truy cập fanpage THÁNH GIÓNG để cập nhật chương trình khuyến mại và tin tức sớm
+          nhất</p>
+        <div class="media-content">
+          <div class="fanpage">
+            <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" class="fanpage-link">
+              <div class="fanpage-box">
+                <img src="../img/fanpage.jpg" alt="Fanpage" class="fanpage-img" />
+
+                <!-- Góc trên trái: logo + tên + lượt theo dõi -->
+                <div class="fanpage-info">
+                  <img src="../img/main-fb.jpg" alt="Logo" class="fanpage-logo" />
+                  <div class="fanpage-text">
+                    <h3>Máy Tính Thánh Gióng</h3>
+                    <p>928 người theo dõi</p>
+                  </div>
+                </div>
+
+                <!-- Góc trái dưới: nút theo dõi -->
+                <div class="fanpage-follow"><i class="fab fa-facebook"></i> Theo dõi Trang</div>
+
+                <!-- Góc phải dưới: nút chia sẻ -->
+                <div class="fanpage-share"><i class="fa-solid fa-share"></i> Chia sẻ</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Cùng THÁNH GIÓNG xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
+        <div class="media-content">
+          <a href="https://www.youtube.com/@daotaothanhgiong7894" target="_blank" class="youtube-button">
+            <div class="youtube-icon-box">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <span class="youtube-label">THÁNH GIÓNG GROUP</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
+        <div class="media-content">
+          <form class="email-form" onsubmit="return false;">
+            <input type="email" placeholder="Nhập email của bạn" required />
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="contact">
+        <div class="office">
+            <h3>HÀ NỘI OFFICE</h3>
+            <p><strong>Địa chỉ:</strong> Trụ sở số 34/90 Láng Hạ - Đống Đa, Hà Nội , VPGD số 37/97 Nguyễn Chí Thanh,
+                Đống Đa, Hà Nội</p>
+            <p><strong>Điện thoại:</strong> 024-3.5143.999 - 0993888000</p>
+            <p><strong>Fax:</strong> 024-3.5146.989</p>
+            <p><strong>Email:</strong> nampt@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>FACTORY IN CITY</h3>
+            <p><strong>Địa chỉ:</strong> Lô A2 CN5 CCN tập trung vừa và nhỏ Từ Liêm, Minh Khai, Bắc Từ Liêm, HN.
+            </p>
+            <p><strong>Điện thoại:</strong> 024-3.868.0000 - 0915598000</p>
+            <p><strong>Fax:</strong> 024-3.868.0000</p>
+            <p><strong>Email:</strong> nhamay@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>ĐÀ NẴNG OFFICE</h3>
+            <p><strong>Địa chỉ:</strong> K80/18 Lê Hữu Trác, P.An Hải Đông, Q.Sơn Trà, Tp.Đà Nẵng</p>
+            <p><strong>Điện thoại:</strong> 02363.667.888 - 0946.001.002</p>
+            <p><strong>Fax:</strong> 02363.667.888</p>
+            <p><strong>Email:</strong> danang-office@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>TP.HỒ CHÍ MINH OFFICE</h3>
+            <p><strong>Địa chỉ:</strong> Lầu 8, Lô A, Tòa nhà Waseco, số 10 Phổ Quang, Phường 2, Q. Tân Bình, TP. Hồ Chí
+                Minh</p>
+            <p><strong>Điện thoại:</strong> 091 811 8233 - 094 839 8000</p>
+            <p><strong>Fax:</strong> </p>
+            <p><strong>Email:</strong> sangnt@teleq.com.vn</p>
+        </div>
+
+    </div>
+
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">↑</button>
+
+    <div class="social-fixed">
+        <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/@daotaothanhgiong7894/" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+
+    <script src="../script/home.js"></script>
+    <script src="../script/product.js"></script>
+    <script src="../script/product_detail.js"></script>
+    <script src="../script/navbar.js"></script>
+</body>
+
+</html>

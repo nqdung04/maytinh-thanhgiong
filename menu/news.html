@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Bản Tin - Công Ty Máy Tính Thánh Gióng</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style/news.css" />
+  <link rel="stylesheet" href="../style/navbar.css" />
+  <link rel="stylesheet" href="../style/media.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+
+    <div class="navbar-left">
+      <a href="../home.html"><i class="fa-solid fa-house"></i></a>
+      <a href="../pages/about.html">GIỚI THIỆU</a>
+      <a href="../pages/product.html">SẢN PHẨM</a>
+      <a href="../pages/xuatkhau.html">XUẤT KHẨU</a>
+      <a href="../pages/baohanh.html" target="_blank">BẢO HÀNH</a>
+    </div>
+
+    <div class="navbar-center">
+      <a href="../home.html">
+        <img src="../img/main-img/logo_maytinh.jpg" alt="Logo trang chủ 2" />
+      </a>
+    </div>
+    <div class="navbar-right">
+      <div class="search-container">
+        <a id="searchToggle" class="search-toggle">
+          <i class="fas fa-search"></i> TÌM KIẾM
+        </a>
+
+        <div id="searchBox" class="search-box">
+          <input type="text" id="searchInput" placeholder="Tìm sản phẩm..." autocomplete="off" />
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+      </div>
+      <a href="../pages/nhamay.html">NHÀ MÁY</a>
+      <a href="../pages/daily.html">ĐẠI LÝ</a>
+      <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ MENU</a>
+
+      <div class="menu" id="menu">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <h3>MENU</h3>
+        <a href="../pages/product.html#nc300">Máy tính MODEL NC300</a>
+        <a href="../pages/product.html#nc500">Máy tính MODEL NC500</a>
+        <a href="../pages/product.html#nc800">Máy tính MODEL NC800</a>
+
+        <a href="news.html">Tin tức </a>
+        <a href="contact.html">Liên hệ</a>
+        <a href="account.html"><i class="fa-solid fa-user"></i> Tài khoản</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="../img/news-img/news-background.png" alt="Bản tin Thánh Gióng" />
+  </div>
+
+  <!-- Nội dung chính -->
+  <div class="container">
+    <h1>
+      <a href="news.html" class="news-link">BẢN TIN CÔNG TY MÁY TÍNH THÁNH GIÓNG</a>
+    </h1>
+    <div id="news-list" class="news-list">
+      <!-- JS sẽ render các tin tức tại đây -->
+    </div>
+
+    <!-- Phân trang -->
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+  <div class="media-block">
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Like và truy cập fanpage THÁNH GIÓNG để cập nhật chương trình khuyến mại và tin tức sớm
+          nhất</p>
+        <div class="media-content">
+          <div class="fanpage">
+            <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" class="fanpage-link">
+              <div class="fanpage-box">
+                <img src="../img/fanpage.jpg" alt="Fanpage" class="fanpage-img" />
+
+                <!-- Góc trên trái: logo + tên + lượt theo dõi -->
+                <div class="fanpage-info">
+                  <img src="../img/main-fb.jpg" alt="Logo" class="fanpage-logo" />
+                  <div class="fanpage-text">
+                    <h3>Máy Tính Thánh Gióng</h3>
+                    <p>928 người theo dõi</p>
+                  </div>
+                </div>
+
+                <!-- Góc trái dưới: nút theo dõi -->
+                <div class="fanpage-follow"><i class="fab fa-facebook"></i> Theo dõi Trang</div>
+
+                <!-- Góc phải dưới: nút chia sẻ -->
+                <div class="fanpage-share"><i class="fa-solid fa-share"></i> Chia sẻ</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Cùng THÁNH GIÓNG xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
+        <div class="media-content">
+          <a href="https://www.youtube.com/@daotaothanhgiong7894" target="_blank" class="youtube-button">
+            <div class="youtube-icon-box">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <span class="youtube-label">THÁNH GIÓNG GROUP</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-item">
+      <div class="media-inner">
+        <p class="media-heading">Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
+        <div class="media-content">
+          <form class="email-form" onsubmit="return false;">
+            <input type="email" placeholder="Nhập email của bạn" required />
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Liên hệ -->
+  <div class="contact">
+    <div class="office">
+      <h3>HÀ NỘI OFFICE</h3>
+      <p>
+        <strong>Địa chỉ:</strong> Trụ sở số 34/90 Láng Hạ, Đống Đa, Hà Nội.
+        VPGD: 37/97 Nguyễn Chí Thanh
+      </p>
+      <p><strong>Điện thoại:</strong> 024-3.5143.999 - 0993.888.000</p>
+      <p><strong>Email:</strong> nampt@thanhgiong.com.vn</p>
+    </div>
+    <div class="office">
+      <h3>FACTORY IN CITY</h3>
+      <p>
+        <strong>Địa chỉ:</strong> Lô A2 CN5, CCN Từ Liêm, Minh Khai, Bắc Từ
+        Liêm, Hà Nội
+      </p>
+      <p><strong>Điện thoại:</strong> 024-3.868.0000 - 0915.598.000</p>
+      <p><strong>Email:</strong> nhamay@thanhgiong.com.vn</p>
+    </div>
+    <div class="office">
+      <h3>ĐÀ NẴNG OFFICE</h3>
+      <p>
+        <strong>Địa chỉ:</strong> K80/18 Lê Hữu Trác, P.An Hải Đông, Q.Sơn
+        Trà, TP. Đà Nẵng
+      </p>
+      <p><strong>Điện thoại:</strong> 0236.3667.888 - 0946.001.002</p>
+      <p><strong>Email:</strong> danang-office@thanhgiong.com.vn</p>
+    </div>
+    <div class="office">
+      <h3>TP.HCM OFFICE</h3>
+      <p>
+        <strong>Địa chỉ:</strong> Lầu 8, Tòa nhà Waseco, 10 Phổ Quang, P.2, Q.
+        Tân Bình, TP.HCM
+      </p>
+      <p><strong>Điện thoại:</strong> 0918.118.233 - 0948.398.000</p>
+      <p><strong>Email:</strong> sangnt@teleq.com.vn</p>
+    </div>
+  </div>
+
+  <!-- Nút cuộn lên đầu -->
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">
+    ↑
+  </button>
+
+  <div class="social-fixed">
+    <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" title="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.youtube.com/@daotaothanhgiong7894/" target="_blank" title="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </div>
+
+  <script>
+    // Hiện/ẩn nút scroll
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTopBtn");
+      if (
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+      ) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  </script>
+  <script src="../script/news.js"></script>
+  <script src="../script/home.js"></script>
+  <script src="../script/navbar.js"></script>
+  <script src="../script/product.js"></script>
+</body>
+
+</html>

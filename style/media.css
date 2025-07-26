@@ -1,0 +1,222 @@
+/* Khối chứa toàn bộ media */
+.media-block {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 3%;
+  background-color: #F6F6F6;
+  /* ✅ nền bao bọc toàn bộ */
+  padding: 20px;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+/* Mỗi cột (hoặc mỗi khối trên mobile) */
+.media-item {
+  flex: 1;
+  min-width: 240px;
+  padding: 0;
+  /* bỏ padding ở đây, sẽ đặt ở .media-inner */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.media-inner {
+  width: 100%;
+  max-width: 450px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tiêu đề của mỗi mục */
+.media-heading {
+  font-size: 16px;
+  margin-bottom: 12px;
+  min-height: 48px;
+  width: 100%;
+  /* ✅ đảm bảo bằng chiều rộng nội dung bên dưới */
+  text-align: center;
+  padding: 0;
+  /* nếu cần, có thể giữ padding ngang */
+  box-sizing: border-box;
+  /* ✅ để padding không làm vượt chiều rộng */
+  line-height: 1.5;
+}
+
+/* Fanpage hình ảnh */
+.fanpage-box {
+  width: 60%;
+  overflow: hidden;
+  position: relative;
+  margin-left: 20%;
+}
+
+.fanpage-img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fanpage-info {
+  position: absolute;
+  top: 3px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 4px 12px;
+  border-radius: 8px;
+  gap: 5px;
+}
+
+.fanpage-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fanpage-text h3,
+.fanpage-text p {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.fanpage-follow,
+.fanpage-share {
+  position: absolute;
+  bottom: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #0082C6;
+  color: white;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.fanpage-follow {
+  left: 10px;
+}
+
+.fanpage-share {
+  right: 10px;
+}
+
+.fanpage-follow:hover,
+.fanpage-share:hover {
+  background-color: #005f90;
+}
+
+/* YouTube button */
+.youtube-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: #ffeaea;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #d10000;
+  font-weight: bold;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.youtube-button:hover {
+  background-color: #ffd0d0;
+}
+
+.youtube-icon-box {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.youtube-icon-box i {
+  font-size: 20px;
+  color: #ff0000;
+}
+
+/* Email form */
+.email-form {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.email-form input {
+  flex: 1;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.email-form button {
+  padding: 10px 15px;
+  font-size: 20px;
+  background-color: #0082C6;
+  color: white;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.email-form button:hover {
+  background-color: #005f90;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .media-block {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .media-item {
+    width: 100%;
+  }
+
+  .email-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .email-form input,
+  .email-form button {
+    width: 100%;
+    border-radius: 6px !important;
+    border: 1px solid #ccc;
+  }
+
+  .email-form button {
+    border-left: 1px solid #ccc;
+  }
+
+  .youtube-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .fanpage-box {
+    width: 80%;
+    margin-left: 50px;
+  }
+}
