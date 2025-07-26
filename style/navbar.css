@@ -269,7 +269,7 @@
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -296,6 +296,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-direction: row-reverse; /* Đảo thứ tự các phần tử */
+    margin-right: 0;
   }
 
   .search-container {
@@ -309,7 +311,8 @@
   }
 
   .menu-toggle {
-    margin-right: 8px;
+    margin-left: 8px;   /* cách mép trái */
+    margin-right: 0;    /* bỏ margin-right cũ */
     font-size: 24px;
     display: block;
   }
@@ -338,9 +341,14 @@
     font-size: 30px;
     cursor: pointer;
   }
+
+  .search-toggle .text,
+  .menu-toggle .text {
+    display: none;
+  }
 }
 
-@media screen and (min-width: 1201px) and (max-width: 1680px) {
+@media screen and (min-width: 1025px) and (max-width: 1680px) {
   .navbar {
     padding: 0 40px;
   }
