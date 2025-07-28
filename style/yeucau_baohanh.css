@@ -1,0 +1,116 @@
+#warrantyForm {
+  width: 70%;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  background: #fdfdfd;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#warrantyForm h3 {
+  color: #0082c6;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  width: 200px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-row textarea {
+  resize: vertical;
+}
+
+#warrantyForm .form-row p {
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: #666;
+}
+
+#warrantyForm .submit-btn {
+  margin-left: 210px;
+  margin-top: 10px;
+  background-color: #0082c6;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#warrantyForm .submit-btn:hover {
+  background-color: #005b91;
+}
+
+#imagePreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.preview-container {
+  position: relative;
+  width: 100px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-container img {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block;
+  background-color: white;
+}
+
+.delete-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: white;
+  color: red;
+  font-weight: bold;
+  border: 1px solid red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 18px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.delete-btn:hover {
+  background: red;
+  color: white;
+}

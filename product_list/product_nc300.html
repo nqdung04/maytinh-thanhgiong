@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../style/product_detail.css">
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/media.css">
+
 <body>
 
     <!-- Navbar -->
@@ -30,7 +31,7 @@
         <div class="navbar-right">
             <div class="search-container">
                 <a id="searchToggle" class="search-toggle">
-                    <i class="fas fa-search"></i> TÌM KIẾM
+                    <i class="fas fa-search"></i> <span class="text">TÌM KIẾM</span>
                 </a>
 
                 <div id="searchBox" class="search-box">
@@ -40,7 +41,7 @@
             </div>
             <a href="../menu/news.html">TIN TỨC</a>
             <a href="../menu/contact.html">LIÊN HỆ</a>
-            <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ MENU</a>
+            <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ <span class="text">MENU</span></a>
 
             <div class="menu" id="menu">
                 <span class="close-btn" onclick="toggleMenu()">&times;</span>
@@ -136,83 +137,76 @@
                 <h1 style="color: #d10000;">Hotline: 0993 888 000</h1>
                 <h2>Tên sản phẩm: Máy Tính Thánh Gióng Model NC300</h2>
                 <h2>Giá bán: 5.800.000₫</h2>
-                <form id="orderForm" autocomplete="off">
-                    <label>Họ và Tên:</label>
-                    <input type="text" required placeholder="Nhập họ tên" />
-                    <label>Số điện thoại:</label>
-                    <input type="tel" required placeholder="Nhập số điện thoại" id="phone" maxlength="11"
-                        inputmode="numeric" pattern="[0-9]*" />
-                    <label>Email:</label>
-                    <input type="email" required placeholder="Nhập email" />
-                    <label>Địa chỉ nhận hàng:</label>
-                    <textarea required placeholder="Nhập địa chỉ"></textarea>
-                    <label>Ghi chú:</label>
-                    <textarea placeholder="Để lại lời nhắn (Nếu có)"></textarea>
-                    <button type="submit">Gửi đơn đặt hàng</button>
-                </form>
+
+                <!-- QR Code thay cho form -->
+                <div class="qr-container">
+                    <p>Vui lòng quét mã QR bên dưới để đến trang đặt hàng:</p>
+                    <img src="../img/product-img/qr-code.jpg" alt="QR Code Đặt Hàng"/>
+                </div>
             </div>
         </div>
 
     </div>
 
     <div class="media-block">
-    <div class="media-item">
-      <div class="media-inner">
-        <p class="media-heading">Like và truy cập fanpage THÁNH GIÓNG để cập nhật chương trình khuyến mại và tin tức sớm
-          nhất</p>
-        <div class="media-content">
-          <div class="fanpage">
-            <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" class="fanpage-link">
-              <div class="fanpage-box">
-                <img src="../img/fanpage.jpg" alt="Fanpage" class="fanpage-img" />
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Like và truy cập fanpage THÁNH GIÓNG để cập nhật chương trình khuyến mại và tin
+                    tức sớm
+                    nhất</p>
+                <div class="media-content">
+                    <div class="fanpage">
+                        <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" class="fanpage-link">
+                            <div class="fanpage-box">
+                                <img src="../img/fanpage.jpg" alt="Fanpage" class="fanpage-img" />
 
-                <!-- Góc trên trái: logo + tên + lượt theo dõi -->
-                <div class="fanpage-info">
-                  <img src="../img/main-fb.jpg" alt="Logo" class="fanpage-logo" />
-                  <div class="fanpage-text">
-                    <h3>Máy Tính Thánh Gióng</h3>
-                    <p>928 người theo dõi</p>
-                  </div>
+                                <!-- Góc trên trái: logo + tên + lượt theo dõi -->
+                                <div class="fanpage-info">
+                                    <img src="../img/main-fb.jpg" alt="Logo" class="fanpage-logo" />
+                                    <div class="fanpage-text">
+                                        <h3>Máy Tính Thánh Gióng</h3>
+                                        <p>928 người theo dõi</p>
+                                    </div>
+                                </div>
+
+                                <!-- Góc trái dưới: nút theo dõi -->
+                                <div class="fanpage-follow"><i class="fab fa-facebook"></i> Theo dõi Trang</div>
+
+                                <!-- Góc phải dưới: nút chia sẻ -->
+                                <div class="fanpage-share"><i class="fa-solid fa-share"></i> Chia sẻ</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-
-                <!-- Góc trái dưới: nút theo dõi -->
-                <div class="fanpage-follow"><i class="fab fa-facebook"></i> Theo dõi Trang</div>
-
-                <!-- Góc phải dưới: nút chia sẻ -->
-                <div class="fanpage-share"><i class="fa-solid fa-share"></i> Chia sẻ</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="media-item">
-      <div class="media-inner">
-        <p class="media-heading">Cùng THÁNH GIÓNG xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
-        <div class="media-content">
-          <a href="https://www.youtube.com/@daotaothanhgiong7894" target="_blank" class="youtube-button">
-            <div class="youtube-icon-box">
-              <i class="fab fa-youtube"></i>
             </div>
-            <span class="youtube-label">THÁNH GIÓNG GROUP</span>
-          </a>
         </div>
-      </div>
-    </div>
 
-    <div class="media-item">
-      <div class="media-inner">
-        <p class="media-heading">Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
-        <div class="media-content">
-          <form class="email-form" onsubmit="return false;">
-            <input type="email" placeholder="Nhập email của bạn" required />
-            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
-          </form>
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Cùng THÁNH GIÓNG xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
+                <div class="media-content">
+                    <a href="https://www.youtube.com/@daotaothanhgiong7894" target="_blank" class="youtube-button">
+                        <div class="youtube-icon-box">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <span class="youtube-label">THÁNH GIÓNG GROUP</span>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
+                <div class="media-content">
+                    <form class="email-form" onsubmit="return false;">
+                        <input type="email" placeholder="Nhập email của bạn" required />
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
     <div class="contact">
         <div class="office">
@@ -253,15 +247,6 @@
     </div>
 
     <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">↑</button>
-
-    <div class="social-fixed">
-        <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" title="Facebook">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.youtube.com/@daotaothanhgiong7894/" target="_blank" title="YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
-    </div>
 
     <script src="../script/home.js"></script>
     <script src="../script/product.js"></script>

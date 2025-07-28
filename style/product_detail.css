@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: 'Saira', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* --- Ảnh thu nhỏ bên dưới ảnh lớn --- */
@@ -270,35 +270,16 @@ body {
   margin-bottom: 20px;
 }
 
-.order-form label {
-  display: block;
-  margin: 10px 0 5px;
-}
-
-.order-form input,
-.order-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.order-form button[type="submit"] {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #d10000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* .order-form button[type="submi"] */
-
 .order-form .close-btn {
   position: absolute;
   right: 15px;
   top: 10px;
   font-size: 24px;
   cursor: pointer;
+}
+
+.qr-container img {
+  max-width: 250px;
+  display: block;
+  margin: 20px auto;
 }

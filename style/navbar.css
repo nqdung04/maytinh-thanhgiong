@@ -1,4 +1,5 @@
 .navbar {
+  font-family: 'Roboto', sans-serif;
   background: #0082C6;
   height: 60px;
   display: flex;
@@ -33,9 +34,9 @@
 /* Navbar trái giữa 2 logo */
 .navbar-left {
   float: left;
-  margin-left: 8%;
+  margin-left: 10%;
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .navbar-left a {
@@ -58,7 +59,7 @@
   margin-right: 10%;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .navbar-right a {
@@ -280,8 +281,8 @@
   /* Ẩn những phần không cần thiết */
   .navbar-left,
   .navbar-logo-left,
-  .navbar-right a[href*="news"],
-  .navbar-right a[href*="contact"] {
+  .navbar-right>a[href*="news"],
+  .navbar-right>a[href*="contact"] {
     display: none;
   }
 
@@ -296,37 +297,69 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    flex-direction: row-reverse; /* Đảo thứ tự các phần tử */
+    flex-direction: row-reverse;
+    /* Đảo thứ tự các phần tử */
     margin-right: 0;
   }
 
   .search-container {
-    margin-left: 8px;
+    position: static; /* không canh theo navbar nữa */
+  }
+
+  .search-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 2000;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
   }
 
   .search-box.open {
-    width: 300px;
+    width: 95%;
+    transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
   }
 
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 2001;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
   .menu-toggle {
-    margin-left: 8px;   /* cách mép trái */
-    margin-right: 0;    /* bỏ margin-right cũ */
+    margin-left: 8px;
+    /* cách mép trái */
+    margin-right: 0;
+    /* bỏ margin-right cũ */
     font-size: 24px;
     display: block;
   }
 
   /* Menu popup full màn hình */
   .menu {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
-    width: 85%;
+    width: 95%;
     height: 100%;
     background: white;
     z-index: 1000;
-    display: none;
     flex-direction: column;
     padding: 20px;
     overflow-y: auto;

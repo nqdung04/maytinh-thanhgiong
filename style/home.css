@@ -1,7 +1,7 @@
 body {
   overflow-x: hidden;
   margin: 0;
-  font-family: 'Saira', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .banner {
@@ -634,10 +634,6 @@ body {
     width: 100%;
   }
 
-  .social-fixed {
-    display: none;
-  }
-
   .reason {
     margin-top: -44%;
   }
@@ -711,9 +707,5 @@ body {
     flex: 1 1 100%;
     max-width: 100%;
     min-width: 0;
-  }
-
-  .social-fixed {
-    display: block;
   }
 }

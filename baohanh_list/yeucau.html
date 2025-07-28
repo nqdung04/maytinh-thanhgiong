@@ -7,10 +7,13 @@
   <title>Bảo hành - Công ty cổ phần truyền thông và máy tính Thánh Gióng</title>
   <!-- Link Font Awesome để dùng biểu tượng -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../style/baohanh.css">
-  <link rel="stylesheet" href="../style/huongdan_baohanh.css">
+  <link rel="stylesheet" href="../style/yeucau_baohanh.css">
   <link rel="stylesheet" href="../style/navbar.css">
   <link rel="stylesheet" href="../style/media.css">
 
@@ -62,120 +65,124 @@
 
   <div class="menu-baohanh">
     <strong><a href="../pages/baohanh.html">TRA CỨU HẠN BẢO HÀNH</a></strong>
-    <strong><a href="../baohanh_list/kichhoat.html">KÍCH HOẠT BẢO HÀNH</a></strong>
-    <strong><a href="../baohanh_list/yeucau.html">YÊU CẦU BẢO HÀNH, SỬA CHỮA</a></strong>
-    <strong><a href="../baohanh_list/tracuu.html">TRA CỨU BẢO HÀNH, SỬA CHỮA</a></strong>
-    <strong><a href="../baohanh_list/tram.html">TRẠM BẢO HÀNH</a></strong>
-    <strong><a href="../baohanh_list/huongdan.html">CHÍNH SÁCH & HƯỚNG DẪN</a></strong>
+    <strong><a href="kichhoat.html">KÍCH HOẠT BẢO HÀNH</a></strong>
+    <strong><a href="yeucau.html">YÊU CẦU BẢO HÀNH, SỬA CHỮA</a></strong>
+    <strong><a href="tracuu.html">TRA CỨU BẢO HÀNH, SỬA CHỮA</a></strong>
+    <strong><a href="tram.html">TRẠM BẢO HÀNH</a></strong>
+    <strong><a href="huongdan.html">CHÍNH SÁCH & HƯỚNG DẪN</a></strong>
   </div>
 
-  <h1 style="text-align: center; margin-top: 50px; font-weight: bold;">CHÍNH SÁCH & HƯỚNG DẪN</h1>
-  <h5 style="margin-left: 5%;"><strong>HƯỚNG DẪN KÍCH HOẠT BẢO HÀNH</strong></h5>
-  <img style="width: 90%; height: 650px; margin-left: 5%; margin-top: 3%;" src="../img/baohanh2.png">
+  <h1 style="text-align: center; margin-top: 50px; color: #0481C3;"><strong>YÊU CẦU BẢO HÀNH, SỬA CHỮA</strong></h1>
+  <form id="warrantyForm">
+    <h3>1. THÔNG TIN SẢN PHẨM</h3>
 
-
-  <div class="container">
-
-    <div class="section">
-      <strong>
-        <p>Mục đích: Kích hoạt bảo hành cho sản phẩm được dán tem/mã.</p>
-      </strong>
+    <div class="form-row">
+      <label for="serial">Số serial:</label>
+      <input type="text" id="serial" name="serial" placeholder="Nhập số serial" required />
     </div>
 
-    <div class="section">
-      <h2>Quy trình thực hiện:</h2>
-      <ol>
-        <li>Nhập hoặc quét <strong>nhiều mã Serial</strong> – mã bảo hành.</li>
-        <li>Nhấn nút <strong>“Xác nhận”</strong>.</li>
-        <li>Hệ thống kiểm tra tính hợp lệ:
-          <ul>
-            <li><strong>TH1 – Mã hợp lệ:</strong> Hiển thị Form khách hàng → Hiển thị thông tin sản phẩm → Nhập thông
-              tin khách hàng → Bước 4.</li>
-            <li><strong>TH2 – Mã không hợp lệ:</strong> Thông báo mã không hợp lệ → Quay lại Bước 1.</li>
-          </ul>
-        </li>
-        <li>Nhấn nút <strong>“Kích hoạt bảo hành”</strong> để xác nhận bảo hành.</li>
-      </ol>
+    <div class="form-row">
+      <label>Tên sản phẩm:</label>
+      <input type="text" readonly />
     </div>
 
-    <div class="section">
-      <h2>I. Quy định chung</h2>
-      <ol>
-        <li>
-          Tất cả sản phẩm bán ra đều tuân thủ điều kiện bảo hành của các hãng: <em>Thánh Gióng, FPT, CMS, IBM, HP, DELL,
-            Canon, Toshiba, Sony, Samsung, LG, Acer...</em>
-        </li>
-        <li>
-          <strong>Điều kiện được bảo hành:</strong>
-          <ul>
-            <li>Phải dán tem bảo hành Thánh Gióng và còn trong hạn bảo hành.</li>
-            <li>Nếu bảo hành tại hãng, khách hàng cần có serial, tem và phiếu bảo hành chính hãng khi giao hàng.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Không được bảo hành nếu:</strong>
-          <ul>
-            <li>Tem/phiếu bảo hành bị mất, rách, chỉnh sửa hoặc đè tem khác.</li>
-            <li>Sản phẩm hết hạn bảo hành.</li>
-            <li>Serial/mã vạch không xác định được hoặc sai lệch.</li>
-            <li>Thiệt hại do thiên tai, cháy, điện, dùng sai điện áp.</li>
-            <li>Ẩm ướt, oxy hóa, có dấu hiệu động vật xâm nhập.</li>
-            <li>Rơi, vỡ, xước, tác động cơ học.</li>
-            <li>Lỗi phần mềm, tự sửa chữa.</li>
-          </ul>
-        </li>
-      </ol>
+    <div class="form-row">
+      <label>Thông số kỹ thuật:</label>
+      <input type="text" readonly />
     </div>
 
-    <div class="section">
-      <h2>II. Cam kết của công ty Máy tính Thánh Gióng</h2>
-      <ol>
-        <li>
-          <strong>Với sản phẩm Thánh Gióng phân phối:</strong>
-          <ul>
-            <li>Bảo hành tại trung tâm Thánh Gióng hoặc đại lý ủy quyền.</li>
-            <li><span class="highlight">1 đổi 1 trong vòng 1 tháng</span> nếu sản phẩm bị lỗi không do người dùng.</li>
-            <li>Bảo hành sau 1 tháng: trả máy trong tối đa 48h làm việc.</li>
-            <li>Cho mượn thiết bị tạm thời nếu cần trong thời gian bảo hành.</li>
-            <li>Miễn phí bảo trì tại trung tâm: vệ sinh, diệt virus, sửa lỗi phần mềm,...</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Với sản phẩm thương hiệu Máy tính Thánh Gióng:</strong>
-          <ul>
-            <li>Bảo hành toàn bộ 24 tháng.</li>
-            <li><strong>Bảo hành tận nơi sử dụng 12 tháng đầu</strong> (trong vòng bán kính 15km từ trung tâm).</li>
-            <li>Xử lý sự cố nhẹ tại chỗ trong vòng 2 giờ làm việc.</li>
-            <li>Nếu không xử lý tại chỗ, hỗ trợ thiết bị thay thế tạm thời.</li>
-            <li>Trả bảo hành tối đa sau 48h làm việc.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Lưu ý:</strong>
-          <ul>
-            <li>Không áp dụng cho: Notebook, Server, Projector, Photocopy,...</li>
-            <li>Cam kết chỉ áp dụng cho khách hàng mua hàng của Thánh Gióng (không áp dụng cho đại lý).</li>
-          </ul>
-        </li>
-      </ol>
+    <div class="form-row">
+      <label>Ngày kích hoạt bảo hành:</label>
+      <input type="text" readonly />
     </div>
 
-    <div class="section">
-      <h2>III. Địa chỉ và thời gian bảo hành</h2>
-      <div class="box">
-        <p><strong><i class="fa-solid fa-location-dot"></i> Địa chỉ trung tâm:</strong> Số 37/97 Nguyễn Chí Thanh – Đống
-          Đa – Hà Nội</p>
-        <p><strong><i class="fas fa-phone"></i> Điện thoại:</strong> 0243.8586.9555 &nbsp; | &nbsp;
-          <strong>Hotline:</strong> 0948.598.000
+    <div class="form-row">
+      <label>Hạn bảo hành đến ngày:</label>
+      <input type="text" readonly />
+    </div>
+
+    <hr />
+
+    <h3>2. THÔNG TIN KHÁCH HÀNG</h3>
+
+    <div class="form-row">
+      <label for="name">Tên khách hàng:</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-row">
+      <label for="dob">Ngày sinh:</label>
+      <input type="date" id="dob" name="dob" />
+    </div>
+
+    <div class="form-row">
+      <label for="phone">Số điện thoại (Zalo):</label>
+      <input type="tel" id="phone" name="phone" required />
+    </div>
+
+    <div class="form-row">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-row">
+      <label for="address">Địa chỉ:</label>
+      <input type="text" id="address" name="address" required />
+    </div>
+
+    <div class="form-row">
+      <label for="province">Tỉnh / thành phố:</label>
+      <select id="province" name="province" required>
+        <option value="">-- Chọn tỉnh thành --</option>
+        <option value="hanoi">Hà Nội</option>
+        <option value="hcm">TP.HCM</option>
+        <option value="danang">Đà Nẵng</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="agency">Thông tin đại lý:</label>
+      <select id="agency" name="agency" required>
+        <option value="">-- Chọn đại lý --</option>
+        <option value="dl1">Trạm bảo hành máy tính 3S - THÁNH GIÓNG</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="errorType">Lỗi gặp phải:</label>
+      <select id="errorType" name="errorType" required>
+        <option value="">-- Chọn loại lỗi --</option>
+        <option value="manhinh">Màn hình không hiển thị</option>
+        <option value="nguon">Không lên nguồn</option>
+        <option value="khac">Khác</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="description">Mô tả lỗi:</label>
+      <textarea id="description" name="description" rows="3" placeholder="Nhập mô tả chi tiết..."></textarea>
+    </div>
+
+    <!-- Phần chọn ảnh -->
+    <div class="form-row">
+      <label for="image">Hình ảnh (tùy chọn):</label>
+      <div style="flex: 1;">
+        <p style="margin: 0 0 5px; color: #555; font-style: italic;">
+          Quý khách nên gửi ít nhất 3 ảnh để hỗ trợ kiểm tra chính xác hơn.
         </p>
-        <p><strong><i class="fa-solid fa-clock"></i> Thời gian làm việc:</strong><br>
-          Thứ 2 đến Thứ 7 (Trừ ngày lễ)<br>
-          <strong>Sáng:</strong> 8h00 – 12h00<br>
-          <strong>Chiều:</strong> 13h30 – 17h30
-        </p>
+        <input type="file" id="image" name="image" accept="image/*" multiple />
+
+        <!-- Vùng hiển thị ảnh xem trước -->
+        <div id="imagePreview" style="margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap;"></div>
       </div>
     </div>
-  </div>
+
+
+    <div class="form-row">
+      <button type="submit" class="submit-btn">GỬI YÊU CẦU</button>
+    </div>
+  </form>
+
 
   <div class="media-block">
     <div class="media-item">
@@ -282,6 +289,51 @@
   <script src="../script/baohanh.js"></script>
   <script src="../script/product.js"></script>
   <script src="../script/navbar.js"></script>
+
+  <script>
+    flatpickr("#dob", {
+      dateFormat: "d/m/Y",
+      maxDate: "today"  // không cho chọn ngày tương lai
+    });
+  </script>
+
+  <script>
+  const imageInput = document.getElementById("image");
+  const imagePreview = document.getElementById("imagePreview");
+
+  imageInput.addEventListener("change", function () {
+    const files = Array.from(this.files);
+
+    files.forEach((file) => {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const container = document.createElement("div");
+        container.className = "preview-container";
+
+        const img = document.createElement("img");
+        img.src = e.target.result;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "delete-btn";
+        deleteBtn.innerText = "×";
+        deleteBtn.onclick = function () {
+          container.remove();
+        };
+
+        container.appendChild(img);
+        container.appendChild(deleteBtn);
+        imagePreview.appendChild(container);
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    // Reset lại input để có thể chọn lại ảnh cũ nếu cần
+    this.value = "";
+  });
+</script>
+
 
 </body>
 

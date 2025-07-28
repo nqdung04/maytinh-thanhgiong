@@ -76,3 +76,18 @@ window.addEventListener("DOMContentLoaded", () => {
     suggestionsBox.style.display = "block";
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.getElementById("menu");
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const closeBtn = document.querySelector(".close-btn");
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    menu.classList.toggle("show");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    menu.classList.remove("show");
+  });
+});

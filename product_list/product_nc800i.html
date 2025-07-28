@@ -31,7 +31,7 @@
         <div class="navbar-right">
             <div class="search-container">
                 <a id="searchToggle" class="search-toggle">
-                    <i class="fas fa-search"></i> TÌM KIẾM
+                    <i class="fas fa-search"></i> <span class="text">TÌM KIẾM</span>
                 </a>
 
                 <div id="searchBox" class="search-box">
@@ -41,7 +41,7 @@
             </div>
             <a href="../menu/news.html">TIN TỨC</a>
             <a href="../menu/contact.html">LIÊN HỆ</a>
-            <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ MENU</a>
+            <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ <span class="text">MENU</span></a>
 
             <div class="menu" id="menu">
                 <span class="close-btn" onclick="toggleMenu()">&times;</span>
@@ -137,20 +137,12 @@
                 <h1 style="color: #d10000;">Hotline: 0993 888 000</h1>
                 <h2>Tên sản phẩm: Máy Tính Thánh Gióng Model NC800i</h2>
                 <h2>Giá bán: 8.800.000₫</h2>
-                <form id="orderForm" autocomplete="off">
-                    <label>Họ và Tên:</label>
-                    <input type="text" required placeholder="Nhập họ tên" />
-                    <label>Số điện thoại:</label>
-                    <input type="tel" required placeholder="Nhập số điện thoại" id="phone" maxlength="11"
-                        inputmode="numeric" pattern="[0-9]*" />
-                    <label>Email:</label>
-                    <input type="email" required placeholder="Nhập email" />
-                    <label>Địa chỉ nhận hàng:</label>
-                    <textarea required placeholder="Nhập địa chỉ"></textarea>
-                    <label>Ghi chú:</label>
-                    <textarea placeholder="Để lại lời nhắn (Nếu có)"></textarea>
-                    <button type="submit">Gửi đơn hàng</button>
-                </form>
+
+                <!-- QR Code thay cho form -->
+                <div class="qr-container">
+                    <p>Vui lòng quét mã QR bên dưới để đến trang đặt hàng:</p>
+                    <img src="../img/product-img/qr-code.jpg" alt="QR Code Đặt Hàng"/>
+                </div>
             </div>
         </div>
 
@@ -254,15 +246,6 @@
     </div>
 
     <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">↑</button>
-
-    <div class="social-fixed">
-        <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" title="Facebook">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.youtube.com/@daotaothanhgiong7894/" target="_blank" title="YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
-    </div>
 
     <script src="../script/home.js"></script>
     <script src="../script/product.js"></script>

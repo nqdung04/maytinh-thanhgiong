@@ -1,5 +1,5 @@
 body {
-  font-family: 'Saira', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
 }
 
@@ -219,7 +219,7 @@ h1 {
   line-height: 1.5;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .news-item {
     flex-direction: column;
   }
@@ -227,5 +227,13 @@ h1 {
   .news-item img {
     width: 100%;
     height: auto;
+  }
+
+  .banner img {
+    display: none;
+  }
+
+  h1 {
+    margin-top: 15%;
   }
 }

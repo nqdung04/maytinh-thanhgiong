@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/baohanh.css">
-    <link rel="stylesheet" href="../style/tracuu_baohanh.css">
+    <link rel="stylesheet" href="../style/tram_baohanh.css">
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/media.css">
 
@@ -18,47 +18,47 @@
     <!-- Navbar -->
     <div class="navbar">
 
-    <div class="navbar-left">
-      <a href="../home.html"><i class="fa-solid fa-house"></i> TRANG CHỦ</a>
-      <a href="../pages/about.html">GIỚI THIỆU</a>
-      <a href="../pages/product.html">SẢN PHẨM</a>
-      <a href="../pages/baohanh.html">BẢO HÀNH</a>
-    </div>
-
-    <div class="navbar-center">
-      <a href="../home.html">
-        <img src="../img/main-img/logo_maytinh.jpg" alt="Logo trang chủ 2" />
-      </a>
-    </div>
-    <div class="navbar-right">
-      <div class="search-container">
-        <a id="searchToggle" class="search-toggle">
-          <i class="fas fa-search"></i> <span class="text">TÌM KIẾM</span>
-        </a>
-
-        <div id="searchBox" class="search-box">
-          <input type="text" id="searchInput" placeholder="Tìm sản phẩm..." autocomplete="off" />
-          <div id="suggestions" class="suggestions"></div>
+        <div class="navbar-left">
+            <a href="../home.html"><i class="fa-solid fa-house"></i> TRANG CHỦ</a>
+            <a href="../pages/about.html">GIỚI THIỆU</a>
+            <a href="../pages/product.html">SẢN PHẨM</a>
+            <a href="../pages/baohanh.html">BẢO HÀNH</a>
         </div>
-      </div>
-      <a href="../menu/news.html">TIN TỨC</a>
-      <a href="../menu/contact.html">LIÊN HỆ</a>
-      <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ <span class="text">MENU</span></a>
 
-      <div class="menu" id="menu">
-        <span class="close-btn" onclick="toggleMenu()">&times;</span>
-        <h3>MENU</h3>
-        <a href="../pages/product.html#nc300">Máy tính MODEL NC300</a>
-        <a href="../pages/product.html#nc500">Máy tính MODEL NC500</a>
-        <a href="../pages/product.html#nc800">Máy tính MODEL NC800</a>
+        <div class="navbar-center">
+            <a href="../home.html">
+                <img src="../img/main-img/logo_maytinh.jpg" alt="Logo trang chủ 2" />
+            </a>
+        </div>
+        <div class="navbar-right">
+            <div class="search-container">
+                <a id="searchToggle" class="search-toggle">
+                    <i class="fas fa-search"></i> <span class="text">TÌM KIẾM</span>
+                </a>
 
-        <a href="../pages/about.html">Giới thiệu</a>
-        <a href="../menu/news.html">Tin tức </a>
-        <a href="../menu/contact.html">Liên hệ</a>
-        <a href="../pages/baohanh.html">Bảo hành</a>
-      </div>
+                <div id="searchBox" class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm sản phẩm..." autocomplete="off" />
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+            </div>
+            <a href="../menu/news.html">TIN TỨC</a>
+            <a href="../menu/contact.html">LIÊN HỆ</a>
+            <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ <span class="text">MENU</span></a>
+
+            <div class="menu" id="menu">
+                <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                <h3>MENU</h3>
+                <a href="../pages/product.html#nc300">Máy tính MODEL NC300</a>
+                <a href="../pages/product.html#nc500">Máy tính MODEL NC500</a>
+                <a href="../pages/product.html#nc800">Máy tính MODEL NC800</a>
+
+                <a href="../pages/about.html">Giới thiệu</a>
+                <a href="../menu/news.html">Tin tức </a>
+                <a href="../menu/contact.html">Liên hệ</a>
+                <a href="../pages/baohanh.html">Bảo hành</a>
+            </div>
+        </div>
     </div>
-  </div>
 
     <div class="menu-baohanh">
         <strong><a href="../pages/baohanh.html">TRA CỨU HẠN BẢO HÀNH</a></strong>
@@ -69,76 +69,30 @@
         <strong><a href="huongdan.html">CHÍNH SÁCH & HƯỚNG DẪN</a></strong>
     </div>
 
-    <h1 style="text-align: center; margin-top: 50px; color: #0082C6; font-weight: bold;">TRA CỨU BẢO HÀNH, SỬA CHỮA</h1>
-    <form method="post" id="captchaForm" autocomplete="off" style="margin-left: 30%;">
-        <table>
+    <h1 style="text-align: center; margin-top: 50px; color: #0082C6; font-weight: bold;">TRẠM BẢO HÀNH, SỬA CHỮA</h1>
+    <p style="text-align: center;">Địa chỉ các Trung tâm bảo hành của MÁY TÍNH THÁNH GIÓNG trên toàn quốc</p>
+    <table class="tram-bao-hanh">
+        <thead>
             <tr>
-                <td><strong><label for="serialInput">Số serial:</label></strong></td>
-                <td><input type="text" id="serialInput" name="serialInput" placeholder="Nhập số serial" required></td>
+                <th>STT</th>
+                <th>Tên trạm</th>
+                <th>Địa chỉ</th>
+                <th>Số điện thoại</th>
+                <th>Tỉnh / Thành phố</th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
-                <td><strong><label for="captchaInput">Mã xác nhận:</label></strong></td>
-                <td><input type="text" id="captchaInput" name="captchaInput" placeholder="Nhập mã xác nhận" required>
-                </td>
+                <td>1</td>
+                <td>Trạm bảo hành máy tính 3S - Thánh Gióng</td>
+                <td>Số 37/97 Nguyễn Chí Thanh, Đống Đa, Hà Nội</td>
+                <td>0975.091.196 / 0948.598.000</td>
+                <td>Hà Nội (Miền Bắc)</td>
             </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <div class="captcha-inline">
-                        <div id="captchaCode" class="captcha"></div>
-                        <i class="fas fa-arrow-rotate-right reset-icon" onclick="generateCaptcha()"
-                            title="Tạo lại mã"></i>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><button class="btn btn-primary" type="submit">Tra cứu</button></td>
-            </tr>
-        </table>
-    </form>
+            <!-- Thêm các dòng khác tại đây -->
+        </tbody>
+    </table>
 
-    <div class="baohanh-info-container">
-        <!-- Cột: Thông tin sản phẩm -->
-        <div class="product-info">
-            <h2>Thông tin sản phẩm</h2>
-            <label>Tên sản phẩm:
-                <input type="text" readonly>
-            </label>
-            <label>Mã bảo hành:
-                <input type="text" readonly>
-            </label>
-            <label>Ngày kích hoạt bảo hành:
-                <input type="text" readonly>
-            </label>
-            <label>Hạn bảo hành đến ngày:
-                <input type="text" readonly>
-            </label>
-            <label>Thông số kỹ thuật:
-                <textarea readonly></textarea>
-            </label>
-        </div>
-
-        <!-- Cột: Thông tin khách hàng -->
-        <div class="customer-info">
-            <h2>Thông tin khách hàng</h2>
-            <label>Tên khách hàng:
-                <input type="text" readonly>
-            </label>
-            <label>Ngày / tháng / năm sinh:
-                <input type="text" readonly>
-            </label>
-            <label>Số điện thoại:
-                <input type="tel" readonly>
-            </label>
-            <label>Email:
-                <input type="email" readonly>
-            </label>
-            <label>Địa chỉ:
-                <textarea readonly></textarea>
-            </label>
-        </div>
-    </div>
 
     <div class="media-block">
         <div class="media-item">
@@ -241,6 +195,8 @@
     <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">
         ↑
     </button>
+
+
 
     <script src="../script/home.js"></script>
     <script src="../script/baohanh.js"></script>

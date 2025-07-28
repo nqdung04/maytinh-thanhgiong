@@ -1,5 +1,5 @@
 body {
-    font-family: 'Saira', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
     margin: 0;
@@ -258,21 +258,6 @@ ul {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-    .message-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .message-text {
-        padding-right: 0;
-    }
-
-    .message-text h2 {
-        font-size: 20px;
-    }
-}
-
 .logo {
     width: 20%;
     margin: 0 auto 30px;
@@ -297,17 +282,6 @@ ul {
     background-color: #e6f3f5;
     border-left: 5px solid #0B677C;
     border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-    .logo {
-        width: 50%;
-    }
-
-    .dialog strong {
-        font-size: 16px;
-        padding: 10px 16px;
-    }
 }
 
 .hoptac h3 {
@@ -392,4 +366,28 @@ ul {
 
 #backToTopBtn:hover {
   background-color: #005b91;
+}
+
+@media (max-width: 1024px) {
+    .logo {
+        width: 50%;
+    }
+
+    .dialog strong {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+
+    .message-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .message-text {
+        padding-right: 0;
+    }
+
+    .message-text h2 {
+        font-size: 20px;
+    }
 }
