@@ -194,7 +194,8 @@ ul {
     gap: 20px;
     padding: 10px;
     flex-wrap: wrap;
-    background-color: #0082C6;;
+    background-color: #0082C6;
+    ;
 }
 
 .office {
@@ -347,28 +348,36 @@ ul {
 }
 
 #backToTopBtn {
-  display: none; /* Ẩn ban đầu */
-  position: fixed;
-  bottom: 40px;
-  right: 30px;
-  z-index: 999;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #0082C6;
-  color: white;
-  cursor: pointer;
-  padding: 12px 16px;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.3s ease;
+    display: none;
+    /* Ẩn ban đầu */
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    z-index: 999;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #0082C6;
+    color: white;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
 }
 
 #backToTopBtn:hover {
-  background-color: #005b91;
+    background-color: #005b91;
 }
 
 @media (max-width: 1024px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
     .logo {
         width: 50%;
     }
@@ -389,5 +398,31 @@ ul {
 
     .message-text h2 {
         font-size: 20px;
+    }
+
+    .certificates-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 10px;
+    }
+
+    .certificate {
+        flex: 0 0 auto;
+        width: 80%;
+        max-width: 250px;
+        scroll-snap-align: start;
+    }
+
+    /* Ẩn thanh cuộn nhưng vẫn có thể gạt */
+    .certificates-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .certificates-section {
+        margin-left: 0;
+        padding: 0 12px;
     }
 }

@@ -69,35 +69,30 @@
 
     <h1 style="text-align: center; margin-top: 50px; color: #0481C3;"><strong>TRA CỨU HẠN BẢO HÀNH</strong></h1>
     <p style="text-align: center;">Quý khách vui lòng điền đầy đủ thông tin vào mục dưới đây.</p>
-    <img style="width: 70%; margin-left: 20%;" src="../img/baohanh1.jpg">
+    <img class="baohanh-img" src="../img/baohanh1.jpg">
 
-    <form method="post" id="captchaForm" autocomplete="off" style="margin-left: 30%;">
-        <table>
-            <tr>
-                <td><strong><label for="serialInput">Số serial:</label></strong></td>
-                <td><input type="text" id="serialInput" name="serialInput" placeholder="Nhập số serial" required></td>
-            </tr>
-            <tr>
-                <td><strong><label for="captchaInput">Mã xác nhận:</label></strong></td>
-                <td><input type="text" id="captchaInput" name="captchaInput" placeholder="Nhập mã xác nhận" required>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <div class="captcha-inline">
-                        <div id="captchaCode" class="captcha"></div>
-                        <i class="fas fa-arrow-rotate-right reset-icon" onclick="generateCaptcha()"
-                            title="Tạo lại mã"></i>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><button class="btn btn-primary" type="submit">Tra cứu</button></td>
-            </tr>
-        </table>
-    </form>
+    <form method="post" id="captchaForm" autocomplete="off">
+  <div class="form-group">
+    <label for="serialInput"><strong>Số serial:</strong></label>
+    <input type="text" id="serialInput" name="serialInput" placeholder="Nhập số serial" required>
+  </div>
+
+  <div class="form-group">
+    <label for="captchaInput"><strong>Mã xác nhận:</strong></label>
+    <input type="text" id="captchaInput" name="captchaInput" placeholder="Nhập mã xác nhận" required>
+  </div>
+
+  <div class="form-group">
+    <div class="captcha-inline">
+      <div id="captchaCode" class="captcha"></div>
+      <i class="fas fa-arrow-rotate-right reset-icon" onclick="generateCaptcha()" title="Tạo lại mã"></i>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Tra cứu</button>
+  </div>
+</form>
 
     <div class="media-block">
     <div class="media-item">

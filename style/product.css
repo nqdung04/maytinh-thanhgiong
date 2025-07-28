@@ -158,4 +158,8 @@ h1[id] {
     border: none;
     border-radius: 0;
   }
+
+  #backToTopBtn {
+    display: none !important;
+  }
 }

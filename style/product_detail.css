@@ -53,46 +53,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Hiệu ứng khi click/hover ảnh chính (nếu muốn) */
-/* .product-image #mainImage:hover {
-  transform: scale(1.02);
-} */
-
-.thumbnail.active {
-  border: 2px solid #0082C6;
-  opacity: 0.8;
-}
-
-/* phóng to ảnh */
-.image-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.image-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(255,255,255,0.5);
-}
-
-.close-image {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 32px;
-    color: white;
-    cursor: pointer;
-}
-
 .product-detail {
   display: flex;
   flex-wrap: wrap;
@@ -282,4 +242,80 @@ body {
   max-width: 250px;
   display: block;
   margin: 20px auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .product-detail {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  .product-image {
+    max-width: 100%;
+  }
+
+  .product-image #mainImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-info {
+    max-width: 100%;
+  }
+
+  .product-info h1 {
+    font-size: 22px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .technical {
+    width: 100%;
+  }
+
+  .technical td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .office {
+    padding: 10px;
+  }
+
+  .order-form {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .order-form h2 {
+    font-size: 18px;
+  }
+
+  .qr-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #backToTopBtn {
+    display: none !important;
+  }
 }
