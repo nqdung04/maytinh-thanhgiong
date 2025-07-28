@@ -280,8 +280,8 @@
   /* Ẩn những phần không cần thiết */
   .navbar-left,
   .navbar-logo-left,
-  .navbar-right a[href*="nhamay"],
-  .navbar-right a[href*="daily"] {
+  .navbar-right a[href*="news"],
+  .navbar-right a[href*="contact"] {
     display: none;
   }
 
