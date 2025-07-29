@@ -1,9 +1,10 @@
+// Toggle menu
 function toggleMenu() {
     var menu = document.getElementById("menu");
     menu.classList.toggle("open");
 }
 
-// ======== NEWS PHÂN NHÓM TỰ ĐỘNG THEO KÍCH THƯỚC MÀN HÌNH ========
+// ======== DỮ LIỆU TIN TỨC ========
 const allNews = [
     {
         title: "MÁY TÍNH THÁNH GIÓNG VINH DỰ ĐỒNG HÀNH CÙNG TÁC PHẨM “TASL” CỦA GIÁO SƯ, TIẾN SĨ ĐINH VĂN HIẾN",
@@ -13,38 +14,39 @@ const allNews = [
     {
         title: "Công ty Máy tính Thánh Gióng - Hành trình đổi mới cùng Diễn đàn Tăng trưởng Kinh tế Việt Nam 2025",
         image: "img/news-img/news2.jpg",
-        link: "https://www.thanhgiong.com.vn/%C2%A0cong-ty-may-tinh-thanh-giong-%E2%80%93-hanh-trinh-doi-moi-cung-dien-dan-tang-truong-kinh-te-viet-nam-2025-bv7580/"
+        link: "https://www.thanhgiong.com.vn/cong-ty-may-tinh-thanh-giong-doi-moi-cung-dien-dan-kinh-te-bv7580/"
     },
     {
         title: "Máy tính Thánh Gióng tự hào Tham dự Diễn đàn 150 Doanh nghiệp Sản xuất",
         image: "img/news-img/news3.jpg",
-        link: "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-tham-du-dien-dan-150-doanh-nghiep-san-xuat-bv7579/"
+        link: "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tham-du-dien-dan-150-doanh-nghiep-bv7579/"
     },
     {
-        title: "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG IPRO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+        title: "THÔNG BÁO HỢP TÁC VỚI HÃNG IPRO – CUNG CẤP MÁY TÍNH CHÍNH THỨC",
         image: "img/news-img/news4.jpg",
-        link: "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-ipro-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7578/"
+        link: "https://www.thanhgiong.com.vn/thong-bao-hop-tac-hang-ipro-bv7578/"
     },
     {
-        title: "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG RAPOO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+        title: "THÔNG BÁO HỢP TÁC VỚI HÃNG RAPOO – CUNG CẤP MÁY TÍNH CHÍNH THỨC",
         image: "img/news-img/news5.jpg",
-        link: "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-rapoo-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7576/"
+        link: "https://www.thanhgiong.com.vn/thong-bao-hop-tac-hang-rapoo-bv7576/"
     },
     {
-        title: "Công ty Máy tính Thánh Gióng đồng hành cùng Quỹ Tiến bộ TP. Đà Nẵng mang tri thức đến với học sinh Văn Yên, Yên Bái",
+        title: "Đồng hành cùng Quỹ Tiến bộ TP. Đà Nẵng mang tri thức đến học sinh Yên Bái",
         image: "img/news-img/news6.jpg",
-        link: "https://www.thanhgiong.com.vn/cong-ty-may-tinh-thanh-giong-dong-hanh-cung-quy-tien-bo-tp-da-nang-mang-tri-thuc-den-voi-hoc-sinh-van-yen-yen-bai-bv7573/"
+        link: "https://www.thanhgiong.com.vn/thanh-giong-cung-quy-tien-bo-tp-da-nang-bv7573/"
     },
     {
-        title: "Máy Tính Thánh Gióng Tự Hào Đồng Hành Cùng Ngày Hội Bình Dân Học Vụ Số 2025 Tại Hòa Bình",
+        title: "Đồng Hành Cùng Ngày Hội Bình Dân Học Vụ 2025 Tại Hòa Bình",
         image: "img/news-img/news7.jpg",
-        link: "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-dong-hanh-cung-ngay-hoi-binh-dan-hoc-vu-so-2025-tai-hoa-binh-bv7567/"
+        link: "https://www.thanhgiong.com.vn/ngay-hoi-binh-dan-hoc-vu-2025-bv7567/"
     }
 ];
 
 let newsGroups = [];
 let currentGroup = 0;
 
+// ======= TẠO NHÓM THEO KÍCH THƯỚC MÀN HÌNH =======
 function detectGroupSize() {
     return window.innerWidth <= 800 ? 1 : 5;
 }
@@ -56,6 +58,7 @@ function createNewsGroups(groupSize) {
     }
 }
 
+// ======= HIỂN THỊ DOT ĐIỀU HƯỚNG =======
 function buildDotNav() {
     const dotNav = document.querySelector(".dot-nav");
     if (!dotNav) return;
@@ -69,6 +72,7 @@ function buildDotNav() {
     });
 }
 
+// ======= HIỂN THỊ NHÓM TIN TỨC =======
 function showNewsGroup(groupIndex) {
     const container = document.getElementById("newsContainer");
     if (!container) return;
@@ -79,7 +83,7 @@ function showNewsGroup(groupIndex) {
     container.innerHTML = "";
     group.forEach(n => {
         container.innerHTML += `
-            <a href="${n.link}" class="news-box">
+            <a href="${n.link}" class="news-box" target="_blank">
                 <img src="${n.image}" alt="${n.title}">
                 <div class="news-content">
                     <h3>${n.title}</h3>
@@ -92,7 +96,6 @@ function showNewsGroup(groupIndex) {
     container.style.transition = "none";
     container.style.transform = "translateX(0)";
 
-    // Update dot active
     document.querySelectorAll(".dot").forEach((d, i) => {
         d.classList.toggle("active", i === groupIndex);
     });
@@ -117,7 +120,104 @@ function initializeNews() {
     showNewsGroup(0);
 }
 
-// Khởi động
+// ======= SỰ KIỆN SWIPE + DRAG =======
+function setupSwipeEvents() {
+    const container = document.getElementById("newsContainer");
+    if (!container) return;
+
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let dragMoved = false;
+
+    // === Touch (mobile) ===
+    container.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        dragMoved = false;
+        container.style.transition = "none";
+    });
+
+    container.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+        const deltaX = currentX - startX;
+        if (Math.abs(deltaX) > 5) dragMoved = true;
+        container.style.transform = `translateX(${deltaX}px)`;
+    });
+
+    container.addEventListener("touchend", (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const deltaX = currentX - startX;
+        const threshold = container.offsetWidth / 4;
+        container.style.transition = "transform 0.3s ease";
+        if (deltaX < -threshold) nextGroup();
+        else if (deltaX > threshold) prevGroup();
+        else container.style.transform = "translateX(0)";
+    });
+
+    // === Mouse (PC) ===
+    let isMouseDown = false;
+    let startMouseX = 0;
+
+    container.addEventListener("mousedown", (e) => {
+        isMouseDown = true;
+        dragMoved = false;
+        startMouseX = e.pageX;
+        container.style.transition = "none";
+        container.style.cursor = "grabbing";
+        e.preventDefault();
+    });
+
+    container.addEventListener("mousemove", (e) => {
+        if (!isMouseDown) return;
+        const deltaX = e.pageX - startMouseX;
+        if (Math.abs(deltaX) > 5) dragMoved = true;
+        container.style.transform = `translateX(${deltaX}px)`;
+    });
+
+    container.addEventListener("mouseup", (e) => {
+        if (!isMouseDown) return;
+        isMouseDown = false;
+        const deltaX = e.pageX - startMouseX;
+        const threshold = container.offsetWidth / 4;
+        container.style.transition = "transform 0.3s ease";
+        if (deltaX < -threshold) nextGroup();
+        else if (deltaX > threshold) prevGroup();
+        else container.style.transform = "translateX(0)";
+        container.style.cursor = "grab";
+    });
+
+    container.addEventListener("mouseleave", () => {
+        if (isMouseDown) {
+            isMouseDown = false;
+            container.style.transition = "transform 0.3s ease";
+            container.style.transform = "translateX(0)";
+            container.style.cursor = "grab";
+        }
+    });
+
+    // === Ngăn click nếu vừa drag ===
+    container.addEventListener("click", (e) => {
+        if (dragMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    }, true); // dùng capture phase để chặn sớm
+}
+
+// ======= NÚT BACK TO TOP =======
+window.onscroll = function () {
+    const btn = document.getElementById("backToTopBtn");
+    btn.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
+};
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// ======= KHỞI TẠO =======
 window.addEventListener("DOMContentLoaded", () => {
     initializeNews();
     setupSwipeEvents();
@@ -129,58 +229,3 @@ window.addEventListener("resize", () => {
         initializeNews();
     }
 });
-
-// ======= Swipe trực tiếp (di chuyển theo tay) =======
-function setupSwipeEvents() {
-    const container = document.getElementById("newsContainer");
-    if (!container) return;
-
-    let startX = 0;
-    let currentX = 0;
-    let isDragging = false;
-
-    container.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-        currentX = startX;
-        isDragging = true;
-        container.style.transition = "none";
-    });
-
-    container.addEventListener("touchmove", (e) => {
-        if (!isDragging) return;
-        currentX = e.touches[0].clientX;
-        const deltaX = currentX - startX;
-        container.style.transform = `translateX(${deltaX}px)`;
-    });
-
-    container.addEventListener("touchend", () => {
-        if (!isDragging) return;
-        isDragging = false;
-        const deltaX = currentX - startX;
-        const threshold = container.offsetWidth / 4;
-
-        container.style.transition = "transform 0.3s ease";
-
-        if (deltaX < -threshold) {
-            nextGroup();
-        } else if (deltaX > threshold) {
-            prevGroup();
-        } else {
-            container.style.transform = "translateX(0)";
-        }
-    });
-}
-
-// ======= NÚT BACK TO TOP =======
-window.onscroll = function () {
-    const btn = document.getElementById("backToTopBtn");
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-};
-
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}

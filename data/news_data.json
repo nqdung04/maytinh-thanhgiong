@@ -1,0 +1,240 @@
+[
+  {
+    "id": 0,
+    "title": "MÁY TÍNH THÁNH GIÓNG VINH DỰ ĐỒNG HÀNH CÙNG TÁC PHẨM “TASL” CỦA GIÁO SƯ, TIẾN SĨ ĐINH VĂN HIẾN",
+    "date": "12/7/2025 | 6:00:28 PM",
+    "image": "../img/news-img/news1.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-vinh-du-dong-hanh-cung-tac-pham-tasl-cua-giao-su-tien-si-dinh-van-hien-bv7581/"
+  },
+  {
+    "id": 1,
+    "title": "Công ty Máy tính Thánh Gióng – Hành trình đổi mới cùng Diễn đàn Tăng trưởng Kinh tế Việt Nam 2025",
+    "date": "8/7/2025 | 10:23:34 PM",
+    "image": "../img/news-img/news2.jpg",
+    "link": "https://www.thanhgiong.com.vn/%C2%A0cong-ty-may-tinh-thanh-giong-%E2%80%93-hanh-trinh-doi-moi-cung-dien-dan-tang-truong-kinh-te-viet-nam-2025-bv7580/"
+  },
+  {
+    "id": 2,
+    "title": "Máy tính Thánh Gióng tự hào Tham dự Diễn đàn 150 Doanh nghiệp Sản xuất",
+    "date": "7/7/2025 | 10:48:05 PM",
+    "image": "../img/news-img/news3.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-tham-du-dien-dan-150-doanh-nghiep-san-xuat-bv7579/"
+  },
+  {
+    "id": 3,
+    "title": "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG IPRO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+    "date": "30/6/2025 | 9:38:39 AM",
+    "image": "../img/news-img/news4.jpg",
+    "link": "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-ipro-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7578/"
+  },
+  {
+    "id": 4,
+    "title": "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG RAPOO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+    "date": "26/6/2025 | 9:01:16 PM",
+    "image": "../img/news-img/news5.jpg",
+    "link": "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-rapoo-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7576/"
+  },
+  {
+    "id": 5,
+    "title": "Công ty Máy tính Thánh Gióng đồng hành cùng Quỹ Tiến bộ TP. Đà Nẵng mang tri thức đến với học sinh Văn Yên, Yên Bái",
+    "date": "2025-07-06",
+    "image": "../img/news-img/news6.jpg",
+    "link": "https://www.thanhgiong.com.vn/cong-ty-may-tinh-thanh-giong-dong-hanh-cung-quy-tien-bo-tp-da-nang-mang-tri-thuc-den-voi-hoc-sinh-van-yen-yen-bai-bv7573/"
+  },
+  {
+    "id": 6,
+    "title": "Máy Tính Thánh Gióng Tự Hào Đồng Hành Cùng Ngày Hội Bình Dân Học Vụ Số 2025 Tại Hòa Bình",
+    "date": "26/5/2025 | 2:45:14 PM",
+    "image": "../img/news-img/news7.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-dong-hanh-cung-ngay-hoi-binh-dan-hoc-vu-so-2025-tai-hoa-binh-bv7567/"
+  },
+  {
+    "id": 7,
+    "title": "MÁY TÍNH THÁNH GIÓNG VINH DỰ ĐỒNG HÀNH CÙNG TÁC PHẨM “TASL” CỦA GIÁO SƯ, TIẾN SĨ ĐINH VĂN HIẾN",
+    "date": "12/7/2025 | 6:00:28 PM",
+    "image": "../img/news-img/news1.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-vinh-du-dong-hanh-cung-tac-pham-tasl-cua-giao-su-tien-si-dinh-van-hien-bv7581/"
+  },
+  {
+    "id": 8,
+    "title": "Công ty Máy tính Thánh Gióng – Hành trình đổi mới cùng Diễn đàn Tăng trưởng Kinh tế Việt Nam 2025",
+    "date": "8/7/2025 | 10:23:34 PM",
+    "image": "../img/news-img/news2.jpg",
+    "link": "https://www.thanhgiong.com.vn/%C2%A0cong-ty-may-tinh-thanh-giong-%E2%80%93-hanh-trinh-doi-moi-cung-dien-dan-tang-truong-kinh-te-viet-nam-2025-bv7580/"
+  },
+  {
+    "id": 9,
+    "title": "Máy tính Thánh Gióng tự hào Tham dự Diễn đàn 150 Doanh nghiệp Sản xuất",
+    "date": "7/7/2025 | 10:48:05 PM",
+    "image": "../img/news-img/news3.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-tham-du-dien-dan-150-doanh-nghiep-san-xuat-bv7579/"
+  },
+  {
+    "id": 10,
+    "title": "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG IPRO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+    "date": "30/6/2025 | 9:38:39 AM",
+    "image": "../img/news-img/news4.jpg",
+    "link": "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-ipro-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7578/"
+  },
+  {
+    "id": 11,
+    "title": "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG RAPOO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+    "date": "26/6/2025 | 9:01:16 PM",
+    "image": "../img/news-img/news5.jpg",
+    "link": "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-rapoo-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7576/"
+  },
+  {
+    "id": 12,
+    "title": "Công ty Máy tính Thánh Gióng đồng hành cùng Quỹ Tiến bộ TP. Đà Nẵng mang tri thức đến với học sinh Văn Yên, Yên Bái",
+    "date": "2025-07-06",
+    "image": "../img/news-img/news6.jpg",
+    "link": "https://www.thanhgiong.com.vn/cong-ty-may-tinh-thanh-giong-dong-hanh-cung-quy-tien-bo-tp-da-nang-mang-tri-thuc-den-voi-hoc-sinh-van-yen-yen-bai-bv7573/"
+  },
+  {
+    "id": 13,
+    "title": "Máy Tính Thánh Gióng Tự Hào Đồng Hành Cùng Ngày Hội Bình Dân Học Vụ Số 2025 Tại Hòa Bình",
+    "date": "26/5/2025 | 2:45:14 PM",
+    "image": "../img/news-img/news7.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-dong-hanh-cung-ngay-hoi-binh-dan-hoc-vu-so-2025-tai-hoa-binh-bv7567/"
+  },
+  {
+    "id": 14,
+    "title": "MÁY TÍNH THÁNH GIÓNG VINH DỰ ĐỒNG HÀNH CÙNG TÁC PHẨM “TASL” CỦA GIÁO SƯ, TIẾN SĨ ĐINH VĂN HIẾN",
+    "date": "12/7/2025 | 6:00:28 PM",
+    "image": "../img/news-img/news1.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-vinh-du-dong-hanh-cung-tac-pham-tasl-cua-giao-su-tien-si-dinh-van-hien-bv7581/"
+  },
+  {
+    "id": 15,
+    "title": "Công ty Máy tính Thánh Gióng – Hành trình đổi mới cùng Diễn đàn Tăng trưởng Kinh tế Việt Nam 2025",
+    "date": "8/7/2025 | 10:23:34 PM",
+    "image": "../img/news-img/news2.jpg",
+    "link": "https://www.thanhgiong.com.vn/%C2%A0cong-ty-may-tinh-thanh-giong-%E2%80%93-hanh-trinh-doi-moi-cung-dien-dan-tang-truong-kinh-te-viet-nam-2025-bv7580/"
+  },
+  {
+    "id": 16,
+    "title": "Máy tính Thánh Gióng tự hào Tham dự Diễn đàn 150 Doanh nghiệp Sản xuất",
+    "date": "7/7/2025 | 10:48:05 PM",
+    "image": "../img/news-img/news3.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-tham-du-dien-dan-150-doanh-nghiep-san-xuat-bv7579/"
+  },
+  {
+    "id": 17,
+    "title": "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG IPRO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+    "date": "30/6/2025 | 9:38:39 AM",
+    "image": "../img/news-img/news4.jpg",
+    "link": "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-ipro-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7578/"
+  },
+  {
+    "id": 18,
+    "title": "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG RAPOO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+    "date": "26/6/2025 | 9:01:16 PM",
+    "image": "../img/news-img/news5.jpg",
+    "link": "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-rapoo-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7576/"
+  },
+  {
+    "id": 19,
+    "title": "Công ty Máy tính Thánh Gióng đồng hành cùng Quỹ Tiến bộ TP. Đà Nẵng mang tri thức đến với học sinh Văn Yên, Yên Bái",
+    "date": "2025-07-06",
+    "image": "../img/news-img/news6.jpg",
+    "link": "https://www.thanhgiong.com.vn/cong-ty-may-tinh-thanh-giong-dong-hanh-cung-quy-tien-bo-tp-da-nang-mang-tri-thuc-den-voi-hoc-sinh-van-yen-yen-bai-bv7573/"
+  },
+  {
+    "id": 20,
+    "title": "Máy Tính Thánh Gióng Tự Hào Đồng Hành Cùng Ngày Hội Bình Dân Học Vụ Số 2025 Tại Hòa Bình",
+    "date": "26/5/2025 | 2:45:14 PM",
+    "image": "../img/news-img/news7.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-dong-hanh-cung-ngay-hoi-binh-dan-hoc-vu-so-2025-tai-hoa-binh-bv7567/"
+  },
+  {
+    "id": 21,
+    "title": "MÁY TÍNH THÁNH GIÓNG VINH DỰ ĐỒNG HÀNH CÙNG TÁC PHẨM “TASL” CỦA GIÁO SƯ, TIẾN SĨ ĐINH VĂN HIẾN",
+    "date": "12/7/2025 | 6:00:28 PM",
+    "image": "../img/news-img/news1.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-vinh-du-dong-hanh-cung-tac-pham-tasl-cua-giao-su-tien-si-dinh-van-hien-bv7581/"
+  },
+  {
+    "id": 22,
+    "title": "Công ty Máy tính Thánh Gióng – Hành trình đổi mới cùng Diễn đàn Tăng trưởng Kinh tế Việt Nam 2025",
+    "date": "8/7/2025 | 10:23:34 PM",
+    "image": "../img/news-img/news2.jpg",
+    "link": "https://www.thanhgiong.com.vn/%C2%A0cong-ty-may-tinh-thanh-giong-%E2%80%93-hanh-trinh-doi-moi-cung-dien-dan-tang-truong-kinh-te-viet-nam-2025-bv7580/"
+  },
+  {
+    "id": 23,
+    "title": "Máy tính Thánh Gióng tự hào Tham dự Diễn đàn 150 Doanh nghiệp Sản xuất",
+    "date": "7/7/2025 | 10:48:05 PM",
+    "image": "../img/news-img/news3.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-tham-du-dien-dan-150-doanh-nghiep-san-xuat-bv7579/"
+  },
+  {
+    "id": 24,
+    "title": "MÁY TÍNH THÁNH GIÓNG VINH DỰ ĐỒNG HÀNH CÙNG TÁC PHẨM “TASL” CỦA GIÁO SƯ, TIẾN SĨ ĐINH VĂN HIẾN",
+    "date": "12/7/2025 | 6:00:28 PM",
+    "image": "../img/news-img/news1.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-vinh-du-dong-hanh-cung-tac-pham-tasl-cua-giao-su-tien-si-dinh-van-hien-bv7581/"
+  },
+  {
+    "id": 25,
+    "title": "Công ty Máy tính Thánh Gióng – Hành trình đổi mới cùng Diễn đàn Tăng trưởng Kinh tế Việt Nam 2025",
+    "date": "8/7/2025 | 10:23:34 PM",
+    "image": "../img/news-img/news2.jpg",
+    "link": "https://www.thanhgiong.com.vn/%C2%A0cong-ty-may-tinh-thanh-giong-%E2%80%93-hanh-trinh-doi-moi-cung-dien-dan-tang-truong-kinh-te-viet-nam-2025-bv7580/"
+  },
+  {
+    "id": 26,
+    "title": "Máy tính Thánh Gióng tự hào Tham dự Diễn đàn 150 Doanh nghiệp Sản xuất",
+    "date": "7/7/2025 | 10:48:05 PM",
+    "image": "../img/news-img/news3.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-tham-du-dien-dan-150-doanh-nghiep-san-xuat-bv7579/"
+  },
+  {
+    "id": 27,
+    "title": "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG IPRO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+    "date": "30/6/2025 | 9:38:39 AM",
+    "image": "../img/news-img/news4.jpg",
+    "link": "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-ipro-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7578/"
+  },
+  {
+    "id": 28,
+    "title": "THÔNG BÁO VỀ VIỆC HỢP TÁC VỚI HÃNG RAPOO – ĐỐI TÁC CUNG CẤP MÁY VI TÍNH CHÍNH THỨC",
+    "date": "26/6/2025 | 9:01:16 PM",
+    "image": "../img/news-img/news5.jpg",
+    "link": "https://www.thanhgiong.com.vn/thong-bao-ve-viec-hop-tac-voi-hang-rapoo-%E2%80%93-doi-tac-cung-cap-may-vi-tinh-chinh-thuc-bv7576/"
+  },
+  {
+    "id": 29,
+    "title": "Công ty Máy tính Thánh Gióng đồng hành cùng Quỹ Tiến bộ TP. Đà Nẵng mang tri thức đến với học sinh Văn Yên, Yên Bái",
+    "date": "2025-07-06",
+    "image": "../img/news-img/news6.jpg",
+    "link": "https://www.thanhgiong.com.vn/cong-ty-may-tinh-thanh-giong-dong-hanh-cung-quy-tien-bo-tp-da-nang-mang-tri-thuc-den-voi-hoc-sinh-van-yen-yen-bai-bv7573/"
+  },
+  {
+    "id": 30,
+    "title": "Máy Tính Thánh Gióng Tự Hào Đồng Hành Cùng Ngày Hội Bình Dân Học Vụ Số 2025 Tại Hòa Bình",
+    "date": "26/5/2025 | 2:45:14 PM",
+    "image": "../img/news-img/news7.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-dong-hanh-cung-ngay-hoi-binh-dan-hoc-vu-so-2025-tai-hoa-binh-bv7567/"
+  },
+  {
+    "id": 31,
+    "title": "MÁY TÍNH THÁNH GIÓNG VINH DỰ ĐỒNG HÀNH CÙNG TÁC PHẨM “TASL” CỦA GIÁO SƯ, TIẾN SĨ ĐINH VĂN HIẾN",
+    "date": "12/7/2025 | 6:00:28 PM",
+    "image": "../img/news-img/news1.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-vinh-du-dong-hanh-cung-tac-pham-tasl-cua-giao-su-tien-si-dinh-van-hien-bv7581/"
+  },
+  {
+    "id": 32,
+    "title": "Công ty Máy tính Thánh Gióng – Hành trình đổi mới cùng Diễn đàn Tăng trưởng Kinh tế Việt Nam 2025",
+    "date": "8/7/2025 | 10:23:34 PM",
+    "image": "../img/news-img/news2.jpg",
+    "link": "https://www.thanhgiong.com.vn/%C2%A0cong-ty-may-tinh-thanh-giong-%E2%80%93-hanh-trinh-doi-moi-cung-dien-dan-tang-truong-kinh-te-viet-nam-2025-bv7580/"
+  },
+  {
+    "id": 33,
+    "title": "Máy tính Thánh Gióng tự hào Tham dự Diễn đàn 150 Doanh nghiệp Sản xuất",
+    "date": "7/7/2025 | 10:48:05 PM",
+    "image": "../img/news-img/news3.jpg",
+    "link": "https://www.thanhgiong.com.vn/may-tinh-thanh-giong-tu-hao-tham-du-dien-dan-150-doanh-nghiep-san-xuat-bv7579/"
+  }
+]

@@ -154,7 +154,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 4vw;
+  gap: 2vw;
   padding: 2rem;
 }
 
@@ -410,6 +410,7 @@ body {
   gap: 20px;
   padding: 20px;
   cursor: grab;
+  user-select: none; /* Ngăn chọn văn bản khi kéo */
 }
 
 .news-container:active {
@@ -421,8 +422,8 @@ body {
 }
 
 .news-item {
-  flex: 0 0 80%;
-  /* mỗi item chiếm 80% chiều ngang */
+  flex: 0 0 auto;
+  width: 300px; /* hoặc 80% nếu bạn muốn to hơn */
   scroll-snap-align: start;
   background: #f0f0f0;
   padding: 20px;
@@ -566,9 +567,13 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: auto;
-    min-height: 400px;
+    height: 400px;
+    /* Hoặc auto tùy theo chiều cao ảnh gốc */
+    object-fit: cover;
+    object-position: center bottom;
     z-index: 1;
+    pointer-events: none;
+    /* nếu bạn không muốn nó cản các nút khác */
   }
 
   .pride-section {
@@ -635,8 +640,10 @@ body {
   }
 
   .reason {
-    margin-top: -44%;
-  }
+  margin-top: -320px; /* Hoặc giá trị phù hợp với chiều cao ảnh parabol */
+  position: relative;
+  z-index: 2; /* Đảm bảo nằm trên ảnh parabol nếu cần */
+}
 
   .pride-image img {
     width: 500px;

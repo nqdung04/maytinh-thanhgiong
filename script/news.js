@@ -1,19 +1,22 @@
 const newsPerPage = 10;
 let currentPage = 1;
 
-// Dữ liệu mẫu
-const newsData = Array.from({ length: 75 }, (_, i) => ({
-  title: `Máy tính Thánh Gióng - Tin số ${i + 1}`,
-  date: `2025-07-${(i % 30 + 1).toString().padStart(2, '0')}`,
-  description: `Đây là đoạn mô tả ngắn cho bản tin số ${i + 1}.`,
-  image: `../img/news-img/news${(i % 7) + 1}.jpg`
-}));
-
-// ✅ Chuyển vào trong DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   const newsList = document.getElementById('news-list');
   const paginationContainer = document.getElementById('pagination');
-  const totalPages = Math.ceil(newsData.length / newsPerPage);
+  let newsData = [];
+
+  // Load dữ liệu từ file JSON
+  fetch('../data/news_data.json')
+    .then(response => response.json())
+    .then(data => {
+      newsData = data;
+      renderNewsPage(currentPage);
+    })
+    .catch(error => {
+      console.error("Lỗi tải dữ liệu tin tức:", error);
+      newsList.innerHTML = "<p>Không thể tải dữ liệu tin tức.</p>";
+    });
 
   function renderNewsPage(page) {
     const start = (page - 1) * newsPerPage;
@@ -22,33 +25,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     newsList.innerHTML = '';
 
-    pageItems.forEach((item, index) => {
+    pageItems.forEach((item) => {
       const newsItem = document.createElement('div');
       newsItem.className = 'news-item';
 
-      const newsId = start + index;
+      // Xác định href và target
+      let href = '';
+      let target = '';
+
+      if (item.link && item.link.startsWith('http')) {
+        // Link ngoài
+        href = item.link;
+        target = ' target="_blank"';
+      } else {
+        // Link nội bộ
+        href = `news-detail.html?id=${item.id}`;
+        target = '';
+      }
 
       newsItem.innerHTML = `
-        <a href="news-detail.html?id=${newsId}" class="news-image-link">
-          <img src="${item.image}" alt="Ảnh tin tức">
+      <a href="${href}" class="news-image-link"${target}>
+        <img src="${item.image}" alt="Ảnh tin tức">
+      </a>
+      <div class="news-content">
+        <a href="${href}" class="news-title-link"${target}>
+          <div class="news-title">${item.title}</div>
         </a>
-        <div class="news-content">
-          <a href="news-detail.html?id=${newsId}" class="news-title-link">
-            <div class="news-title">${item.title}</div>
-          </a>
-          <div class="news-date">Cập nhật: ${item.date}</div>
-          <div class="news-description">${item.description}</div>
-        </div>
-      `;
+        <div class="news-date">Cập nhật: ${item.date}</div>
+      </div>
+    `;
 
       newsList.appendChild(newsItem);
     });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    renderPagination();
+    renderPagination(newsData.length);
   }
 
-  function renderPagination() {
+
+  function renderPagination(totalItems) {
+    const totalPages = Math.ceil(totalItems / newsPerPage);
     paginationContainer.innerHTML = '';
 
     const firstBtn = document.createElement('button');
@@ -60,17 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     paginationContainer.appendChild(firstBtn);
 
-    let startPage, endPage;
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalPages, startPage + 4);
 
-    if (currentPage <= 4) {
-      startPage = 1;
-      endPage = Math.min(5, totalPages);
-    } else {
-      startPage = currentPage;
-      endPage = Math.min(currentPage + 4, totalPages);
-    }
-
-    if (endPage - startPage + 1 < 5 && startPage > 1) {
+    if (endPage - startPage < 4) {
       startPage = Math.max(1, endPage - 4);
     }
 
@@ -96,6 +105,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     paginationContainer.appendChild(lastBtn);
   }
-
-  renderNewsPage(currentPage);
 });

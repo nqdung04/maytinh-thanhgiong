@@ -178,10 +178,6 @@ h1 {
 
 }
 
-.news-item img:hover {
-  transform: scale(1.03);
-}
-
 .news-image-link {
   display: block;
   flex-shrink: 0;

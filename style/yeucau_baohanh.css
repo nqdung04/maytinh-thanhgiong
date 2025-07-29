@@ -114,3 +114,62 @@
   background: red;
   color: white;
 }
+
+@media (max-width: 1024px) {
+  #warrantyForm {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .form-row label {
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #warrantyForm .submit-btn {
+    width: 100%;
+    margin: 20px 0 0 0;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  #imagePreview {
+    justify-content: center;
+  }
+
+  .preview-container {
+    width: 80px;
+  }
+
+  .preview-container img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .delete-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
