@@ -605,13 +605,13 @@ body {
   }
 
   .caption-content h2 {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .logo-img {
     background: #0082c6;
     border: 1px solid #0082c6;
-    width: 220px;
+    width: 250px;
     max-width: 90%;
     margin-bottom: 20px;
     border-radius: 8px;

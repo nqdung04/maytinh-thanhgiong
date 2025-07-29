@@ -130,6 +130,8 @@
 
 .youtube-button:hover {
   background-color: #ffd0d0;
+  text-decoration: none;
+  color: #D10021;
 }
 
 .youtube-icon-box {
@@ -183,7 +185,7 @@
 }
 
 /* Responsive cho mobile */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .media-block {
     flex-direction: column;
     gap: 20px;

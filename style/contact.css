@@ -7,6 +7,13 @@ body {
   padding: 0;
 }
 
+.banner img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
 .contact-container {
   max-width: 1200px;
   margin: auto;
@@ -84,10 +91,10 @@ section h2 {
 
 @media screen and (max-width: 1024px) {
   .banner img {
-    display: none;
-  }
-
-  h1 {
-    margin-top: 15%;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    margin-top: 60px; /* nếu cần đẩy xuống tránh header */
   }
 }
