@@ -640,10 +640,10 @@ body {
   }
 
   .reason {
-  margin-top: -320px; /* Hoặc giá trị phù hợp với chiều cao ảnh parabol */
-  position: relative;
-  z-index: 2; /* Đảm bảo nằm trên ảnh parabol nếu cần */
-}
+    margin-top: -320px; /* Hoặc giá trị phù hợp với chiều cao ảnh parabol */
+    position: relative;
+    z-index: 2; /* Đảm bảo nằm trên ảnh parabol nếu cần */
+  }
 
   .pride-image img {
     width: 500px;
@@ -714,5 +714,20 @@ body {
     flex: 1 1 100%;
     max-width: 100%;
     min-width: 0;
+  }
+
+  #backToTopBtn {
+    display: none !important;
+  }
+}
+
+@media (max-height: 700px) {
+  .banner {
+    height: 700px; /* giữ cố định chiều cao banner */
+    overflow: hidden; /* che phần nội dung phía dưới */
+  }
+
+  .banner-img {
+    display: none !important;
   }
 }

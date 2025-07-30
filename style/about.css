@@ -425,4 +425,8 @@ ul {
         margin-left: 0;
         padding: 0 12px;
     }
+
+    #backToTopBtn {
+        display: none !important;
+    }
 }

@@ -237,4 +237,8 @@ h1 {
     object-fit: cover;
     margin-top: 60px; /* nếu cần đẩy xuống tránh header */
   }
+
+  #backToTopBtn {
+    display: none !important;
+  }
 }
