@@ -559,7 +559,7 @@ body {
   }
 
   .caption {
-    top: -320px
+    top: -170px
   }
 
   .parabol-img {
@@ -574,15 +574,6 @@ body {
     z-index: 1;
     pointer-events: none;
     /* nếu bạn không muốn nó cản các nút khác */
-  }
-
-  .pride-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .pride-image {
-    text-align: center;
   }
 
   .caption-list {
@@ -640,9 +631,18 @@ body {
   }
 
   .reason {
-    margin-top: -320px; /* Hoặc giá trị phù hợp với chiều cao ảnh parabol */
+    margin-top: -170px; /* Hoặc giá trị phù hợp với chiều cao ảnh parabol */
     position: relative;
     z-index: 2; /* Đảm bảo nằm trên ảnh parabol nếu cần */
+  }
+
+  .pride-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pride-image {
+    text-align: center;
   }
 
   .pride-image img {
@@ -725,9 +725,5 @@ body {
   .banner {
     height: 700px; /* giữ cố định chiều cao banner */
     overflow: hidden; /* che phần nội dung phía dưới */
-  }
-
-  .banner-img {
-    display: none !important;
   }
 }
