@@ -7,14 +7,14 @@ body {
 .banner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 115vh;
   overflow: hidden;
 }
 
 .banner-img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 81vh;
+  object-fit: cover;
   display: block;
 }
 
@@ -42,7 +42,7 @@ body {
 /* Nội dung nằm trên parabol */
 .caption-content {
   position: absolute;
-  bottom: 0;
+  bottom: 2%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -50,7 +50,7 @@ body {
   z-index: 2;
   width: 100%;
   max-width: 100%;
-  padding: 0 10px;
+  padding: 0 10px 20px;
   pointer-events: auto;
   overflow: hidden;
 }
@@ -552,14 +552,15 @@ body {
   }
 
   .banner-img {
+    margin-top: 0 !important;
     width: 100%;
-    height: 34%;
+    height: 35%;
     object-fit: contain;
     display: block;
   }
 
   .caption {
-    top: -300px
+    top: -290px
   }
 
   .parabol-img {
@@ -576,11 +577,20 @@ body {
     /* nếu bạn không muốn nó cản các nút khác */
   }
 
+  .pride-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pride-image {
+    text-align: center;
+  }
+
   .caption-list {
     justify-content: flex-start;
     /* Căn về trái để scroll mượt */
-    padding-left: 16px;
-    gap: 55px;
+    padding-left: 15px;
+    gap: 65px;
   }
 
   .caption-list img {
@@ -592,6 +602,7 @@ body {
   }
 
   .caption-content {
+    bottom: 8%;
     padding: 0;
   }
 
@@ -604,7 +615,7 @@ body {
     border: 1px solid #0082c6;
     width: 250px;
     max-width: 90%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-radius: 8px;
   }
 
@@ -634,15 +645,6 @@ body {
     margin-top: -320px; /* Hoặc giá trị phù hợp với chiều cao ảnh parabol */
     position: relative;
     z-index: 2; /* Đảm bảo nằm trên ảnh parabol nếu cần */
-  }
-
-  .pride-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .pride-image {
-    text-align: center;
   }
 
   .pride-image img {
