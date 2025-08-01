@@ -734,9 +734,9 @@ body {
 }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 900px) {
   .banner {
-    height: 700px; /* giữ cố định chiều cao banner */
+    height: 900px; /* giữ cố định chiều cao banner */
     overflow: hidden; /* che phần nội dung phía dưới */
   }
 }
