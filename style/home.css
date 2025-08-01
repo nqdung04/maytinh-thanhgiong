@@ -7,13 +7,13 @@ body {
 .banner {
   position: relative;
   width: 100%;
-  height: 110vh;
+  height: 120vh;
   overflow: hidden;
 }
 
 .banner-img {
   width: 100%;
-  height: 81vh;
+  height: 77%;
   object-fit: cover;
   display: block;
 }
@@ -554,7 +554,7 @@ body {
   .banner-img {
     margin-top: 0 !important;
     width: 100%;
-    height: 35%;
+    height: 34%;
     object-fit: contain;
     display: block;
   }
