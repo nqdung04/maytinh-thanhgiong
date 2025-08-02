@@ -61,12 +61,9 @@ body {
 }
 
 .logo-img {
-  background: #0082c6;
-  border: 1px solid #0082c6;
   width: 400px;
   max-width: 90%;
   margin-bottom: 20px;
-  border-radius: 8px;
 }
 
 .caption-list-wrapper {
