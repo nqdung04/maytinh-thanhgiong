@@ -45,15 +45,17 @@ body {
 }
 
 .call-button {
+  display: block;               /* Để chiếm 100% chiều rộng */
   width: 100%;
   background-color: #d10000;
   color: white;
-  border: none;
+  text-decoration: none;        /* Xóa gạch chân mặc định của thẻ a */
   padding: 12px 0;
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 0 0 8px 8px;
+  text-align: center;           /* Căn giữa nội dung */
 }
 
 .call-button:hover {

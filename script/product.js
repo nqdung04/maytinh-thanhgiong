@@ -54,17 +54,19 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   function createProductCard(product) {
-  return `
+    return `
     <div class="product-link">
       <div class="product">
         <a href="${product.link}">
           <img src="${product.img}" alt="${product.name}" />
         </a>
-        <button class="call-button"><strong>Gọi mua hàng: 0993 888 000</strong></button>
+        <a class="call-button" href="tel:0993888000">
+          <strong>Gọi mua hàng: 0993 888 000</strong>
+        </a>
       </div>
     </div>
   `;
-}
+  }
 
   function renderAllProducts() {
     const containers = {
