@@ -64,6 +64,23 @@
   background-color: #005b91;
 }
 
+.form-row.serial-row {
+  display: flex;
+  align-items: center;
+}
+
+.form-row.serial-row label {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.serial-check-wrapper {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+}
+
+
 #imagePreview {
   display: flex;
   flex-wrap: wrap;
@@ -152,6 +169,30 @@
     border-radius: 8px;
   }
 
+  .form-row.serial-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-row.serial-row label {
+    margin-bottom: 8px;
+  }
+
+  .serial-check-wrapper {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .serial-check-wrapper input {
+    width: 100%;
+  }
+
+  .serial-check-wrapper button {
+    width: 30%;
+  }
+  
+
   #imagePreview {
     justify-content: center;
   }
@@ -172,4 +213,3 @@
     line-height: 16px;
   }
 }
-

@@ -6,13 +6,19 @@ function closeOrderForm() {
     document.getElementById("orderOverlay").style.display = "none";
 }
 
+const orderOverlay = document.getElementById("orderOverlay");
+orderOverlay.addEventListener("click", function (e) {
+    if (e.target === orderOverlay) {
+        closeOrderForm();
+    }
+});
+
 const overlay = document.getElementById("imageOverlay");
 
 document.getElementById("mainImage").addEventListener("click", function () {
     overlay.style.display = "flex";
 });
 
-// 👇 Đóng khi click vào vùng overlay (trừ ảnh và nút đóng)
 overlay.addEventListener("click", function (e) {
     if (e.target === overlay) {
         overlay.style.display = "none";

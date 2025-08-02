@@ -23,7 +23,7 @@ document.getElementById("captchaForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const serial = document.getElementById("serialInput").value.trim();
-  const userCaptcha = document.getElementById("captchaInput").value.trim(); // KHÔNG .toUpperCase()
+  const userCaptcha = document.getElementById("captchaInput").value.trim();
   const generatedCaptcha = document.getElementById("captchaCode").innerText.trim();
 
   if (userCaptcha !== generatedCaptcha) {

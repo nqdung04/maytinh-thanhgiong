@@ -2,205 +2,248 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bảo hành - Công ty cổ phần truyền thông và máy tính Thánh Gióng</title>
-  <link rel="icon" href="../img/main-img/logo_maytinh.jpg" type="image" />
-  <!-- Link Font Awesome để dùng biểu tượng -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../style/baohanh.css">
-  <link rel="stylesheet" href="../style/navbar.css">
-  <link rel="stylesheet" href="../style/media.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảo hành - Công ty cổ phần truyền thông và máy tính Thánh Gióng</title>
+    <link rel="icon" href="../img/main-img/logo_maytinh.jpg" type="image" />
+    <!-- Link Font Awesome để dùng biểu tượng -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/baohanh.css">
+    <link rel="stylesheet" href="../style/tracuu_baohanh.css">
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/media.css">
 
 <body>
-  <!-- Navbar -->
-  <div class="navbar">
+    <!-- Navbar -->
+    <div class="navbar">
 
-    <div class="navbar-left">
-      <a href="../home.html"><i class="fa-solid fa-house"></i> TRANG CHỦ</a>
-      <a href="about.html">GIỚI THIỆU</a>
-      <a href="product.html">SẢN PHẨM</a>
-      <a href="baohanh.html">BẢO HÀNH</a>
-    </div>
-
-    <div class="navbar-center">
-      <a href="../home.html">
-        <img src="../img/main-img/logo_maytinh.jpg" alt="Logo trang chủ 2" />
-      </a>
-    </div>
-    <div class="navbar-right">
-      <div class="search-container">
-        <a id="searchToggle" class="search-toggle">
-          <i class="fas fa-search"></i> <span class="text">TÌM KIẾM</span>
-        </a>
-
-        <div id="searchBox" class="search-box">
-          <input type="text" id="searchInput" placeholder="Nội dung tìm kiếm" autocomplete="off" />
-          <div id="suggestions" class="suggestions"></div>
+        <div class="navbar-left">
+            <a href="../home.html"><i class="fa-solid fa-house"></i> TRANG CHỦ</a>
+            <a href="../pages/about.html">GIỚI THIỆU</a>
+            <a href="../pages/product.html">SẢN PHẨM</a>
+            <a href="../pages/baohanh.html">BẢO HÀNH</a>
         </div>
-      </div>
-      <a href="../menu/news.html">TIN TỨC</a>
-      <a href="../menu/contact.html">LIÊN HỆ</a>
-      <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ <span class="text">MENU</span></a>
 
-      <div class="menu" id="menu">
-        <span class="close-btn" onclick="toggleMenu()">&times;</span>
-        <h3>MENU</h3>
-        <a href="product.html#nc300">Máy tính MODEL NC300</a>
-        <a href="product.html#nc500">Máy tính MODEL NC500</a>
-        <a href="product.html#nc800">Máy tính MODEL NC800</a>
-
-        <a href="about.html">Giới thiệu</a>
-        <a href="../menu/news.html">Tin tức </a>
-        <a href="../menu/contact.html">Liên hệ</a>
-        <a href="baohanh.html">Bảo hành</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="menu-baohanh">
-    <strong><a href="baohanh.html">TRA CỨU HẠN BẢO HÀNH</a></strong>
-    <strong><a href="../baohanh_list/kichhoat.html">KÍCH HOẠT BẢO HÀNH</a></strong>
-    <strong><a href="../baohanh_list/yeucau.html">YÊU CẦU BẢO HÀNH, SỬA CHỮA</a></strong>
-    <strong><a href="../baohanh_list/tracuu.html">TRA CỨU BẢO HÀNH, SỬA CHỮA</a></strong>
-    <strong><a href="../baohanh_list/tram.html">TRẠM BẢO HÀNH</a></strong>
-    <strong><a href="../baohanh_list/huongdan.html">CHÍNH SÁCH & HƯỚNG DẪN</a></strong>
-  </div>
-
-  <h1 style="text-align: center; margin-top: 50px; color: #0481C3;"><strong>TRA CỨU HẠN BẢO HÀNH</strong></h1>
-  <p style="text-align: center;">Quý khách vui lòng điền đầy đủ thông tin vào mục dưới đây.</p>
-  <img class="baohanh-img" src="../img/baohanh1.jpg">
-
-  <form method="post" id="captchaForm" autocomplete="off">
-    <div class="form-group">
-      <label for="serialInput"><strong>Số serial:</strong></label>
-      <input type="text" id="serialInput" name="serialInput" placeholder="Nhập số serial" required>
-    </div>
-
-    <div class="form-group">
-      <label for="captchaInput"><strong>Mã xác nhận:</strong></label>
-      <input type="text" id="captchaInput" name="captchaInput" placeholder="Nhập mã xác nhận" required>
-    </div>
-
-    <div class="form-group">
-      <div class="captcha-inline">
-        <div id="captchaCode" class="captcha"></div>
-        <i class="fas fa-arrow-rotate-right reset-icon" onclick="generateCaptcha()" title="Tạo lại mã"></i>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit">Tra cứu</button>
-    </div>
-  </form>
-
-  <div class="media-block">
-    <div class="media-item">
-      <div class="media-inner">
-        <p class="media-heading">Like và truy cập fanpage THÁNH GIÓNG để cập nhật chương trình khuyến mại và tin tức sớm
-          nhất</p>
-        <div class="media-content">
-          <div class="fanpage">
-            <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" class="fanpage-link">
-              <div class="fanpage-box">
-                <img src="../img/fanpage.jpg" alt="Fanpage" class="fanpage-img" />
-
-                <!-- Góc trên trái: logo + tên + lượt theo dõi -->
-                <div class="fanpage-info">
-                  <img src="../img/main-fb.jpg" alt="Logo" class="fanpage-logo" />
-                  <div class="fanpage-text">
-                    <h3>Máy Tính Thánh Gióng</h3>
-                    <p>928 người theo dõi</p>
-                  </div>
-                </div>
-
-                <!-- Góc trái dưới: nút theo dõi -->
-                <div class="fanpage-follow"><i class="fab fa-facebook"></i> Theo dõi Trang</div>
-
-                <!-- Góc phải dưới: nút chia sẻ -->
-                <div class="fanpage-share"><i class="fa-solid fa-share"></i> Chia sẻ</div>
-              </div>
+        <div class="navbar-center">
+            <a href="../home.html">
+                <img src="../img/main-img/logo_maytinh.jpg" alt="Logo trang chủ 2" />
             </a>
-          </div>
         </div>
-      </div>
-    </div>
+        <div class="navbar-right">
+            <div class="search-container">
+                <a id="searchToggle" class="search-toggle">
+                    <i class="fas fa-search"></i> <span class="text">TÌM KIẾM</span>
+                </a>
 
-    <div class="media-item">
-      <div class="media-inner">
-        <p class="media-heading">Cùng THÁNH GIÓNG xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
-        <div class="media-content">
-          <a href="https://www.youtube.com/@daotaothanhgiong7894" target="_blank" class="youtube-button">
-            <div class="youtube-icon-box">
-              <i class="fab fa-youtube"></i>
+                <div id="searchBox" class="search-box">
+                    <input type="text" id="searchInput" placeholder="Nội dung tìm kiếm" autocomplete="off" />
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
             </div>
-            <span class="youtube-label">THÁNH GIÓNG GROUP</span>
-          </a>
+            <a href="../menu/news.html">TIN TỨC</a>
+            <a href="../menu/contact.html">LIÊN HỆ</a>
+            <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ <span
+                    class="text">MENU</span></a>
+
+            <div class="menu" id="menu">
+                <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                <h3>MENU</h3>
+                <a href="../pages/product.html#nc300">Máy tính MODEL NC300</a>
+                <a href="../pages/product.html#nc500">Máy tính MODEL NC500</a>
+                <a href="../pages/product.html#nc800">Máy tính MODEL NC800</a>
+
+                <a href="../pages/about.html">Giới thiệu</a>
+                <a href="../menu/news.html">Tin tức </a>
+                <a href="../menu/contact.html">Liên hệ</a>
+                <a href="../pages/baohanh.html">Bảo hành</a>
+            </div>
         </div>
-      </div>
     </div>
 
-    <div class="media-item">
-      <div class="media-inner">
-        <p class="media-heading">Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
-        <div class="media-content">
-          <form class="email-form" onsubmit="return false;">
-            <input type="email" placeholder="Nhập email của bạn" required />
-            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
-          </form>
+    <div class="menu-baohanh">
+        <strong><a href="baohanh.html">TRA CỨU BẢO HÀNH, SỬA CHỮA</a></strong>
+        <strong><a href="../baohanh_list/kichhoat.html">KÍCH HOẠT BẢO HÀNH, SỬA CHỮA</a></strong>
+        <strong><a href="../baohanh_list/yeucau.html">YÊU CẦU BẢO HÀNH, SỬA CHỮA</a></strong>
+        <strong><a href="../baohanh_list/tram.html">TRẠM BẢO HÀNH, SỬA CHỮA</a></strong>
+        <strong><a href="../baohanh_list/huongdan.html">CHÍNH SÁCH & HƯỚNG DẪN</a></strong>
+    </div>
+
+    <h1 style="text-align: center; margin-top: 50px; color: #0082C6; font-weight: bold;">TRA CỨU BẢO HÀNH, SỬA CHỮA</h1>
+    <p style="text-align: center;">Quý khách vui lòng điền đầy đủ thông tin vào mục dưới đây.</p>
+    <img class="baohanh-img" src="../img/baohanh1.jpg">
+    <form method="post" id="captchaForm" autocomplete="off">
+        <div class="form-group">
+            <label for="serialInput"><strong>Số serial:</strong></label>
+            <input type="text" id="serialInput" name="serialInput" placeholder="Nhập số serial" required>
         </div>
-      </div>
+
+        <div class="form-group">
+            <label for="captchaInput"><strong>Mã xác nhận:</strong></label>
+            <input type="text" id="captchaInput" name="captchaInput" placeholder="Nhập mã xác nhận" required>
+        </div>
+
+        <div class="form-group">
+            <div class="captcha-inline">
+                <div id="captchaCode" class="captcha"></div>
+                <i class="fas fa-arrow-rotate-right reset-icon" onclick="generateCaptcha()" title="Tạo lại mã"></i>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Tra cứu</button>
+        </div>
+    </form>
+
+    <div class="baohanh-info-container">
+        <!-- Cột: Thông tin sản phẩm -->
+        <div class="product-info">
+            <h2>Thông tin sản phẩm</h2>
+            <label>Tên sản phẩm:
+                <input type="text" readonly>
+            </label>
+            <label>Mã bảo hành:
+                <input type="text" readonly>
+            </label>
+            <label>Ngày kích hoạt bảo hành:
+                <input type="text" readonly>
+            </label>
+            <label>Hạn bảo hành đến ngày:
+                <input type="text" readonly>
+            </label>
+            <label>Thông số kỹ thuật:
+                <textarea readonly></textarea>
+            </label>
+        </div>
+
+        <!-- Cột: Thông tin khách hàng -->
+        <div class="customer-info">
+            <h2>Thông tin khách hàng</h2>
+            <label>Tên khách hàng:
+                <input type="text" readonly>
+            </label>
+            <label>Ngày / tháng / năm sinh:
+                <input type="text" readonly>
+            </label>
+            <label>Số điện thoại:
+                <input type="tel" readonly>
+            </label>
+            <label>Email:
+                <input type="email" readonly>
+            </label>
+            <label>Địa chỉ:
+                <textarea readonly></textarea>
+            </label>
+        </div>
     </div>
-  </div>
 
-  <div class="contact">
-    <div class="office">
-      <h3>HÀ NỘI OFFICE</h3>
-      <p><strong>Địa chỉ:</strong> Trụ sở số 34/90 Láng Hạ - Đống Đa, Hà Nội , VPGD số 37/97 Nguyễn Chí Thanh,
-        Đống Đa, Hà Nội</p>
-      <p><strong>Điện thoại:</strong> 024-3.5143.999 - 0993888000</p>
-      <p><strong>Fax:</strong> 024-3.5146.989</p>
-      <p><strong>Email:</strong> nampt@thanhgiong.com.vn</p>
+    <div class="media-block">
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Like và truy cập fanpage THÁNH GIÓNG để cập nhật chương trình khuyến mại và tin
+                    tức sớm
+                    nhất</p>
+                <div class="media-content">
+                    <div class="fanpage">
+                        <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" class="fanpage-link">
+                            <div class="fanpage-box">
+                                <img src="../img/fanpage.jpg" alt="Fanpage" class="fanpage-img" />
+
+                                <!-- Góc trên trái: logo + tên + lượt theo dõi -->
+                                <div class="fanpage-info">
+                                    <img src="../img/main-fb.jpg" alt="Logo" class="fanpage-logo" />
+                                    <div class="fanpage-text">
+                                        <h3>Máy Tính Thánh Gióng</h3>
+                                        <p>928 người theo dõi</p>
+                                    </div>
+                                </div>
+
+                                <!-- Góc trái dưới: nút theo dõi -->
+                                <div class="fanpage-follow"><i class="fab fa-facebook"></i> Theo dõi Trang</div>
+
+                                <!-- Góc phải dưới: nút chia sẻ -->
+                                <div class="fanpage-share"><i class="fa-solid fa-share"></i> Chia sẻ</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Cùng THÁNH GIÓNG xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
+                <div class="media-content">
+                    <a href="https://www.youtube.com/@daotaothanhgiong7894" target="_blank" class="youtube-button">
+                        <div class="youtube-icon-box">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <span class="youtube-label">THÁNH GIÓNG GROUP</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
+                <div class="media-content">
+                    <form class="email-form" onsubmit="return false;">
+                        <input type="email" placeholder="Nhập email của bạn" required />
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="office">
-      <h3>FACTORY IN CITY</h3>
-      <p><strong>Địa chỉ:</strong> Lô A2 CN5 CCN tập trung vừa và nhỏ Từ Liêm, Minh Khai, Bắc Từ Liêm, HN.
-      </p>
-      <p><strong>Điện thoại:</strong> 024-3.868.0000 - 0915598000</p>
-      <p><strong>Fax:</strong> 024-3.868.0000</p>
-      <p><strong>Email:</strong> nhamay@thanhgiong.com.vn</p>
+    <div class="contact">
+        <div class="office">
+            <h3>HÀ NỘI OFFICE</h3>
+            <p><strong>Địa chỉ:</strong> Trụ sở số 34/90 Láng Hạ - Đống Đa, Hà Nội , VPGD số 37/97 Nguyễn Chí Thanh,
+                Đống Đa, Hà Nội</p>
+            <p><strong>Điện thoại:</strong> 024-3.5143.999 - 0993888000</p>
+            <p><strong>Fax:</strong> 024-3.5146.989</p>
+            <p><strong>Email:</strong> nampt@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>FACTORY IN CITY</h3>
+            <p><strong>Địa chỉ:</strong> Lô A2 CN5 CCN tập trung vừa và nhỏ Từ Liêm, Minh Khai, Bắc Từ Liêm, HN.
+            </p>
+            <p><strong>Điện thoại:</strong> 024-3.868.0000 - 0915598000</p>
+            <p><strong>Fax:</strong> 024-3.868.0000</p>
+            <p><strong>Email:</strong> nhamay@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>ĐÀ NẴNG OFFICE</h3>
+            <p><strong>Địa chỉ:</strong> K80/18 Lê Hữu Trác, P.An Hải Đông, Q.Sơn Trà, Tp.Đà Nẵng</p>
+            <p><strong>Điện thoại:</strong> 02363.667.888 - 0946.001.002</p>
+            <p><strong>Fax:</strong> 02363.667.888</p>
+            <p><strong>Email:</strong> danang-office@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>TP.HỒ CHÍ MINH OFFICE</h3>
+            <p><strong>Địa chỉ:</strong> Lầu 8, Lô A, Tòa nhà Waseco, số 10 Phổ Quang, Phường 2, Q. Tân Bình, TP. Hồ Chí
+                Minh</p>
+            <p><strong>Điện thoại:</strong> 091 811 8233 - 094 839 8000</p>
+            <p><strong>Fax:</strong> </p>
+            <p><strong>Email:</strong> sangnt@teleq.com.vn</p>
+        </div>
+
     </div>
 
-    <div class="office">
-      <h3>ĐÀ NẴNG OFFICE</h3>
-      <p><strong>Địa chỉ:</strong> K80/18 Lê Hữu Trác, P.An Hải Đông, Q.Sơn Trà, Tp.Đà Nẵng</p>
-      <p><strong>Điện thoại:</strong> 02363.667.888 - 0946.001.002</p>
-      <p><strong>Fax:</strong> 02363.667.888</p>
-      <p><strong>Email:</strong> danang-office@thanhgiong.com.vn</p>
-    </div>
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">
+        ↑
+    </button>
 
-    <div class="office">
-      <h3>TP.HỒ CHÍ MINH OFFICE</h3>
-      <p><strong>Địa chỉ:</strong> Lầu 8, Lô A, Tòa nhà Waseco, số 10 Phổ Quang, Phường 2, Q. Tân Bình, TP. Hồ Chí
-        Minh</p>
-      <p><strong>Điện thoại:</strong> 091 811 8233 - 094 839 8000</p>
-      <p><strong>Fax:</strong> </p>
-      <p><strong>Email:</strong> sangnt@teleq.com.vn</p>
-    </div>
-
-  </div>
-
-  <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">
-    ↑
-  </button>
-
-  <script src="../script/home.js"></script>
-  <script src="../script/baohanh.js"></script>
-  <script src="../script/product.js"></script>
-  <script src="../script/navbar.js"></script>
+    <script src="../script/home.js"></script>
+    <script src="../script/baohanh.js"></script>
+    <script src="../script/product.js"></script>
+    <script src="../script/navbar.js"></script>
 
 </body>
 

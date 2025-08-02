@@ -65,11 +65,10 @@
   </div>
 
   <div class="menu-baohanh">
-    <strong><a href="../pages/baohanh.html">TRA CỨU HẠN BẢO HÀNH</a></strong>
-    <strong><a href="kichhoat.html">KÍCH HOẠT BẢO HÀNH</a></strong>
+    <strong><a href="../pages/baohanh.html">TRA CỨU BẢO HÀNH, SỬA CHỮA</a></strong>
+    <strong><a href="kichhoat.html">KÍCH HOẠT BẢO HÀNH, SỬA CHỮA</a></strong>
     <strong><a href="yeucau.html">YÊU CẦU BẢO HÀNH, SỬA CHỮA</a></strong>
-    <strong><a href="tracuu.html">TRA CỨU BẢO HÀNH, SỬA CHỮA</a></strong>
-    <strong><a href="tram.html">TRẠM BẢO HÀNH</a></strong>
+    <strong><a href="tram.html">TRẠM BẢO HÀNH, SỬA CHỮA</a></strong>
     <strong><a href="huongdan.html">CHÍNH SÁCH & HƯỚNG DẪN</a></strong>
   </div>
 
@@ -79,7 +78,10 @@
 
     <div class="form-row">
       <label for="serial">Số serial:</label>
-      <input type="text" id="serial" name="serial" placeholder="Nhập số serial" required />
+      <div class="serial-check-wrapper">
+        <input type="text" id="serial" name="serial" placeholder="Nhập số serial" required />
+        <button type="button" id="checkSerialBtn" class="btn btn-dark">Kiểm tra</button>
+      </div>
     </div>
 
     <div class="form-row">
@@ -299,42 +301,50 @@
   </script>
 
   <script>
-  const imageInput = document.getElementById("image");
-  const imagePreview = document.getElementById("imagePreview");
+    const imageInput = document.getElementById("image");
+    const imagePreview = document.getElementById("imagePreview");
 
-  imageInput.addEventListener("change", function () {
-    const files = Array.from(this.files);
+    imageInput.addEventListener("change", function () {
+      const files = Array.from(this.files);
 
-    files.forEach((file) => {
-      const reader = new FileReader();
+      files.forEach((file) => {
+        const reader = new FileReader();
 
-      reader.onload = function (e) {
-        const container = document.createElement("div");
-        container.className = "preview-container";
+        reader.onload = function (e) {
+          const container = document.createElement("div");
+          container.className = "preview-container";
 
-        const img = document.createElement("img");
-        img.src = e.target.result;
+          const img = document.createElement("img");
+          img.src = e.target.result;
 
-        const deleteBtn = document.createElement("button");
-        deleteBtn.className = "delete-btn";
-        deleteBtn.innerText = "×";
-        deleteBtn.onclick = function () {
-          container.remove();
+          const deleteBtn = document.createElement("button");
+          deleteBtn.className = "delete-btn";
+          deleteBtn.innerText = "×";
+          deleteBtn.onclick = function () {
+            container.remove();
+          };
+
+          container.appendChild(img);
+          container.appendChild(deleteBtn);
+          imagePreview.appendChild(container);
         };
 
-        container.appendChild(img);
-        container.appendChild(deleteBtn);
-        imagePreview.appendChild(container);
-      };
+        reader.readAsDataURL(file);
+      });
 
-      reader.readAsDataURL(file);
+      // Reset lại input để có thể chọn lại ảnh cũ nếu cần
+      this.value = "";
     });
+  </script>
 
-    // Reset lại input để có thể chọn lại ảnh cũ nếu cần
-    this.value = "";
-  });
-</script>
-
+  <script>
+    document.getElementById("checkSerialBtn").addEventListener("click", function () {
+      const serial = document.getElementById("serial").value.trim();
+      if (!serial) {
+        alert("Vui lòng nhập số serial trước khi kiểm tra.");
+      }
+    });
+  </script>
 
 </body>
 

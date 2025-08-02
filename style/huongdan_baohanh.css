@@ -2,7 +2,6 @@
   text-align: center;
   margin-top: 50px;
   font-weight: bold;
-  font-size: 32px;
   color: #0082C6;
 }
 
@@ -18,6 +17,7 @@
   max-width: 100%;
   height: auto;
   margin: 3% auto 30px;
+  border: 1px solid black;
 }
 
 .container {
