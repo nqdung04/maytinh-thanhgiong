@@ -174,10 +174,10 @@ body {
 }
 
 .product img {
-  width: 90%;          /* Giãn ngang hết khung cha */
-  height: auto;         /* Tự co chiều cao theo tỷ lệ */
-  object-fit: contain;  /* Hiển thị toàn bộ ảnh, không bị cắt */
-  border-radius: 5px;
+  width: 100%;       /* Chiều ngang chiếm toàn bộ khung */
+  height: auto;      /* Chiều cao tự động theo tỉ lệ ảnh gốc */
+  aspect-ratio: 16 / 9; /* Khung hình chữ nhật tỷ lệ 4:3 */
+  object-fit: cover; /* Cắt ảnh để vừa khung nếu cần */
   display: block;
 }
 
