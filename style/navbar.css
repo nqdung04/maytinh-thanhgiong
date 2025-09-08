@@ -176,7 +176,7 @@
 
 /* Khi mở */
 .search-box.open {
-  width: 350px;
+  width: 400px;
   opacity: 1;
   pointer-events: auto;
 }

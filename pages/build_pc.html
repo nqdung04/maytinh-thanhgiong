@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xây dựng cấu hình</title>
+    <link rel="icon" href="../img/main-img/logo_maytinh.jpg" type="image" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style/build_pc.css" />
+    <link rel="stylesheet" href="../style/navbar.css" />
+    <link rel="stylesheet" href="../style/media.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-
         h1 {
             text-align: center;
-            color: #333;
+            color: #0082c6;
         }
 
         table {
-            width: 100%;
+            width: 90%;
+            margin-left: 5%;
             border-collapse: collapse;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px 15px;
             border-bottom: 1px solid #ddd;
             text-align: left;
+            font-weight: bold;
         }
 
-        th {
-            background-color: #4CAF50;
-            color: white;
+        td:first-child {
+            width: 20%;
+            /* cột trái */
+            border-right: 1px solid #ddd;
+            /* nét ngăn cách dọc */
         }
 
-        tr:hover {
-            background-color: #f1f1f1;
+        td:last-child {
+            width: 80%;
+            /* cột phải */
         }
 
         a.choose-link {
@@ -54,105 +60,288 @@
         }
     </style>
 </head>
+
 <body>
-    <h1>Xây dựng cấu hình</h1>
+    <div class="navbar">
+
+        <div class="navbar-left">
+            <a href="../home.html"><i class="fa-solid fa-house"></i> TRANG CHỦ</a>
+            <a href="about.html">GIỚI THIỆU</a>
+            <a href="product.html">SẢN PHẨM</a>
+            <a href="baohanh.html" target="_blank">BẢO HÀNH</a>
+        </div>
+
+        <div class="navbar-center">
+            <a href="../home.html">
+                <img src="../img/main-img/logo_maytinh.jpg" alt="Logo trang chủ 2" />
+            </a>
+        </div>
+        <div class="navbar-right">
+            <div class="search-container">
+                <a id="searchToggle" class="search-toggle">
+                    <i class="fas fa-search"></i> <span class="text">TÌM KIẾM</span>
+                </a>
+
+                <div id="searchBox" class="search-box">
+                    <input type="text" id="searchInput" placeholder="Nội dung tìm kiếm" autocomplete="off" />
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+            </div>
+            <a href="build_pc.html">BUILD PC</a>
+            <a href="../menu/news.html">TIN TỨC</a>
+            <a href="../menu/contact.html">LIÊN HỆ</a>
+            <a href="javascript:void(0);" class="menu-toggle" onclick="toggleMenu()">☰ <span
+                    class="text">MENU</span></a>
+
+            <div class="menu" id="menu">
+                <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                <h3>MENU</h3>
+                <a href="product.html#nc300">Máy tính MODEL NC300</a>
+                <a href="product.html#nc500">Máy tính MODEL NC500</a>
+                <a href="product.html#nc800">Máy tính MODEL NC800</a>
+
+                <a href="about.html">Giới thiệu</a>
+                <a href="../menu/news.html">Tin tức </a>
+                <a href="../menu/contact.html">Liên hệ</a>
+                <a href="baohanh.html" target="_blank">Bảo hành</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="product.html" class="banner">
+        <img src="../img/banner2.jpeg" class="banner-img" />
+    </a>
+
+    <h1>Build PC - Xây dựng cấu hình máy tính</h1>
+    <p>Vui lòng chọn linh kiện bạn cần để xây dựng cấu hình máy tính riêng cho bạn</p>
     <table>
         <tr>
-            <th>Thành phần</th>
-            <th>Hành động</th>
+            <td>1. Bộ vi xử lý</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Bộ vi xử lý <span class="highlight">GIÁ SỐC NHẤT THỊ TRƯỜNG</span></td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>2. Bo mạch chủ</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Bo mạch chủ</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>3. RAM</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>RAM</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>4. HDD</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>HDD</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>5. SSD</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>SSD</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>6. VGA</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>VGA <span class="highlight">GIÁ SIÊU TỐT</span></td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>7. VGA Like New</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>VGA Like New</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>8. Nguồn</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Nguồn</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>9. Vỏ Case</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Vỏ Case</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>10. Màn hình</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Màn hình</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>11. Bàn phím</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Bộ bàn phím, chuột</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>12. Chuột</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Bàn phím</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>13. Tai nghe</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Chuột</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>14. Loa</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Tai nghe</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>15. Quạt Làm Mát</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Loa</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>16. Tản Nhiệt khí</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Ghế Gaming</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>17. Tản nhiệt nước</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Quạt Làm Mát</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>18. Thiết bị mạng</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Tản Nhiệt khí</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>19. Windows bản quyền</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
         <tr>
-            <td>Tản nhiệt nước All in One</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
-        </tr>
-        <tr>
-            <td>Tản nhiệt nước Custom</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
-        </tr>
-        <tr>
-            <td>Thiết bị mạng</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
-        </tr>
-        <tr>
-            <td>Windows bản quyền</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
-        </tr>
-        <tr>
-            <td>Phần mềm Antivirus</td>
-            <td><a href="#" class="choose-link">+Chọn...</a></td>
+            <td>20. Phần mềm Antivirus</td>
+            <td><a href="#" class="choose-link">+ Chọn...</a></td>
         </tr>
     </table>
+
+    <div>
+        <h3>Tóm tắt đơn hàng</h3>
+        <h3>Tổng chi phí dự tính: 0 ₫</h3>
+    </div>
+
+    <div>
+        <button>TẢI ẢNH CẤU HÌNH</button>
+        <button>TẢI FILE EXCEL CẤU HÌNH</button>
+        <button>XEM & IN</button>
+    </div>
+
+    <div class="media-block">
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Like và truy cập fanpage THÁNH GIÓNG để cập nhật chương trình khuyến mại và tin
+                    tức sớm
+                    nhất</p>
+                <div class="media-content">
+                    <div class="fanpage">
+                        <a href="https://www.facebook.com/ThanhGiongComputer/" target="_blank" class="fanpage-link">
+                            <div class="fanpage-box">
+                                <img src="../img/fanpage.jpg" alt="Fanpage" class="fanpage-img" />
+
+                                <!-- Góc trên trái: logo + tên + lượt theo dõi -->
+                                <div class="fanpage-info">
+                                    <img src="../img/main-fb.jpg" alt="Logo" class="fanpage-logo" />
+                                    <div class="fanpage-text">
+                                        <h3>Máy Tính Thánh Gióng</h3>
+                                        <p>928 người theo dõi</p>
+                                    </div>
+                                </div>
+
+                                <!-- Góc trái dưới: nút theo dõi -->
+                                <div class="fanpage-follow"><i class="fab fa-facebook"></i> Theo dõi Trang</div>
+
+                                <!-- Góc phải dưới: nút chia sẻ -->
+                                <div class="fanpage-share"><i class="fa-solid fa-share"></i> Chia sẻ</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Cùng THÁNH GIÓNG xem các chương trình phát sóng về giới thiệu về sản phẩm</p>
+                <div class="media-content">
+                    <a href="https://www.youtube.com/@daotaothanhgiong7894" target="_blank" class="youtube-button">
+                        <div class="youtube-icon-box">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <span class="youtube-label">THÁNH GIÓNG GROUP</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-item">
+            <div class="media-inner">
+                <p class="media-heading">Đăng ký để cập nhật những thông tin về dịch vụ mới, sự kiện và khuyến mãi</p>
+                <div class="media-content">
+                    <form class="email-form" onsubmit="return false;">
+                        <input type="email" placeholder="Nhập email của bạn" required />
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact">
+        <div class="office">
+            <h3>HÀ NỘI OFFICE</h3>
+            <p>
+                <strong>Địa chỉ:</strong> Trụ sở số 34/90 Láng Hạ - Đống Đa, Hà Nội ,
+                VPGD số 37/97 Nguyễn Chí Thanh, Đống Đa, Hà Nội
+            </p>
+            <p><strong>Điện thoại:</strong> 024-3.5143.999 - 0993888000</p>
+            <p><strong>Fax:</strong> 024-3.5146.989</p>
+            <p><strong>Email:</strong> nampt@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>FACTORY IN CITY</h3>
+            <p>
+                <strong>Địa chỉ:</strong> Lô A2 CN5 CCN tập trung vừa và nhỏ Từ Liêm,
+                Minh Khai, Bắc Từ Liêm, HN.
+            </p>
+            <p><strong>Điện thoại:</strong> 024-3.868.0000 - 0915598000</p>
+            <p><strong>Fax:</strong> 024-3.868.0000</p>
+            <p><strong>Email:</strong> nhamay@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>ĐÀ NẴNG OFFICE</h3>
+            <p>
+                <strong>Địa chỉ:</strong> K80/18 Lê Hữu Trác, P.An Hải Đông, Q.Sơn
+                Trà, Tp.Đà Nẵng
+            </p>
+            <p><strong>Điện thoại:</strong> 02363.667.888 - 0946.001.002</p>
+            <p><strong>Fax:</strong> 02363.667.888</p>
+            <p><strong>Email:</strong> danang-office@thanhgiong.com.vn</p>
+        </div>
+
+        <div class="office">
+            <h3>TP.HỒ CHÍ MINH OFFICE</h3>
+            <p>
+                <strong>Địa chỉ:</strong> Lầu 8, Lô A, Tòa nhà Waseco, số 10 Phổ
+                Quang, Phường 2, Q. Tân Bình, TP. Hồ Chí Minh
+            </p>
+            <p><strong>Điện thoại:</strong> 091 811 8233 - 094 839 8000</p>
+            <p><strong>Fax:</strong></p>
+            <p><strong>Email:</strong> sangnt@teleq.com.vn</p>
+        </div>
+    </div>
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Lên đầu trang">
+        ↑
+    </button>
+
+    <script>
+        // Khi cuộn trang, hiện nút nếu vượt 200px
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTopBtn");
+            if (
+                document.body.scrollTop > 200 ||
+                document.documentElement.scrollTop > 200
+            ) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Khi bấm nút, cuộn mượt lên đầu
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }
+    </script>
+    <script src="../script/build_pc.js"></script>
+    <script src="../script/navbar.js"></script>
+    <script src="../script/product.js"></script>
 </body>
+
 </html>
