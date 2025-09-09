@@ -11,6 +11,80 @@ body {
   display: block;
 }
 
+.choose-link {
+  display: inline-block;   /* bắt buộc để padding hoạt động */
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #0082c6;
+  color: white;            /* chữ trắng */
+  text-decoration: none;   /* bỏ gạch chân mặc định */
+  transition: background 0.3s;
+}
+
+.choose-link:hover {
+  background: #005b91;
+  color: white;
+  text-decoration: none;
+}
+
+
+/* Bảng tóm tắt */
+.summary-table {
+    width: 40%;                /* nhỏ gọn hơn bảng trên */
+    margin: 20px auto;         /* căn giữa */
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 5%;
+}
+
+.summary-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary-table tr:last-child td {
+    border-bottom: none;
+    font-weight: bold;
+    color: #FF4500;
+}
+
+/* Nhóm button */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px auto;
+    width: 50%;
+}
+
+/* áp dụng style cho cả button và a */
+.button-group button{
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    background: #0082c6;
+    color: white;
+    text-align: center;   /* canh giữa chữ */
+    text-decoration: none; /* bỏ gạch chân của link */
+    transition: background 0.3s;
+    display: inline-block; /* để a giống button */
+}
+
+.button-group button:hover{
+    background: #005b91;
+}
+
+
 .contact {
   margin-top: 60px;
   display: flex;

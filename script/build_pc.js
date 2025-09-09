@@ -1,9 +1,11 @@
-document.querySelectorAll("tr").forEach(function(row) {
-    const tdText = row.querySelector("td:first-child")?.innerText || "";
-    const link = row.querySelector(".choose-link");
-    if (link && tdText) {
-      // Tách phần tên sản phẩm sau số thứ tự
-      const name = tdText.replace(/^\d+\.\s*/, "").trim();
-      link.textContent = `+Chọn ${name}`;
+document.querySelectorAll('.choose-link').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.key;
+    const tpl = document.getElementById(key);
+    if (tpl) {
+      content.innerHTML = '';
+      content.appendChild(tpl.content.cloneNode(true));
+      overlay.classList.add('open');
     }
   });
+});
