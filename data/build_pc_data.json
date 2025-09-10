@@ -1,11 +1,82 @@
 [
-    {
-        "id": 0,
-        "name": "",
-        "code": "",
-        "baohanh": "",
-        "price": "",
-        "image": "",
-        "category": ""
-    }
+  {
+    "id": 1,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "4,500,000 ₫",
+    "priceNumber": 4500000,
+    "image": "../img/linhkien-img/cpu1.png",
+    "category": "cpu"
+  },
+  {
+    "id": 2,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "4,500,000 ₫",
+    "priceNumber": 4500000,
+    "image": "../img/products/cpu/i5-12400f.jpg",
+    "category": "cpu"
+  },
+  {
+    "id": 3,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "4,500,000 ₫",
+    "priceNumber": 4500000,
+    "image": "../img/products/cpu/i5-12400f.jpg",
+    "category": "cpu"
+  },
+  {
+    "id": 4,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "4,500,000 ₫",
+    "priceNumber": 4500000,
+    "image": "../img/products/cpu/i5-12400f.jpg",
+    "category": "cpu"
+  },
+  {
+    "id": 5,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "4,500,000 ₫",
+    "priceNumber": 4500000,
+    "image": "../img/products/cpu/i5-12400f.jpg",
+    "category": "cpu"
+  },
+  {
+    "id": 6,
+    "name": "MSI B660M Mortar",
+    "code": "MAIN001",
+    "baohanh": "36 tháng",
+    "price": "3,200,000 ₫",
+    "priceNumber": 3200000,
+    "image": "../img/products/main/b660m.jpg",
+    "category": "main"
+  },
+  {
+    "id": 7,
+    "name": "Corsair Vengeance 16GB DDR4",
+    "code": "RAM001",
+    "baohanh": "36 tháng",
+    "price": "1,500,000 ₫",
+    "priceNumber": 1500000,
+    "image": "../img/products/ram/corsair16.jpg",
+    "category": "ram"
+  },
+  {
+    "id": 8,
+    "name": "bamboo",
+    "code": "MOUSE001",
+    "baohanh": "24 tháng",
+    "price": "100,000 ₫",
+    "priceNumber": 100000,
+    "image": "../img/products/mouse/g102.jpg",
+    "category": "mouse"
+  }
 ]

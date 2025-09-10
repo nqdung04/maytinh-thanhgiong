@@ -85,6 +85,66 @@ body {
 }
 
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.overlay.active { display: flex; }
+
+.popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  max-height: 80vh;
+  overflow: auto;
+  position: relative;
+}
+.popup h3 { margin-top: 0; }
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.product {
+  padding: 6px;
+  border: 1px solid #ddd;
+  margin: 4px 0;
+  border-radius: 4px;
+}
+
+#filterBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.price-filter {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #0082c6;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.price-filter:hover {
+  background: #005b91;
+}
+
+
 .contact {
   margin-top: 60px;
   display: flex;
