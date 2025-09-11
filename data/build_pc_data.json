@@ -14,9 +14,9 @@
     "name": "Intel Core i5-12400F",
     "code": "CPU001",
     "baohanh": "36 tháng",
-    "price": "4,500,000 ₫",
-    "priceNumber": 4500000,
-    "image": "../img/products/cpu/i5-12400f.jpg",
+    "price": "310,000 ₫",
+    "priceNumber": 310000,
+    "image": "../img/linhkien-img/cpu1.png",
     "category": "cpu"
   },
   {
@@ -24,9 +24,9 @@
     "name": "Intel Core i5-12400F",
     "code": "CPU001",
     "baohanh": "36 tháng",
-    "price": "4,500,000 ₫",
-    "priceNumber": 4500000,
-    "image": "../img/products/cpu/i5-12400f.jpg",
+    "price": "60,000,000 ₫",
+    "priceNumber": 60000000,
+    "image": "../img/linhkien-img/cpu1.png",
     "category": "cpu"
   },
   {
@@ -34,13 +34,43 @@
     "name": "Intel Core i5-12400F",
     "code": "CPU001",
     "baohanh": "36 tháng",
-    "price": "4,500,000 ₫",
-    "priceNumber": 4500000,
-    "image": "../img/products/cpu/i5-12400f.jpg",
+    "price": "125,000 ₫",
+    "priceNumber": 125000,
+    "image": "../img/linhkien-img/cpu1.png",
     "category": "cpu"
   },
   {
     "id": 5,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "6,900,000 ₫",
+    "priceNumber": 6900000,
+    "image": "../img/linhkien-img/cpu1.png",
+    "category": "cpu"
+  },
+  {
+    "id": 6,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "2,000,000 ₫",
+    "priceNumber": 2000000,
+    "image": "../img/linhkien-img/cpu1.png",
+    "category": "cpu"
+  },
+  {
+    "id": 7,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "5,000,000 ₫",
+    "priceNumber": 5000000,
+    "image": "../img/linhkien-img/cpu1.png",
+    "category": "cpu"
+  },
+  {
+    "id": 8,
     "name": "Intel Core i5-12400F",
     "code": "CPU001",
     "baohanh": "36 tháng",
@@ -50,7 +80,37 @@
     "category": "cpu"
   },
   {
-    "id": 6,
+    "id": 9,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "8,500,000 ₫",
+    "priceNumber": 8500000,
+    "image": "../img/products/cpu/i5-12400f.jpg",
+    "category": "cpu"
+  },
+  {
+    "id": 10,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "770,000,000 ₫",
+    "priceNumber": 770000000,
+    "image": "../img/products/cpu/i5-12400f.jpg",
+    "category": "cpu"
+  },
+  {
+    "id": 11,
+    "name": "Intel Core i5-12400F",
+    "code": "CPU001",
+    "baohanh": "36 tháng",
+    "price": "4,500,000 ₫",
+    "priceNumber": 4500000,
+    "image": "../img/products/cpu/i5-12400f.jpg",
+    "category": "cpu"
+  },
+  {
+    "id": 12,
     "name": "MSI B660M Mortar",
     "code": "MAIN001",
     "baohanh": "36 tháng",
@@ -60,7 +120,7 @@
     "category": "main"
   },
   {
-    "id": 7,
+    "id": 13,
     "name": "Corsair Vengeance 16GB DDR4",
     "code": "RAM001",
     "baohanh": "36 tháng",
@@ -70,7 +130,7 @@
     "category": "ram"
   },
   {
-    "id": 8,
+    "id": 14,
     "name": "bamboo",
     "code": "MOUSE001",
     "baohanh": "24 tháng",
