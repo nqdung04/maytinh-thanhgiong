@@ -282,7 +282,8 @@
   .navbar-left,
   .navbar-logo-left,
   .navbar-right>a[href*="news"],
-  .navbar-right>a[href*="contact"] {
+  .navbar-right>a[href*="contact"],
+  .navbar-right>a[href*="build_pc"] {
     display: none;
   }
 
