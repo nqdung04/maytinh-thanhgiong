@@ -16,6 +16,15 @@ const pagination     = document.getElementById("pagination");
 const sortSelect     = document.getElementById("sortSelect");
 const closeBtn       = document.getElementById("closeBtn");
 
+// ==== TÍNH TỔNG GIÁ ====
+const selectedItems  = {};   // key = category, value = priceNumber
+const totalCostEl    = document.getElementById("totalCost"); // <td id="totalCost">0 ₫</td>
+function updateTotalCost() {
+  const sum = Object.values(selectedItems).reduce((a,b)=>a+b,0);
+  totalCostEl.textContent = sum.toLocaleString() + " ₫";
+}
+// =======================
+
 let products         = [];
 let currentCategory  = null;
 let currentProducts  = [];
@@ -45,31 +54,36 @@ sortSelect.addEventListener("change", () => {
 });
 
 function applyFiltersAndSort() {
-  // lọc theo danh mục
   let list = products.filter(p => p.category === currentCategory);
 
-  // lọc theo khoảng giá (nếu có)
+  // Lọc theo khoảng giá (nếu có)
   if (activeRanges.size) {
     list = list.filter(p => {
       return Array.from(activeRanges).some(r => {
         if (r.endsWith("+")) return p.priceNumber >= parseInt(r);
-        const [min,max] = r.split("-").map(Number);
+        const [min, max] = r.split("-").map(Number);
         return p.priceNumber >= min && p.priceNumber <= max;
       });
     });
   }
 
-  // sắp xếp
-  list.sort((a,b)=>{
-    if (currentSort === "priceAsc")  return a.priceNumber - b.priceNumber || a.name.localeCompare(b.name);
-    if (currentSort === "priceDesc") return b.priceNumber - a.priceNumber || a.name.localeCompare(b.name);
-    if (currentSort === "status")    return (b.status - a.status) || a.name.localeCompare(b.name);
-    // mặc định A-Z
+  // Sắp xếp
+  list.sort((a, b) => {
+    if (currentSort === "priceAsc") {
+      return a.priceNumber - b.priceNumber || a.name.localeCompare(b.name);
+    }
+    if (currentSort === "priceDesc") {
+      return b.priceNumber - a.priceNumber || a.name.localeCompare(b.name);
+    }
+
+    // Mặc định (A-Z) — ƯU TIÊN còn hàng trước
+    if (a.status !== b.status) return b.status - a.status;
     return a.name.localeCompare(b.name);
   });
 
   return list;
 }
+
 
 function showProducts(category) {
   currentCategory = category;
@@ -127,6 +141,10 @@ function renderProducts() {
               ${product.name} - ${Number(product.priceNumber).toLocaleString()} ₫
             `;
           }
+          // --- Cập nhật tổng giá ---
+          selectedItems[cat] = Number(product.priceNumber);
+          updateTotalCost();
+          // -------------------------
           overlay.classList.remove("active");
         }
       });

@@ -205,7 +205,7 @@
         </tr>
         <tr>
             <td>Chi phí dự tính</td>
-            <td>0 ₫</td>
+            <td id="totalCost">0 ₫</td>
         </tr>
     </table>
 
@@ -373,15 +373,10 @@
                     <div class="sort-filter">
                         <label for="sortSelect">Sắp xếp:</label>
                         <select id="sortSelect">
-                            <option value="name">Mặc định (A-Z)</option>
+                            <option value="name">Mặc định</option>
                             <option value="priceAsc">Giá tăng dần</option>
                             <option value="priceDesc">Giá giảm dần</option>
                         </select>
-                    </div>
-                    <!-- Lọc tình trạng -->
-                    <div class="status-filter">
-                        <label><input type="checkbox" id="statusInStock" value="1"> Còn hàng</label>
-                        <label><input type="checkbox" id="statusOutStock" value="0"> Hết hàng</label>
                     </div>
                     <div id="pagination" class="pagination"></div>
                     <div id="productContent"></div>

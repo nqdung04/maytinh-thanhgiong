@@ -120,6 +120,7 @@
     "price": "3,200,000 ₫",
     "priceNumber": 3200000,
     "image": "../img/products/main/b660m.jpg",
+    "status": 1,
     "category": "main"
   },
   {
