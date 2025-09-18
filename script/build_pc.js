@@ -16,14 +16,58 @@ const pagination     = document.getElementById("pagination");
 const sortSelect     = document.getElementById("sortSelect");
 const closeBtn       = document.getElementById("closeBtn");
 
-// ==== TÍNH TỔNG GIÁ ====
-const selectedItems  = {};   // key = category, value = priceNumber
+// ==== QUẢN LÝ GIỎ HÀNG / TỔNG GIÁ ====
+/*
+  selectedItems[cat] = {
+     product: {...},
+     qty: number
+  }
+*/
+const selectedItems  = {};
 const totalCostEl    = document.getElementById("totalCost"); // <td id="totalCost">0 ₫</td>
 function updateTotalCost() {
-  const sum = Object.values(selectedItems).reduce((a,b)=>a+b,0);
+  let sum = 0;
+  Object.values(selectedItems).forEach(item => {
+    sum += item.product.priceNumber * item.qty;
+  });
   totalCostEl.textContent = sum.toLocaleString() + " ₫";
 }
-// =======================
+
+function renderSelectedItem(cat) {
+  const row = document.querySelector(`a.choose-link[data-cat="${cat}"]`);
+  if (!row) return;
+
+  const { product, qty } = selectedItems[cat];
+  const inStock = product.status === 1;
+
+  // Cho phép chiếm trọn chiều ngang của ô row
+  row.style.display = "block";        // dãn toàn bộ
+  row.style.padding = "8px";          // tùy chỉnh padding nếu muốn
+  row.style.textDecoration = "none";  // bỏ gạch chân link mặc định
+
+  row.innerHTML = `
+    <img src="${product.image}" style="width:50px;height:50px;object-fit:cover;vertical-align:middle;margin-right:8px;">
+    <strong>${product.name}</strong><br>
+    Mã: ${product.code}<br>
+    Bảo hành: ${product.baohanh}<br>
+    Tình trạng: <span style="color:${inStock?'green':'black'}">
+      ${inStock?'Còn hàng':'Hết hàng'}
+    </span><br>
+    <div style="margin-top:6px;">
+      Số lượng:
+      <input type="number" min="1" value="${qty}" data-cat="${cat}"
+             class="qty-input" style="width:60px;text-align:center;">
+      <span style="font-weight:bold;color:red;margin-left:6px;">
+        ${(product.priceNumber * qty).toLocaleString()} ₫
+      </span>
+      <button class="remove-btn" data-cat="${cat}"
+              style="float:right;background:none;border:none;cursor:pointer;font-size:16px;color:#c00;">
+        🗑️
+      </button>
+    </div>
+  `;
+}
+// ====================================
 
 let products         = [];
 let currentCategory  = null;
@@ -56,7 +100,7 @@ sortSelect.addEventListener("change", () => {
 function applyFiltersAndSort() {
   let list = products.filter(p => p.category === currentCategory);
 
-  // Lọc theo khoảng giá (nếu có)
+  // Lọc theo khoảng giá
   if (activeRanges.size) {
     list = list.filter(p => {
       return Array.from(activeRanges).some(r => {
@@ -75,8 +119,6 @@ function applyFiltersAndSort() {
     if (currentSort === "priceDesc") {
       return b.priceNumber - a.priceNumber || a.name.localeCompare(b.name);
     }
-
-    // Mặc định (A-Z) — ƯU TIÊN còn hàng trước
     if (a.status !== b.status) return b.status - a.status;
     return a.name.localeCompare(b.name);
   });
@@ -94,7 +136,7 @@ function showProducts(category) {
 }
 
 function renderProducts() {
-  currentProducts = applyFiltersAndSort(); // cập nhật mỗi lần render
+  currentProducts = applyFiltersAndSort();
   const start = (currentPage - 1) * itemsPerPage;
   const end   = start + itemsPerPage;
   const paginated = currentProducts.slice(start, end);
@@ -126,31 +168,47 @@ function renderProducts() {
         </div>`;
     }).join("");
 
-    // nút thêm (chỉ cho hàng còn)
+    // Gắn sự kiện cho nút thêm
     document.querySelectorAll(".add-btn:not([disabled])").forEach(btn => {
       btn.addEventListener("click", () => {
         const id  = btn.dataset.id;
         const cat = btn.dataset.cat;
         const product = products.find(p => p.id == id);
         if (product) {
-          const row = document.querySelector(`a.choose-link[data-cat="${cat}"]`);
-          if (row) {
-            row.innerHTML = `
-              <img src="${product.image}"
-                   style="width:40px;vertical-align:middle;margin-right:5px;">
-              ${product.name} - ${Number(product.priceNumber).toLocaleString()} ₫
-            `;
-          }
-          // --- Cập nhật tổng giá ---
-          selectedItems[cat] = Number(product.priceNumber);
+          selectedItems[cat] = { product, qty: 1 };
+          renderSelectedItem(cat);
           updateTotalCost();
-          // -------------------------
           overlay.classList.remove("active");
+          attachRowEvents(cat);
         }
       });
     });
   }
   renderPagination();
+}
+
+// Gắn sự kiện qty và xóa cho từng row
+function attachRowEvents(cat) {
+  const row = document.querySelector(`a.choose-link[data-cat="${cat}"]`);
+  if (!row) return;
+
+  row.querySelector(".qty-input").addEventListener("input", e => {
+    let val = parseInt(e.target.value) || 1;
+    if (val < 1) val = 1;
+    selectedItems[cat].qty = val;
+    updateTotalCost();
+    renderSelectedItem(cat);
+    attachRowEvents(cat); // gắn lại sự kiện sau khi re-render
+  });
+
+  row.querySelector(".remove-btn").addEventListener("click", () => {
+    if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
+      delete selectedItems[cat];
+      updateTotalCost();
+      // Trả lại text ban đầu
+      row.textContent = "Chọn linh kiện";
+    }
+  });
 }
 
 function renderPagination() {

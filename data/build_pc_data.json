@@ -6,50 +6,52 @@
     "baohanh": "36 tháng",
     "price": "4,500,000 ₫",
     "priceNumber": 4500000,
-    "image": "../img/linhkien-img/cpu1.png",
+    "image": "../img/linhkien-img/cpu/cpu1.png",
     "status": 1,
     "category": "cpu"
   },
   {
     "id": 2,
-    "name": "Intel Core i5-12400F",
-    "code": "CPU001",
+    "name": "CPU AMD Ryzen 9 7900X",
+    "code": "CPU002",
     "baohanh": "36 tháng",
     "price": "310,000 ₫",
     "priceNumber": 310000,
-    "image": "../img/linhkien-img/cpu1.png",
+    "image": "../img/linhkien-img/cpu/cpu2.webp",
     "status": 1,
     "category": "cpu"
   },
   {
     "id": 3,
-    "name": "Intel Core i5-12400F",
-    "code": "CPU001",
+    "name": "CPU AMD Ryzen 5 3400G",
+    "code": "CPU003",
     "baohanh": "36 tháng",
     "price": "60,000,000 ₫",
     "priceNumber": 60000000,
-    "image": "../img/linhkien-img/cpu1.png",
-    "status": 0,
+    "image": "../img/linhkien-img/cpu/cpu3.webp",
+    "status": 1,
     "category": "cpu"
   },
   {
     "id": 4,
-    "name": "Intel Core i5-12400F",
+    "name": "CPU Intel Core i5-10400F",
     "code": "CPU001",
     "baohanh": "36 tháng",
     "price": "125,000 ₫",
     "priceNumber": 125000,
-    "image": "../img/linhkien-img/cpu1.png",
+    "image": "../img/linhkien-img/cpu/cpu4.webp",
+    "status": 1,
     "category": "cpu"
   },
   {
     "id": 5,
-    "name": "Intel Core i5-12400F",
+    "name": "CPU Intel Core Ultra 9 285K",
     "code": "CPU001",
     "baohanh": "36 tháng",
     "price": "6,900,000 ₫",
     "priceNumber": 6900000,
-    "image": "../img/linhkien-img/cpu1.png",
+    "image": "../img/linhkien-img/cpu/cpu5.webp",
+    "status": 1,
     "category": "cpu"
   },
   {
@@ -59,7 +61,7 @@
     "baohanh": "36 tháng",
     "price": "2,000,000 ₫",
     "priceNumber": 2000000,
-    "image": "../img/linhkien-img/cpu1.png",
+    "image": "../img/linhkien-img/cpu/cpu1.png",
     "category": "cpu"
   },
   {
@@ -69,7 +71,7 @@
     "baohanh": "36 tháng",
     "price": "5,000,000 ₫",
     "priceNumber": 5000000,
-    "image": "../img/linhkien-img/cpu1.png",
+    "image": "../img/linhkien-img/cpu/cpu1.png",
     "category": "cpu"
   },
   {
