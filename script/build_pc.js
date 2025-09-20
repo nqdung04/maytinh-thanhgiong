@@ -10,11 +10,11 @@ document.querySelectorAll('.choose-link').forEach(btn => {
   });
 });
 
-const overlay        = document.getElementById("overlay");
+const overlay = document.getElementById("overlay");
 const productContent = document.getElementById("productContent");
-const pagination     = document.getElementById("pagination");
-const sortSelect     = document.getElementById("sortSelect");
-const closeBtn       = document.getElementById("closeBtn");
+const pagination = document.getElementById("pagination");
+const sortSelect = document.getElementById("sortSelect");
+const closeBtn = document.getElementById("closeBtn");
 
 // ==== QUẢN LÝ GIỎ HÀNG / TỔNG GIÁ ====
 /*
@@ -23,8 +23,8 @@ const closeBtn       = document.getElementById("closeBtn");
      qty: number
   }
 */
-const selectedItems  = {};
-const totalCostEl    = document.getElementById("totalCost"); // <td id="totalCost">0 ₫</td>
+const selectedItems = {};
+const totalCostEl = document.getElementById("totalCost"); // <td id="totalCost">0 ₫</td>
 function updateTotalCost() {
   let sum = 0;
   Object.values(selectedItems).forEach(item => {
@@ -40,42 +40,52 @@ function renderSelectedItem(cat) {
   const { product, qty } = selectedItems[cat];
   const inStock = product.status === 1;
 
-  // Cho phép chiếm trọn chiều ngang của ô row
-  row.style.display = "block";        // dãn toàn bộ
-  row.style.padding = "8px";          // tùy chỉnh padding nếu muốn
-  row.style.textDecoration = "none";  // bỏ gạch chân link mặc định
+  // Đặt nền trắng khi đã chọn
+  row.style.background = "#fff";
+  row.style.color = "#000";
+  row.style.display = "block";
+  row.style.padding = "10px";
 
+  // Bố cục flex: ảnh trái, thông tin phải
   row.innerHTML = `
-    <img src="${product.image}" style="width:50px;height:50px;object-fit:cover;vertical-align:middle;margin-right:8px;">
-    <strong>${product.name}</strong><br>
-    Mã: ${product.code}<br>
-    Bảo hành: ${product.baohanh}<br>
-    Tình trạng: <span style="color:${inStock?'green':'black'}">
-      ${inStock?'Còn hàng':'Hết hàng'}
-    </span><br>
-    <div style="margin-top:6px;">
-      Số lượng:
-      <input type="number" min="1" value="${qty}" data-cat="${cat}"
-             class="qty-input" style="width:60px;text-align:center;">
-      <span style="font-weight:bold;color:red;margin-left:6px;">
-        ${(product.priceNumber * qty).toLocaleString()} ₫
-      </span>
-      <button class="remove-btn" data-cat="${cat}"
-              style="float:right;background:none;border:none;cursor:pointer;font-size:16px;color:#c00;">
-        🗑️
-      </button>
+    <div style="display:flex;align-items:flex-start;gap:12px;">
+      <img src="${product.image}"
+           style="width:120px;height:120px;object-fit:cover;border-radius:6px;flex-shrink:0;">
+      <div style="flex:1;">
+        <strong style="font-size:16px;">${product.name}</strong><br>
+        Mã: ${product.code}<br>
+        Bảo hành: ${product.baohanh}<br>
+        Tình trạng:
+        <span style="color:${inStock ? 'green' : 'black'}">
+          ${inStock ? 'Còn hàng' : 'Hết hàng'}
+        </span>
+        <div style="margin-top:8px;display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            Số lượng:
+            <input type="number" min="1" value="${qty}" data-cat="${cat}"
+                   class="qty-input" style="width:60px;text-align:center;">
+            <span style="font-weight:bold;color:red;margin-left:6px;">
+              ${(product.priceNumber * qty).toLocaleString()} ₫
+            </span>
+          </div>
+          <button class="remove-btn" data-cat="${cat}"
+                  style="background:none;border:none;cursor:pointer;font-size:20px;color:#c00;">
+            🗑️
+          </button>
+        </div>
+      </div>
     </div>
   `;
 }
 // ====================================
 
-let products         = [];
-let currentCategory  = null;
-let currentProducts  = [];
-let currentPage      = 1;
-const itemsPerPage   = 10;
-let activeRanges     = new Set();
-let currentSort      = "name";   // mặc định A-Z
+let products = [];
+let currentCategory = null;
+let currentProducts = [];
+let currentPage = 1;
+const itemsPerPage = 10;
+let activeRanges = new Set();
+let currentSort = "name";   // mặc định A-Z
 
 // Load JSON
 fetch("../data/build_pc_data.json")
@@ -138,7 +148,7 @@ function showProducts(category) {
 function renderProducts() {
   currentProducts = applyFiltersAndSort();
   const start = (currentPage - 1) * itemsPerPage;
-  const end   = start + itemsPerPage;
+  const end = start + itemsPerPage;
   const paginated = currentProducts.slice(start, end);
 
   if (paginated.length === 0) {
@@ -154,15 +164,15 @@ function renderProducts() {
             <strong>${p.name}</strong><br>
             Mã SP: ${p.code}<br>
             Bảo hành: ${p.baohanh}<br>
-            Tình trạng: <span style="color:${inStock?'green':'black'};">
-              ${inStock?'Còn hàng':'Hết hàng'}
+            Tình trạng: <span style="color:${inStock ? 'green' : 'black'};">
+              ${inStock ? 'Còn hàng' : 'Hết hàng'}
             </span><br>
             <span style="color:red; font-weight: bold">${p.price}</span>
           </div>
           <button class="add-btn" data-id="${p.id}" data-cat="${p.category}"
-            ${inStock?"":"disabled"}
-            style="margin-top:5px;${inStock?"":"background:#ccc;cursor:not-allowed;"}">
-            ${inStock?"THÊM VÀO >":"✖ Hết hàng"}
+            ${inStock ? "" : "disabled"}
+            style="margin-top:5px;${inStock ? "" : "background:#ccc;cursor:not-allowed;"}">
+            ${inStock ? "THÊM VÀO >" : "✖ Hết hàng"}
           </button>
           <div style="clear:both"></div>
         </div>`;
@@ -171,7 +181,7 @@ function renderProducts() {
     // Gắn sự kiện cho nút thêm
     document.querySelectorAll(".add-btn:not([disabled])").forEach(btn => {
       btn.addEventListener("click", () => {
-        const id  = btn.dataset.id;
+        const id = btn.dataset.id;
         const cat = btn.dataset.cat;
         const product = products.find(p => p.id == id);
         if (product) {
@@ -188,27 +198,94 @@ function renderProducts() {
 }
 
 // Gắn sự kiện qty và xóa cho từng row
+// function attachRowEvents(cat) {
+//   const row = document.querySelector(`a.choose-link[data-cat="${cat}"]`);
+//   if (!row) return;
+
+//   row.querySelector(".qty-input").addEventListener("input", e => {
+//     let val = parseInt(e.target.value) || 1;
+//     if (val < 1) val = 1;
+//     selectedItems[cat].qty = val;
+//     updateTotalCost();
+//     renderSelectedItem(cat);
+//     attachRowEvents(cat); // gắn lại sự kiện sau khi re-render
+//   });
+
+//   row.querySelector(".remove-btn").addEventListener("click", () => {
+//     if (confirm("Bạn có chắc muốn bỏ sản phẩm này?")) {
+//       delete selectedItems[cat];
+//       updateTotalCost();
+//       // Trả lại text ban đầu
+//       row.textContent = "Chọn linh kiện";
+//     }
+//   });
+// }
+// Lưu HTML gốc của từng nút khi load
+// Lưu bản clone gốc
+const originalLinks = {};
+document.querySelectorAll("a.choose-link").forEach(a => {
+  originalLinks[a.dataset.cat] = a.cloneNode(true);
+  attachChooseEvent(a);
+});
+
+function attachChooseEvent(link) {
+  if (!link || link.dataset.chooseBound) return;
+  link.dataset.chooseBound = '1';
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const cat = e.currentTarget.dataset.cat;
+    openOverlayFor(cat);
+  });
+}
+
+function openOverlayFor(cat) {
+  // ví dụ mở overlay và load danh sách sản phẩm theo cat
+  const overlay = document.getElementById("overlay");
+  overlay.classList.add("open");
+  showProducts(cat); // nếu có hàm hiển thị sản phẩm
+}
+
 function attachRowEvents(cat) {
   const row = document.querySelector(`a.choose-link[data-cat="${cat}"]`);
   if (!row) return;
+  // tránh bind nhiều lần cho cùng 1 node
+  if (row.dataset.rowBound) return;
+  row.dataset.rowBound = '1';
 
-  row.querySelector(".qty-input").addEventListener("input", e => {
-    let val = parseInt(e.target.value) || 1;
-    if (val < 1) val = 1;
-    selectedItems[cat].qty = val;
-    updateTotalCost();
-    renderSelectedItem(cat);
-    attachRowEvents(cat); // gắn lại sự kiện sau khi re-render
-  });
+  const qty = row.querySelector('.qty-input');
+  if (qty && !qty.dataset.qtyBound) {
+    qty.dataset.qtyBound = '1';
+    qty.addEventListener('input', e => {
+      let val = parseInt(e.target.value, 10) || 1;
+      if (val < 1) val = 1;
+      selectedItems[cat].qty = val;
+      updateTotalCost();
+      renderSelectedItem(cat);
+      // renderSelectedItem có thể thay DOM -> re-attach
+      attachRowEvents(cat);
+    });
+  }
 
-  row.querySelector(".remove-btn").addEventListener("click", () => {
-    if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
+  const remove = row.querySelector('.remove-btn');
+  if (remove && !remove.dataset.removeBound) {
+    remove.dataset.removeBound = '1';
+    remove.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();   // 🔑 chặn sự kiện click nổi lên thẻ <a>
+
+      if (!confirm('Bạn có chắc muốn xóa sản phẩm này?')) return;
+
       delete selectedItems[cat];
       updateTotalCost();
-      // Trả lại text ban đầu
-      row.textContent = "Chọn linh kiện";
-    }
-  });
+
+      // Khôi phục link gốc
+      const restored = originalLinks[cat].cloneNode(true);
+      row.replaceWith(restored);
+
+      // Gắn lại sự kiện chọn cho link gốc
+      attachChooseEvent(restored);
+    });
+  }
 }
 
 function renderPagination() {
@@ -217,27 +294,27 @@ function renderPagination() {
   if (totalPages <= 1) return;
 
   let startPage = Math.max(1, currentPage - 2);
-  let endPage   = Math.min(totalPages, startPage + 4);
+  let endPage = Math.min(totalPages, startPage + 4);
   if (endPage - startPage < 4) startPage = Math.max(1, endPage - 4);
 
   let html = "";
-  if (currentPage > 1) html += `<button data-page="${currentPage-1}">«</button>`;
+  if (currentPage > 1) html += `<button data-page="${currentPage - 1}">«</button>`;
   for (let i = startPage; i <= endPage; i++) {
-    html += `<button data-page="${i}" class="${i===currentPage?"active":""}">${i}</button>`;
+    html += `<button data-page="${i}" class="${i === currentPage ? "active" : ""}">${i}</button>`;
   }
-  if (currentPage < totalPages) html += `<button data-page="${currentPage+1}">»</button>`;
+  if (currentPage < totalPages) html += `<button data-page="${currentPage + 1}">»</button>`;
 
   pagination.innerHTML = html;
-  pagination.querySelectorAll("button").forEach(b=>{
-    b.addEventListener("click",()=>{ currentPage = Number(b.dataset.page); renderProducts(); });
+  pagination.querySelectorAll("button").forEach(b => {
+    b.addEventListener("click", () => { currentPage = Number(b.dataset.page); renderProducts(); });
   });
 }
 
-closeBtn.addEventListener("click",()=>overlay.classList.remove("active"));
-overlay.addEventListener("click",e=>{ if(e.target===overlay) overlay.classList.remove("active"); });
+closeBtn.addEventListener("click", () => overlay.classList.remove("active"));
+overlay.addEventListener("click", e => { if (e.target === overlay) overlay.classList.remove("active"); });
 
 // ----- Lọc nhiều mức giá -----
-document.getElementById("priceFilterForm")?.addEventListener("change", e=>{
+document.getElementById("priceFilterForm")?.addEventListener("change", e => {
   const cb = e.target;
   if (cb && cb.type === "checkbox") {
     if (cb.checked) activeRanges.add(cb.value);

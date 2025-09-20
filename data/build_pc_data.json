@@ -116,33 +116,79 @@
   },
   {
     "id": 12,
-    "name": "MSI B660M Mortar",
+    "name": "Mainboard ASUS TUF GAMING X870-PLUS WIFI",
     "code": "MAIN001",
     "baohanh": "36 tháng",
     "price": "3,200,000 ₫",
     "priceNumber": 3200000,
-    "image": "../img/products/main/b660m.jpg",
+    "image": "../img/linhkien-img/main/main1.webp",
     "status": 1,
     "category": "main"
   },
   {
     "id": 13,
-    "name": "Corsair Vengeance 16GB DDR4",
-    "code": "RAM001",
+    "name": "Mainboard ASUS ProArt X870E-CREATOR WIFI",
+    "code": "MAIN002",
     "baohanh": "36 tháng",
     "price": "1,500,000 ₫",
     "priceNumber": 1500000,
-    "image": "../img/products/ram/corsair16.jpg",
-    "category": "ram"
+    "image": "../img/linhkien-img/main/main2.webp",
+    "status": 1,
+    "category": "main"
   },
   {
     "id": 14,
-    "name": "bamboo",
-    "code": "MOUSE001",
+    "name": "Mainboard ASUS Z790 AYW WIFI W DDR5",
+    "code": "MAIN003",
     "baohanh": "24 tháng",
-    "price": "100,000 ₫",
-    "priceNumber": 100000,
-    "image": "../img/products/mouse/g102.jpg",
-    "category": "mouse"
+    "price": "5,700,000 ₫",
+    "priceNumber": 5700000,
+    "image": "../img/linhkien-img/main/main3.webp",
+    "status": 1,
+    "category": "main"
+  },
+  {
+    "id": 15,
+    "name": "Mainboard Gigabyte H610M S2H V2 DDR4",
+    "code": "MAIN004",
+    "baohanh": "24 tháng",
+    "price": "2,100,000 ₫",
+    "priceNumber": 2100000,
+    "image": "../img/linhkien-img/main/main4.webp",
+    "status": 1,
+    "category": "main"
+  },
+  {
+    "id": 16,
+    "name": "RAM Desktop KINGSTON Fury Beast RGB (KF556C40BBAK2-32) 32GB (2x16GB) DDR5 5600MHz",
+    "code": "RAM001",
+    "baohanh": "24 tháng",
+    "price": "3,300,000 ₫",
+    "priceNumber": 3300000,
+    "image": "../img/linhkien-img/ram/ram1.webp",
+    "status": 1,
+    "category": "ram"
+  },
+  {
+    "id": 17,
+    "name": "RAM Desktop LEXAR (LD4AU008G-B3200GSST/LD4AU008G-B3200GSST) 8GB (1x8GB) DDR4 3200MHz",
+    "code": "RAM002",
+    "baohanh": "24 tháng",
+    "price": "700,000 ₫",
+    "priceNumber": 700000,
+    "image": "../img/linhkien-img/ram/ram2.webp",
+    "status": 1,
+    "category": "ram"
+  },
+  {
+    "id": 18,
+    "name": "RAM Desktop KINGMAX ARTHON X-HS&RGB (KM-LD54-5600-16GSRB36) 16GB (1x16GB) DDR5 5600MHz",
+    "code": "RAM003",
+    "baohanh": "24 tháng",
+    "price": "1,800,000 ₫",
+    "priceNumber": 1800000,
+    "image": "../img/linhkien-img/ram/ram3.webp",
+    "status": 1,
+    "category": "ram"
   }
 ]
