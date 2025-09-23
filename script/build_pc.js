@@ -34,49 +34,89 @@ function updateTotalCost() {
 }
 
 function renderSelectedItem(cat) {
-  const row = document.querySelector(`a.choose-link[data-cat="${cat}"]`);
-  if (!row) return;
+  const old = document.querySelector(
+    `a.choose-link[data-cat="${cat}"], div.choose-link[data-cat="${cat}"]`
+  );
+  if (!old) return;
 
   const { product, qty } = selectedItems[cat];
-  const inStock = product.status === 1;
+  const unitPrice = product.priceNumber;
 
-  // Đặt nền trắng khi đã chọn
-  row.style.background = "#fff";
-  row.style.color = "#000";
-  row.style.display = "block";
-  row.style.padding = "10px";
+  const container = document.createElement('div');
+  container.dataset.cat = cat;
+  container.className = old.className;
+  old.replaceWith(container);
 
-  // Bố cục flex: ảnh trái, thông tin phải
-  row.innerHTML = `
-    <div style="display:flex;align-items:flex-start;gap:12px;">
-      <img src="${product.image}"
-           style="width:120px;height:120px;object-fit:cover;border-radius:6px;flex-shrink:0;">
+  container.style.cssText =
+    "background:#fff;color:#000;display:block;padding:10px;";
+
+  container.innerHTML = `
+    <div style="display:flex;gap:12px;">
+      <img src="${product.image}" style="width:120px;height:120px;object-fit:cover;border-radius:6px;">
       <div style="flex:1;">
-        <strong style="font-size:16px;">${product.name}</strong><br>
+        <strong>${product.name}</strong><br>
         Mã: ${product.code}<br>
         Bảo hành: ${product.baohanh}<br>
-        Tình trạng:
-        <span style="color:${inStock ? 'green' : 'black'}">
-          ${inStock ? 'Còn hàng' : 'Hết hàng'}
-        </span>
-        <div style="margin-top:8px;display:flex;align-items:center;justify-content:space-between;">
+        Kho hàng:
+          <span style="color:${product.status===1?'green':'black'}">
+            ${product.status===1?'Còn hàng':'Hết hàng'}
+          </span>
+        <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;">
           <div>
-            Số lượng:
-            <input type="number" min="1" value="${qty}" data-cat="${cat}"
+            ${unitPrice.toLocaleString()} ₫ ×
+            <input type="number" min="1" value="${qty}"
                    class="qty-input" style="width:60px;text-align:center;">
-            <span style="font-weight:bold;color:red;margin-left:6px;">
-              ${(product.priceNumber * qty).toLocaleString()} ₫
+            <span class="total-price" style="font-weight:bold;color:red;margin-left:6px;">
+              = ${(unitPrice * qty).toLocaleString()} ₫
             </span>
           </div>
-          <button class="remove-btn" data-cat="${cat}"
-                  style="background:none;border:none;cursor:pointer;font-size:20px;color:#c00;">
-            🗑️
-          </button>
+          <div style="display:flex;gap:6px;">
+            <button class="edit-btn"
+                    style="background:none;border:none;cursor:pointer;font-size:20px;color:#06c;">✏️</button>
+            <button class="remove-btn"
+                    style="background:none;border:none;cursor:pointer;font-size:20px;color:#c00;">🗑️</button>
+          </div>
         </div>
       </div>
     </div>
   `;
+
+  const qtyInput  = container.querySelector('.qty-input');
+  const totalSpan = container.querySelector('.total-price');
+
+  // Chỉ cho nhập số nguyên dương và auto về 1 ngay khi xóa hết
+  qtyInput.addEventListener('input', e => {
+    let cleaned = e.target.value.replace(/\D/g, ''); // lọc chỉ số
+    if (cleaned === '') {
+      // vừa xóa hết => đặt ngay về 1
+      cleaned = '1';
+    }
+    let val = parseInt(cleaned, 10);
+    if (val < 1 || isNaN(val)) val = 1;
+
+    e.target.value = val;
+    selectedItems[cat].qty = val;
+    totalSpan.textContent = "= " + (unitPrice * val).toLocaleString() + " ₫";
+    updateTotalCost();
+  });
+
+  container.querySelector('.edit-btn').addEventListener('click', e => {
+    e.preventDefault(); e.stopPropagation();
+    openOverlayFor(cat);
+  });
+
+  container.querySelector('.remove-btn').addEventListener('click', e => {
+    e.preventDefault(); e.stopPropagation();
+    if (confirm('Bạn có chắc muốn xóa sản phẩm này?')) {
+      delete selectedItems[cat];
+      updateTotalCost();
+      const restored = originalLinks[cat].cloneNode(true);
+      container.replaceWith(restored);
+      attachChooseEvent(restored);
+    }
+  });
 }
+
 // ====================================
 
 let products = [];
@@ -164,7 +204,7 @@ function renderProducts() {
             <strong>${p.name}</strong><br>
             Mã SP: ${p.code}<br>
             Bảo hành: ${p.baohanh}<br>
-            Tình trạng: <span style="color:${inStock ? 'green' : 'black'};">
+            Kho hàng: <span style="color:${inStock ? 'green' : 'black'};">
               ${inStock ? 'Còn hàng' : 'Hết hàng'}
             </span><br>
             <span style="color:red; font-weight: bold">${p.price}</span>
@@ -197,29 +237,6 @@ function renderProducts() {
   renderPagination();
 }
 
-// Gắn sự kiện qty và xóa cho từng row
-// function attachRowEvents(cat) {
-//   const row = document.querySelector(`a.choose-link[data-cat="${cat}"]`);
-//   if (!row) return;
-
-//   row.querySelector(".qty-input").addEventListener("input", e => {
-//     let val = parseInt(e.target.value) || 1;
-//     if (val < 1) val = 1;
-//     selectedItems[cat].qty = val;
-//     updateTotalCost();
-//     renderSelectedItem(cat);
-//     attachRowEvents(cat); // gắn lại sự kiện sau khi re-render
-//   });
-
-//   row.querySelector(".remove-btn").addEventListener("click", () => {
-//     if (confirm("Bạn có chắc muốn bỏ sản phẩm này?")) {
-//       delete selectedItems[cat];
-//       updateTotalCost();
-//       // Trả lại text ban đầu
-//       row.textContent = "Chọn linh kiện";
-//     }
-//   });
-// }
 // Lưu HTML gốc của từng nút khi load
 // Lưu bản clone gốc
 const originalLinks = {};
