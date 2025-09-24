@@ -11,15 +11,40 @@ body {
   display: block;
 }
 
+.button-refresh button {
+  flex: 1;
+  margin-left: 5%;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background: #0082c6;
+  color: white;
+  text-align: center;
+  /* canh giữa chữ */
+  text-decoration: none;
+  /* bỏ gạch chân của link */
+  transition: background 0.3s;
+  display: inline-block;
+  /* để a giống button */
+  font-weight: bold;
+}
+
+.button-refresh button:hover {
+  background: #005b91;
+}
+
 .choose-link {
-  display: inline-block;   /* bắt buộc để padding hoạt động */
+  display: inline-block;
+  /* bắt buộc để padding hoạt động */
   padding: 8px;
   font-size: 14px;
   border-radius: 6px;
   cursor: pointer;
   background: #0082c6;
-  color: white;            /* chữ trắng */
-  text-decoration: none;   /* bỏ gạch chân mặc định */
+  color: white;
+  /* chữ trắng */
+  text-decoration: none;
+  /* bỏ gạch chân mặc định */
   transition: background 0.3s;
 }
 
@@ -32,56 +57,61 @@ body {
 
 /* Bảng tóm tắt */
 .summary-table {
-    width: 40%;                /* nhỏ gọn hơn bảng trên */
-    margin: 20px auto;         /* căn giữa */
-    border-collapse: collapse;
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: left;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-right: 5%;
+  width: 40%;
+  /* nhỏ gọn hơn bảng trên */
+  margin: 20px auto;
+  /* căn giữa */
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 5%;
 }
 
 .summary-table td {
-    padding: 10px 15px;
-    border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
 }
 
 .summary-table tr:last-child td {
-    border-bottom: none;
-    font-weight: bold;
-    color: #FF4500;
+  border-bottom: none;
+  font-weight: bold;
+  color: #FF4500;
 }
 
 /* Nhóm button */
 .button-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 20px auto;
-    width: 50%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 20px auto;
+  width: 50%;
 }
 
 /* áp dụng style cho cả button và a */
-.button-group button{
-    flex: 1;
-    padding: 12px;
-    font-size: 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    border: none;
-    background: #0082c6;
-    color: white;
-    text-align: center;   /* canh giữa chữ */
-    text-decoration: none; /* bỏ gạch chân của link */
-    transition: background 0.3s;
-    display: inline-block; /* để a giống button */
+.button-group button {
+  flex: 1;
+  padding: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background: #0082c6;
+  color: white;
+  text-align: center;
+  /* canh giữa chữ */
+  text-decoration: none;
+  /* bỏ gạch chân của link */
+  transition: background 0.3s;
+  display: inline-block;
+  /* để a giống button */
+  font-weight: bold;
 }
 
-.button-group button:hover{
-    background: #005b91;
+.button-group button:hover {
+  background: #005b91;
 }
 
 
@@ -92,12 +122,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
+
 .overlay.active {
   display: flex;
 }
@@ -123,9 +154,12 @@ body {
   color: #fff;
   padding: 10px 15px;
 }
+
 .popup-header h3 {
   margin: 0;
+  font-weight: bold;
 }
+
 .close-btn {
   background: transparent;
   border: none;
@@ -137,17 +171,21 @@ body {
 /* Body */
 .popup-body {
   display: flex;
-  flex: 1;              /* chiếm hết phần còn lại của popup */
-  overflow: hidden;     /* tránh tràn ngoài */
+  flex: 1;
+  /* chiếm hết phần còn lại của popup */
+  overflow: hidden;
+  /* tránh tràn ngoài */
 }
 
 .filter {
   width: 300px;
   background: #f8f8f8;
   padding: 15px;
-  border-radius: 0;     /* bỏ bo góc để đồng bộ với popup */
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-  overflow-y: auto;     /* cuộn nếu lọc dài */
+  border-radius: 0;
+  /* bỏ bo góc để đồng bộ với popup */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  /* cuộn nếu lọc dài */
 }
 
 .filter h4 {
@@ -170,26 +208,32 @@ body {
 
 .price-filter-form input[type="checkbox"] {
   margin-right: 8px;
-  accent-color: #0082c6; /* màu xanh đồng bộ */
+  accent-color: #0082c6;
+  /* màu xanh đồng bộ */
 }
 
 .product-list {
-  flex: 1;              /* chiếm toàn bộ không gian còn lại */
+  flex: 1;
+  /* chiếm toàn bộ không gian còn lại */
   padding: 15px;
-  overflow-y: auto;     /* cho phần sản phẩm cuộn được */
+  overflow-y: auto;
+  /* cho phần sản phẩm cuộn được */
 }
+
 .product {
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
   display: flex;
   align-items: center;
 }
+
 .product img {
   width: 80px;
   height: 80px;
   object-fit: cover;
   margin-right: 10px;
 }
+
 .product button {
   margin-left: auto;
   padding: 5px 10px;
@@ -199,6 +243,7 @@ body {
   cursor: pointer;
   border-radius: 4px;
 }
+
 .product button:hover {
   background: #006699;
 }
@@ -206,7 +251,8 @@ body {
 /* Pagination */
 .pagination {
   display: flex;
-  justify-content: flex-end; /* nằm góc phải */
+  justify-content: flex-end;
+  /* nằm góc phải */
   align-items: center;
   margin-bottom: 10px;
   gap: 5px;
@@ -263,7 +309,8 @@ body {
 }
 
 #backToTopBtn {
-  display: none; /* Ẩn ban đầu */
+  display: none;
+  /* Ẩn ban đầu */
   position: fixed;
   bottom: 40px;
   right: 30px;

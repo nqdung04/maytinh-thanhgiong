@@ -50,6 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
       category: "nc800",
       link: linkPrefix + "product_nc800i.html",
     },
+    {
+      id: "nc900",
+      name: "Máy Tính Model NC900",
+      img: imgPrefix + "product-img/nc900.png",
+      category: "nc900",
+      link: linkPrefix + "product_nc900.html",
+    },
+    {
+      id: "nc900i",
+      name: "Máy Tính Model NC900i",
+      img: imgPrefix + "product-img/nc900i.png",
+      category: "nc900",
+      link: linkPrefix + "product_nc900i.html",
+    },
     // thêm nhiều sản phẩm ở đây
   ];
 
@@ -73,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       nc300: document.getElementById("nc300-container"),
       nc500: document.getElementById("nc500-container"),
       nc800: document.getElementById("nc800-container"),
+      nc900: document.getElementById("nc900-container"),
     };
 
     products.forEach((product) => {

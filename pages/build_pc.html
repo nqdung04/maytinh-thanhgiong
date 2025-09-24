@@ -95,10 +95,7 @@
             <div class="menu" id="menu">
                 <span class="close-btn" onclick="toggleMenu()">&times;</span>
                 <h3>MENU</h3>
-                <a href="product.html#nc300">Máy tính MODEL NC300</a>
-                <a href="product.html#nc500">Máy tính MODEL NC500</a>
-                <a href="product.html#nc800">Máy tính MODEL NC800</a>
-
+                <a href="product.html">Sản phẩm máy tính</a>
                 <a href="build_pc.html">Xây dựng cấu hình</a>
                 <a href="about.html">Giới thiệu</a>
                 <a href="../menu/news.html">Tin tức </a>
@@ -114,6 +111,21 @@
 
     <h1>Build PC - Xây dựng cấu hình máy tính</h1>
     <p>Vui lòng chọn linh kiện bạn cần để xây dựng cấu hình máy tính riêng cho bạn</p>
+
+    <div class="button-refresh">
+        <button id="refreshBtn">Làm mới <i class="fa fa-refresh"></i></button>
+    </div>
+
+    <table class="summary-table">
+        <tr>
+            <td colspan="2">Tóm tắt đơn hàng</td>
+        </tr>
+        <tr>
+            <td>Chi phí dự tính</td>
+            <td class="totalCost">0₫</td>
+        </tr>
+    </table>
+
     <table>
         <tr>
             <td>1. Bộ vi xử lý</td>
@@ -206,14 +218,14 @@
         </tr>
         <tr>
             <td>Chi phí dự tính</td>
-            <td id="totalCost">0 ₫</td>
+            <td class="totalCost">0₫</td>
         </tr>
     </table>
 
     <div class="button-group">
         <button>XEM & IN <i class="fa-solid fa-print"></i></button>
         <button>TẢI ẢNH CẤU HÌNH <i class="fa-solid fa-image"></i></button>
-        <button>THÊM VÀO GIỎ HÀNG <i class="fa-solid fa-cart-shopping"></i></button>
+        <button>TẢI FILE PDF CẤU HÌNH <i class="fa-solid fa-file-pdf"></i></button>
     </div>
 
     <div class="media-block">

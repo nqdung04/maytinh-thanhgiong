@@ -10,6 +10,29 @@ document.querySelectorAll('.choose-link').forEach(btn => {
   });
 });
 
+document.getElementById('refreshBtn').addEventListener('click', function () {
+  if (!confirm('Cảnh báo: Thao tác này sẽ xóa tất cả sản phẩm đã chọn')) return;
+
+  // 1️⃣ Xóa dữ liệu đang chọn
+  for (const cat in selectedItems) {
+    delete selectedItems[cat];
+  }
+
+  // 2️⃣ Cập nhật lại tổng giá
+  updateTotalCost();
+
+  // 3️⃣ Khôi phục từng dòng về đúng giao diện ban đầu
+  Object.entries(originalLinks).forEach(([cat, original]) => {
+    // Tìm phần tử hiện tại của danh mục này (có thể đang là <div> sau khi chọn)
+    const current = document.querySelector(`[data-cat="${cat}"]`);
+    if (current) {
+      const restored = original.cloneNode(true);      // clone bản gốc
+      current.replaceWith(restored);                 // thay thế
+      attachChooseEvent(restored);                   // gắn lại sự kiện click
+    }
+  });
+});
+
 const overlay = document.getElementById("overlay");
 const productContent = document.getElementById("productContent");
 const pagination = document.getElementById("pagination");
@@ -24,13 +47,17 @@ const closeBtn = document.getElementById("closeBtn");
   }
 */
 const selectedItems = {};
-const totalCostEl = document.getElementById("totalCost"); // <td id="totalCost">0 ₫</td>
+// const totalCostEl = document.getElementById("totalCost"); // <td id="totalCost">0 ₫</td>
 function updateTotalCost() {
   let sum = 0;
   Object.values(selectedItems).forEach(item => {
     sum += item.product.priceNumber * item.qty;
   });
-  totalCostEl.textContent = sum.toLocaleString() + " ₫";
+
+  // Cập nhật cho tất cả ô tổng giá
+  document.querySelectorAll('.totalCost').forEach(el => {
+    el.textContent = sum.toLocaleString() + '₫';
+  });
 }
 
 function renderSelectedItem(cat) {
@@ -96,7 +123,7 @@ function renderSelectedItem(cat) {
 
     e.target.value = val;
     selectedItems[cat].qty = val;
-    totalSpan.textContent = "= " + (unitPrice * val).toLocaleString() + " ₫";
+    totalSpan.textContent = "= " + (unitPrice * val).toLocaleString() + "₫";
     updateTotalCost();
   });
 
