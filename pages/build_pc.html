@@ -223,9 +223,14 @@
     </table>
 
     <div class="button-group">
-        <button>XEM & IN <i class="fa-solid fa-print"></i></button>
-        <button>TẢI ẢNH CẤU HÌNH <i class="fa-solid fa-image"></i></button>
-        <button>TẢI FILE PDF CẤU HÌNH <i class="fa-solid fa-file-pdf"></i></button>
+        <button id="saveConfigBtn">LƯU CẤU HÌNH <i class="fa-solid fa-save"></i></button>
+        <button id="export-jpg">TẢI ẢNH CẤU HÌNH <i class="fa-solid fa-image"></i></button>
+        <button id="openPDF" class="btn">
+            XEM & IN <i class="fa-solid fa-print"></i>
+        </button>
+        <button id="addToCartBtn" class="btn">
+            THÊM VÀO GIỎ HÀNG <i class="fa-solid fa-cart-shopping"></i>
+        </button>
     </div>
 
     <div class="media-block">
@@ -421,6 +426,47 @@
             });
         }
     </script>
+
+    <!-- Iframe ẩn để load trang báo giá -->
+    <iframe id="hidden-frame" src="../build_list/baogia.html" style="display:none;"></iframe>
+
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        document.getElementById("export-jpg").addEventListener("click", () => {
+            const iframe = document.getElementById("hidden-frame");
+
+            iframe.onload = () => {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                const quoteArea = iframeDoc.getElementById("quote-area");
+
+                if (!quoteArea) {
+                    alert("Không tìm thấy báo giá trong iframe!");
+                    return;
+                }
+
+                // Chụp ảnh báo giá
+                html2canvas(quoteArea, { scale: 2 }).then(canvas => {
+                    const imgData = canvas.toDataURL("image/jpeg", 1.0);
+                    const link = document.createElement("a");
+                    link.href = imgData;
+                    link.download = "bao-gia.jpg";
+                    link.click();
+                });
+            };
+
+            // Reload lại iframe để có báo giá mới nhất
+            iframe.src = "../build_list/baogia.html";
+        });
+    </script>
+
+    <script>
+        document.getElementById('openPDF').addEventListener('click', () => {
+            window.location.href = '../build_list/baogia.html'; // mở ngay trong tab hiện tại
+        });
+    </script>
+
     <script src="../script/build_pc.js"></script>
     <script src="../script/navbar.js"></script>
     <script src="../script/product.js"></script>

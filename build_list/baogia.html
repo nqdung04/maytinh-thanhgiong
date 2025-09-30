@@ -100,15 +100,10 @@
     table {
       width: 100%;
       border-collapse: separate;
-      /* KHÔNG dùng collapse */
       border-spacing: 0;
-      /* Giữ ô sát nhau */
       border: 1px solid black;
-      /* Viền ngoài rõ ràng */
       border-radius: 8px;
-      /* Bo tròn */
       overflow: hidden;
-      /* Ẩn phần viền thừa */
     }
 
     thead th {
@@ -126,7 +121,6 @@
       border: 1px solid black;
       font-size: 16px;
       text-align: center;
-      /* căn giữa mọi ô */
     }
 
     tfoot td {
@@ -136,7 +130,7 @@
     }
 
     .right {
-      text-align: right
+      text-align: center
     }
 
     .footer-bar {
@@ -161,7 +155,7 @@
   <div class="paper" id="quote-area">
     <header>
       <div class="brand">
-        <img src="img/main-img/logo_maytinh.jpg" alt="Logo công ty">
+        <img src="../img/main-img/logo_maytinh.jpg" alt="Logo công ty">
       </div>
       <div class="company-info">
         <div class="name">Công ty Máy tính Thánh Gióng</div>
@@ -174,9 +168,9 @@
     <div class="divider"></div>
     <div class="big-title">BẢNG BÁO GIÁ THIẾT BỊ</div>
 
-    <div class="controls">
+    <div class="controls no-print">
       <div class="date" id="quote-date">Ngày báo giá: --/--/----</div>
-      <button id="export-pdf" class="btn">Tải PDF</button>
+      <button id="print-quote" class="btn">In đơn hàng</button>
     </div>
 
     <table id="quote-table">
@@ -186,119 +180,41 @@
           <th style="width:11%">Mã SP</th>
           <th>Tên sản phẩm</th>
           <th style="width:12%">Bảo hành</th>
-          <th style="width:10%" class="right">Số lượng</th>
-          <th style="width:16%" class="right">Đơn giá</th>
-          <th style="width:16%" class="right">Thành tiền</th>
+          <th style="width:10%">Số lượng</th>
+          <th style="width:16%">Đơn giá</th>
+          <th style="width:16%">Thành tiền</th>
         </tr>
       </thead>
-      <tbody id="tbody-products">
-        <tr>
-          <td>1</td>
-          <td>MTG-001</td>
-          <td>Máy tính để bàn A</td>
-          <td>24 tháng</td>
-          <td class="right">2</td>
-          <td class="right">12000000</td>
-          <td class="right">24000000</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>MTG-002</td>
-          <td>Màn hình 24" IPS</td>
-          <td>12 tháng</td>
-          <td class="right">3</td>
-          <td class="right">3200000</td>
-          <td class="right">9600000</td>
-        </tr>
-      </tbody>
+      <tbody id="tbody-products"></tbody>
       <tfoot>
         <tr>
-          <td colspan="6" class="right">Tổng cộng</td>
-          <td class="right" id="grand-total">0</td>
+          <td colspan="6" style="text-align: right;">Phí vận chuyển</td>
+          <td style="text-align: left; color: red;">0₫</td>
+        </tr>
+        <tr>
+          <td colspan="6" style="text-align: right;">Tổng chi phí thanh toán</td>
+          <td style="text-align: left; color: red;" id="grand-total">0₫</td>
         </tr>
       </tfoot>
     </table>
 
-    <!-- Ngăn cách trước phần kết -->
     <div class="divider"></div>
-
     <div class="footer-bar">
       <div style="color:black; text-align:left;">
         <div>Để biết thêm chi tiết, vui lòng liên hệ</div>
-        <div>Hotline: 0993 888 000 (8h-18h30 thứ 2 - thứ 7)</div>
+        <div>Hotline: 0993 888 000</div>
+        <div>Ngày làm việc: 8h-18h30 thứ 2 - thứ 7</div>
       </div>
       <div style="color:#0082c6;">Xin chân thành cảm ơn quý khách</div>
     </div>
   </div>
 
-  <!-- jsPDF và plugin autoTable -->
+  <script src="../script/baogia.js"></script>
+
+  <!-- jsPDF và html2canvas -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-  <script>
-    function pad(n) { return n < 10 ? '0' + n : n; }
-    function formatDate(d) {
-      return pad(d.getHours()) + ':' + pad(d.getMinutes()) + ' - ' +
-        pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear();
-    }
-    document.getElementById('quote-date').textContent =
-      'Ngày báo giá: ' + formatDate(new Date());
-
-    function formatCurrency(n) {
-      if (isNaN(n)) return n;
-      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' ₫';
-    }
-    function computeTotals() {
-      const tbody = document.getElementById('tbody-products');
-      let total = 0;
-      Array.from(tbody.rows).forEach((r, idx) => {
-        r.cells[0].textContent = idx + 1;
-        const qty = parseFloat(r.cells[4].textContent.replace(/[^0-9.-]+/g, '')) || 0;
-        const price = parseFloat(r.cells[5].textContent.replace(/[^0-9.-]+/g, '')) || 0;
-        const line = qty * price;
-        r.cells[6].textContent = formatCurrency(Math.round(line));
-        total += line;
-      });
-      document.getElementById('grand-total').textContent = formatCurrency(Math.round(total));
-    }
-    computeTotals();
-
-    document.getElementById('export-pdf').addEventListener('click', () => {
-      const { jsPDF } = window.jspdf;
-      const quote = document.getElementById('quote-area');
-
-      html2canvas(quote, {
-        scale: 2,              // tăng độ nét
-        useCORS: true          // nếu có ảnh từ link ngoài
-      }).then(canvas => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF('p', 'pt', 'a4');
-
-        // Tính tỉ lệ để vừa trang A4
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
-        const imgWidth = pageWidth;
-        const imgHeight = canvas.height * pageWidth / canvas.width;
-
-        let position = 0;
-        if (imgHeight < pageHeight) {
-          pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-        } else {
-          // Nếu dài hơn 1 trang, chia ra nhiều trang
-          let heightLeft = imgHeight;
-          while (heightLeft > 0) {
-            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-            if (heightLeft > 0) {
-              pdf.addPage();
-              position = - (imgHeight - heightLeft);
-            }
-          }
-        }
-        pdf.save('bao_gia.pdf');
-      });
-    });
-  </script>
 </body>
 
 </html>

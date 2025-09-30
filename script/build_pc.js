@@ -1,3 +1,4 @@
+// ================== CHỌN SẢN PHẨM ==================
 document.querySelectorAll('.choose-link').forEach(btn => {
   btn.addEventListener('click', () => {
     const key = btn.dataset.key;
@@ -10,6 +11,7 @@ document.querySelectorAll('.choose-link').forEach(btn => {
   });
 });
 
+// ================== XÓA HẾT ==================
 document.getElementById('refreshBtn').addEventListener('click', function () {
   if (!confirm('Cảnh báo: Thao tác này sẽ xóa tất cả sản phẩm đã chọn')) return;
 
@@ -21,14 +23,16 @@ document.getElementById('refreshBtn').addEventListener('click', function () {
   // 2️⃣ Cập nhật lại tổng giá
   updateTotalCost();
 
-  // 3️⃣ Khôi phục từng dòng về đúng giao diện ban đầu
+  // 3️⃣ Xóa luôn localStorage
+  localStorage.removeItem("savedConfig");
+
+  // 4️⃣ Khôi phục từng dòng về đúng giao diện ban đầu
   Object.entries(originalLinks).forEach(([cat, original]) => {
-    // Tìm phần tử hiện tại của danh mục này (có thể đang là <div> sau khi chọn)
     const current = document.querySelector(`[data-cat="${cat}"]`);
     if (current) {
-      const restored = original.cloneNode(true);      // clone bản gốc
-      current.replaceWith(restored);                 // thay thế
-      attachChooseEvent(restored);                   // gắn lại sự kiện click
+      const restored = original.cloneNode(true);
+      current.replaceWith(restored);
+      attachChooseEvent(restored);
     }
   });
 });
@@ -40,24 +44,22 @@ const sortSelect = document.getElementById("sortSelect");
 const closeBtn = document.getElementById("closeBtn");
 
 // ==== QUẢN LÝ GIỎ HÀNG / TỔNG GIÁ ====
-/*
-  selectedItems[cat] = {
-     product: {...},
-     qty: number
-  }
-*/
 const selectedItems = {};
-// const totalCostEl = document.getElementById("totalCost"); // <td id="totalCost">0 ₫</td>
+
 function updateTotalCost() {
   let sum = 0;
   Object.values(selectedItems).forEach(item => {
     sum += item.product.priceNumber * item.qty;
   });
-
-  // Cập nhật cho tất cả ô tổng giá
   document.querySelectorAll('.totalCost').forEach(el => {
     el.textContent = sum.toLocaleString() + '₫';
   });
+  saveConfig(); // 🔄 luôn lưu khi tính lại
+}
+
+// Lưu vào localStorage
+function saveConfig() {
+  localStorage.setItem("savedConfig", JSON.stringify(selectedItems));
 }
 
 function renderSelectedItem(cat) {
@@ -111,20 +113,15 @@ function renderSelectedItem(cat) {
   const qtyInput  = container.querySelector('.qty-input');
   const totalSpan = container.querySelector('.total-price');
 
-  // Chỉ cho nhập số nguyên dương và auto về 1 ngay khi xóa hết
   qtyInput.addEventListener('input', e => {
-    let cleaned = e.target.value.replace(/\D/g, ''); // lọc chỉ số
-    if (cleaned === '') {
-      // vừa xóa hết => đặt ngay về 1
-      cleaned = '1';
-    }
+    let cleaned = e.target.value.replace(/\D/g, '');
+    if (cleaned === '') cleaned = '1';
     let val = parseInt(cleaned, 10);
     if (val < 1 || isNaN(val)) val = 1;
-
     e.target.value = val;
     selectedItems[cat].qty = val;
     totalSpan.textContent = "= " + (unitPrice * val).toLocaleString() + "₫";
-    updateTotalCost();
+    updateTotalCost(); // 🔄 tự động lưu
   });
 
   container.querySelector('.edit-btn').addEventListener('click', e => {
@@ -144,15 +141,14 @@ function renderSelectedItem(cat) {
   });
 }
 
-// ====================================
-
+// ================== SẢN PHẨM ==================
 let products = [];
 let currentCategory = null;
 let currentProducts = [];
 let currentPage = 1;
 const itemsPerPage = 10;
 let activeRanges = new Set();
-let currentSort = "name";   // mặc định A-Z
+let currentSort = "name";
 
 // Load JSON
 fetch("../data/build_pc_data.json")
@@ -176,8 +172,6 @@ sortSelect.addEventListener("change", () => {
 
 function applyFiltersAndSort() {
   let list = products.filter(p => p.category === currentCategory);
-
-  // Lọc theo khoảng giá
   if (activeRanges.size) {
     list = list.filter(p => {
       return Array.from(activeRanges).some(r => {
@@ -187,22 +181,14 @@ function applyFiltersAndSort() {
       });
     });
   }
-
-  // Sắp xếp
   list.sort((a, b) => {
-    if (currentSort === "priceAsc") {
-      return a.priceNumber - b.priceNumber || a.name.localeCompare(b.name);
-    }
-    if (currentSort === "priceDesc") {
-      return b.priceNumber - a.priceNumber || a.name.localeCompare(b.name);
-    }
+    if (currentSort === "priceAsc") return a.priceNumber - b.priceNumber || a.name.localeCompare(b.name);
+    if (currentSort === "priceDesc") return b.priceNumber - a.priceNumber || a.name.localeCompare(b.name);
     if (a.status !== b.status) return b.status - a.status;
     return a.name.localeCompare(b.name);
   });
-
   return list;
 }
-
 
 function showProducts(category) {
   currentCategory = category;
@@ -245,7 +231,6 @@ function renderProducts() {
         </div>`;
     }).join("");
 
-    // Gắn sự kiện cho nút thêm
     document.querySelectorAll(".add-btn:not([disabled])").forEach(btn => {
       btn.addEventListener("click", () => {
         const id = btn.dataset.id;
@@ -254,7 +239,7 @@ function renderProducts() {
         if (product) {
           selectedItems[cat] = { product, qty: 1 };
           renderSelectedItem(cat);
-          updateTotalCost();
+          updateTotalCost(); // 🔄 tự động lưu
           overlay.classList.remove("active");
           attachRowEvents(cat);
         }
@@ -264,8 +249,7 @@ function renderProducts() {
   renderPagination();
 }
 
-// Lưu HTML gốc của từng nút khi load
-// Lưu bản clone gốc
+// ========== ORIGINAL LINKS ==========
 const originalLinks = {};
 document.querySelectorAll("a.choose-link").forEach(a => {
   originalLinks[a.dataset.cat] = a.cloneNode(true);
@@ -283,16 +267,13 @@ function attachChooseEvent(link) {
 }
 
 function openOverlayFor(cat) {
-  // ví dụ mở overlay và load danh sách sản phẩm theo cat
-  const overlay = document.getElementById("overlay");
   overlay.classList.add("open");
-  showProducts(cat); // nếu có hàm hiển thị sản phẩm
+  showProducts(cat);
 }
 
 function attachRowEvents(cat) {
   const row = document.querySelector(`a.choose-link[data-cat="${cat}"]`);
   if (!row) return;
-  // tránh bind nhiều lần cho cùng 1 node
   if (row.dataset.rowBound) return;
   row.dataset.rowBound = '1';
 
@@ -305,7 +286,6 @@ function attachRowEvents(cat) {
       selectedItems[cat].qty = val;
       updateTotalCost();
       renderSelectedItem(cat);
-      // renderSelectedItem có thể thay DOM -> re-attach
       attachRowEvents(cat);
     });
   }
@@ -315,18 +295,12 @@ function attachRowEvents(cat) {
     remove.dataset.removeBound = '1';
     remove.addEventListener('click', e => {
       e.preventDefault();
-      e.stopPropagation();   // 🔑 chặn sự kiện click nổi lên thẻ <a>
-
+      e.stopPropagation();
       if (!confirm('Bạn có chắc muốn xóa sản phẩm này?')) return;
-
       delete selectedItems[cat];
       updateTotalCost();
-
-      // Khôi phục link gốc
       const restored = originalLinks[cat].cloneNode(true);
       row.replaceWith(restored);
-
-      // Gắn lại sự kiện chọn cho link gốc
       attachChooseEvent(restored);
     });
   }
@@ -336,18 +310,15 @@ function renderPagination() {
   const totalPages = Math.ceil(currentProducts.length / itemsPerPage);
   pagination.innerHTML = "";
   if (totalPages <= 1) return;
-
   let startPage = Math.max(1, currentPage - 2);
   let endPage = Math.min(totalPages, startPage + 4);
   if (endPage - startPage < 4) startPage = Math.max(1, endPage - 4);
-
   let html = "";
   if (currentPage > 1) html += `<button data-page="${currentPage - 1}">«</button>`;
   for (let i = startPage; i <= endPage; i++) {
     html += `<button data-page="${i}" class="${i === currentPage ? "active" : ""}">${i}</button>`;
   }
   if (currentPage < totalPages) html += `<button data-page="${currentPage + 1}">»</button>`;
-
   pagination.innerHTML = html;
   pagination.querySelectorAll("button").forEach(b => {
     b.addEventListener("click", () => { currentPage = Number(b.dataset.page); renderProducts(); });
@@ -365,5 +336,29 @@ document.getElementById("priceFilterForm")?.addEventListener("change", e => {
     else activeRanges.delete(cb.value);
     currentPage = 1;
     renderProducts();
+  }
+});
+
+// ====== LƯU & KHÔI PHỤC CẤU HÌNH ======
+const saveBtn = document.getElementById("saveConfigBtn");
+
+// Lưu thủ công khi bấm nút
+saveBtn.addEventListener("click", () => {
+  saveConfig();
+  alert("✅ Cấu hình đã được lưu thành công!");
+});
+
+// Tự khôi phục khi load lại trang
+window.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("savedConfig");
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      Object.assign(selectedItems, parsed);
+      Object.keys(selectedItems).forEach(cat => renderSelectedItem(cat));
+      updateTotalCost();
+    } catch (e) {
+      console.error("Lỗi khi đọc cấu hình đã lưu:", e);
+    }
   }
 });
